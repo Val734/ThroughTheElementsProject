@@ -143,6 +143,15 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeSceneAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""f5935419-6615-448b-9d60-87c63f1a6a5d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -332,6 +341,17 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""action"": ""Liquid"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""449ab8ee-f038-4251-a5d7-9996f471b349"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeSceneAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -353,6 +373,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         m_Player_Transform = m_Player.FindAction("Transform", throwIfNotFound: true);
         m_Player_Hability = m_Player.FindAction("Hability", throwIfNotFound: true);
         m_Player_BaseAttack = m_Player.FindAction("BaseAttack", throwIfNotFound: true);
+        m_Player_ChangeSceneAction = m_Player.FindAction("ChangeSceneAction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -427,6 +448,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Transform;
     private readonly InputAction m_Player_Hability;
     private readonly InputAction m_Player_BaseAttack;
+    private readonly InputAction m_Player_ChangeSceneAction;
     public struct PlayerActions
     {
         private @NewControls m_Wrapper;
@@ -444,6 +466,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         public InputAction @Transform => m_Wrapper.m_Player_Transform;
         public InputAction @Hability => m_Wrapper.m_Player_Hability;
         public InputAction @BaseAttack => m_Wrapper.m_Player_BaseAttack;
+        public InputAction @ChangeSceneAction => m_Wrapper.m_Player_ChangeSceneAction;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -492,6 +515,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @BaseAttack.started += instance.OnBaseAttack;
             @BaseAttack.performed += instance.OnBaseAttack;
             @BaseAttack.canceled += instance.OnBaseAttack;
+            @ChangeSceneAction.started += instance.OnChangeSceneAction;
+            @ChangeSceneAction.performed += instance.OnChangeSceneAction;
+            @ChangeSceneAction.canceled += instance.OnChangeSceneAction;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -535,6 +561,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @BaseAttack.started -= instance.OnBaseAttack;
             @BaseAttack.performed -= instance.OnBaseAttack;
             @BaseAttack.canceled -= instance.OnBaseAttack;
+            @ChangeSceneAction.started -= instance.OnChangeSceneAction;
+            @ChangeSceneAction.performed -= instance.OnChangeSceneAction;
+            @ChangeSceneAction.canceled -= instance.OnChangeSceneAction;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -567,5 +596,6 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         void OnTransform(InputAction.CallbackContext context);
         void OnHability(InputAction.CallbackContext context);
         void OnBaseAttack(InputAction.CallbackContext context);
+        void OnChangeSceneAction(InputAction.CallbackContext context);
     }
 }

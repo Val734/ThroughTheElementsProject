@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public abstract class EnemyController : MonoBehaviour
 {
-    public GameObject player;
     protected State state = State.Wandering;
     protected enum State
     {
         Wandering,
         Chasing,
-        LookToPlayer
+        Dead
     }
 
     [Header("Vertical Movement Settings")]
@@ -67,7 +67,10 @@ public abstract class EnemyController : MonoBehaviour
                 DetectEnemy();
                 if (target == null) { state = State.Wandering; }
                 break;
-           
+
+            case State.Dead:
+                speed = 0f;
+                break;
         }
     }
     private void VerticalMovement()
