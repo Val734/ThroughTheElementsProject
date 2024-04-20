@@ -31,10 +31,10 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
         //}
     }
 
-    private void OnHit(int damage)
-    {
-        LoseHealth();
-    }
+    //private void OnHit(int damage)
+    //{
+    //    LoseHealth();
+    //}
 
     private void LoseHealth()
     {

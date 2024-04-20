@@ -63,8 +63,8 @@ public class LiquidBoss_Behaviour : MonoBehaviour
     {
         OnBattle,
         WaitingBattle,
-        Exploding, //CAMBIAR NOMBRE xD
-        Recovering //TAMBIÉN CAMBAR NOMBRE xD
+        Exploding, 
+        Recovering 
     }
 
     public StatesType state = StatesType.WaitingBattle;
@@ -132,7 +132,7 @@ public class LiquidBoss_Behaviour : MonoBehaviour
             }
             else if(attack == 1)
             {
-                OrbAttack(); // ORB ATTACK
+                OrbAttack();
             }
             else if(attack == 2)
             {
