@@ -64,8 +64,7 @@ public class LiquidBoss_Behaviour : MonoBehaviour
         OnBattle,
         WaitingBattle,
         Exploding, 
-        Recovering,
-        Dead
+        Recovering
     }
 
     public StatesType state = StatesType.WaitingBattle;

@@ -22,13 +22,17 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
     {
         if(debugHit) 
         {
-            LoseHealth();
+            Prueba();
         }
+    }
+
+    private void Prueba()
+    {
+        _hCollider.onHurt.Invoke(1);
     }
 
     private void Awake()
     {
-        Debug.Log("VIDAS: " + lives);
         _hCollider = GetComponentInChildren<HurtCollider>();
         _boss = GetComponent<LiquidBoss_Behaviour>();
     }
@@ -42,9 +46,10 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
         }
     }
 
-    private void OnHit(int damage)
+    public void OnHit(int damage)
     {
         LoseHealth();
+        Debug.Log("El ON HIT");
     }
 
     private void LoseHealth()
@@ -58,11 +63,15 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
                 Dead();
             }
         }
+        else
+        {
+            Debug.Log("No le puedes hacer daño ahora");
+        }
     }
 
     private void Dead()
     {
-        Debug.Log("Se ha muerto");
+        gameObject.SetActive(false);    
     }
 
     public void Healing()
