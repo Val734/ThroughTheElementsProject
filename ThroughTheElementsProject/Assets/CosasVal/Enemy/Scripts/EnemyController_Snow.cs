@@ -22,6 +22,20 @@ public class EnemyController_Snow : EnemyController
 
     protected override void ChildUpdate()
     {
+        if (isAlive == false)
+        {
+            state = State.Dead;
+        }
+
+        if (!isAlive)
+        {
+            disappear -= Time.deltaTime;
+            if (disappear < 0)
+            {
+                Debug.Log("activar particulas para que la palme y se vaya alv");
+                gameObject.SetActive(false);
+            }
+        }
         // Aquí puedes agregar lógica adicional para el comportamiento de patrulla
     }
 

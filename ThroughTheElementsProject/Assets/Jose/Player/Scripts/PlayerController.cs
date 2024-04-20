@@ -603,20 +603,22 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("HurtTrigger");
             isDashing = true;
             Dashdirection = Dashdirection = new Vector2(0, -1);
-            StartCoroutine(stopHurt());
             canJump= false;
             canMove= false;
             playerCanAttack = false;
+            StartCoroutine(stopHurt());
+
 
         }
 
     }
     IEnumerator stopHurt() 
     {
+        canMove = false;
+        movementSpeed = 0f;
         yield return new WaitForSeconds(0.2f);
         isDashing = false;
-        canMove= false;
-        movementSpeed = 0f; 
+
         yield return new WaitForSeconds(2f);
         canMove = true;
         canJump= true;
