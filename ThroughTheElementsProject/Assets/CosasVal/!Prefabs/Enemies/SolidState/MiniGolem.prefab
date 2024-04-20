@@ -126,7 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3789041686877879353}
   - component: {fileID: 1323315744014564207}
-  - component: {fileID: 8118644451477697349}
+  - component: {fileID: 8091499956018138317}
   m_Layer: 0
   m_Name: hitCollider
   m_TagString: Untagged
@@ -168,9 +168,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.7425976, y: 0.6222639, z: 1}
-  m_Center: {x: -0.003619194, y: 0.18886805, z: 0}
---- !u!114 &8118644451477697349
+  m_Size: {x: 1.2470303, y: 0.65793145, z: 1.4284403}
+  m_Center: {x: -0.06418896, y: 0.17103428, z: 0.21422017}
+--- !u!114 &8091499956018138317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,18 +179,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 4286317844577828386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d585dff909079294e9d4f8bfbf866b96, type: 3}
+  m_Script: {fileID: 11500000, guid: 48ea028f088207e4a86954c3014691cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hittableTags:
-  - Player
   - PunchingBag
-  onHit:
+  - Player
+  OnhittableObject:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6129842283918124027, guid: f410953482cffb24cb6f3ef04bc8ec9f,
+      - m_Target: {fileID: 7621851433585586232, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
           type: 3}
-        m_TargetAssemblyTypeName: HealthBehaviourScript, Assembly-CSharp
+        m_TargetAssemblyTypeName: HealthBehaviour, Assembly-CSharp
         m_MethodName: Damage
         m_Mode: 3
         m_Arguments:
@@ -201,7 +201,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  damage: 2
+  damage: 0
 --- !u!1 &4919778461981277077
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1655253952951139712
 RectTransform:
   m_ObjectHideFlags: 0
@@ -420,8 +420,8 @@ GameObject:
   - component: {fileID: 8385724315849237296}
   - component: {fileID: 8159864751895495630}
   - component: {fileID: 5949850467711387735}
-  - component: {fileID: 5645863218121252913}
-  - component: {fileID: 1098910720052264864}
+  - component: {fileID: 5531772742311226972}
+  - component: {fileID: 481230545281655242}
   m_Layer: 0
   m_Name: MiniGolem
   m_TagString: Enemy
@@ -462,7 +462,7 @@ MonoBehaviour:
   maxWanderPosition: 10
   layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   hitCollider: {fileID: 4286317844577828386}
 --- !u!143 &8385724315849237296
 CharacterController:
@@ -532,7 +532,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5645863218121252913
+--- !u!114 &5531772742311226972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -541,7 +541,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8764744183442045438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adf432665ccba9845a48c409e0988015, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fbcd426a46dea2479370b2f6d3f20b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   onHurt:
@@ -559,7 +559,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1098910720052264864
+--- !u!114 &481230545281655242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -568,10 +568,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8764744183442045438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c69f239a581bf4d41a49e6bbd67be54b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f44ff1fc82fbee42896eba87a505348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onDie:
+  OnDie:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3919866713096372538}
@@ -586,7 +586,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onHurt:
+  OnHurt:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3919866713096372538}
@@ -601,7 +601,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  maxHealth: 3
   health: 3
+  invulnerable: 0
 --- !u!1001 &318698080112307714
 PrefabInstance:
   m_ObjectHideFlags: 0

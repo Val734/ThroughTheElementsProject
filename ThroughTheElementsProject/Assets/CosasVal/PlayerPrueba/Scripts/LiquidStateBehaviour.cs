@@ -94,8 +94,8 @@ public class LiquidStateBehaviour : MonoBehaviour
     {
         animator.SetBool("TransformBool", true);
       
-        yield return new WaitForSeconds(2f);
-        controller.verticalVelocity = 20;
+        yield return new WaitForSeconds(1f);
+        controller.verticalVelocity = 15;
         yield return new WaitForSeconds(0.1f);
 
 

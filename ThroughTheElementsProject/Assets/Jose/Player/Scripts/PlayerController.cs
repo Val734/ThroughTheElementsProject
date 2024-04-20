@@ -98,6 +98,7 @@ public class PlayerController : MonoBehaviour
         stamina = maxStamina;
         animator = GetComponentInChildren<Animator>();
         canMove = true;
+        isFreezed = false; 
 
     }
     private void OnEnable()
@@ -597,21 +598,39 @@ public class PlayerController : MonoBehaviour
 
     public void GetHurt()
     {
-        animator.SetTrigger("HurtTrigger");
-        isDashing = true;
-        Dashdirection= Dashdirection = new Vector2(0, -1);
-        StartCoroutine(stopHurt());
+        if(!isFreezed)
+        {
+            animator.SetTrigger("HurtTrigger");
+            isDashing = true;
+            Dashdirection = Dashdirection = new Vector2(0, -1);
+            StartCoroutine(stopHurt());
+            canJump= false;
+            canMove= false;
+            playerCanAttack = false;
+
+        }
+
     }
     IEnumerator stopHurt() 
     {
         yield return new WaitForSeconds(0.2f);
         isDashing = false;
         canMove= false;
+        movementSpeed = 0f; 
         yield return new WaitForSeconds(2f);
         canMove = true;
+        canJump= true;
+        playerCanAttack = true;
+
+        movementSpeed = 4f;
+
     }
     public void GetDie()
     {
-        animator.SetTrigger("HurtTrigger");
+        if(!isFreezed)
+        {
+            animator.SetTrigger("HurtTrigger");
+
+        }
     }
 }

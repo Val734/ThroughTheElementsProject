@@ -11,6 +11,8 @@ public class EnemyController_Snow : EnemyController
     bool activated;
     float localSpeed = 0f;
     Vector3 initialPosition;
+    private bool isAlive;
+    private float disappear = 5f;
 
     protected override void ChildAwake()
     {
