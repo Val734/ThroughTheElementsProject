@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1337331188148837862}
-  - component: {fileID: 5271631540088193698}
   - component: {fileID: 4976846446017068609}
   m_Layer: 0
   m_Name: Geiser
@@ -34,19 +33,6 @@ Transform:
   - {fileID: 5212244306169570523}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5271631540088193698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2134872319911279863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdab2d36a17d16a4187dbd95de868b41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  geiserForce: 2
 --- !u!65 &4976846446017068609
 BoxCollider:
   m_ObjectHideFlags: 0
