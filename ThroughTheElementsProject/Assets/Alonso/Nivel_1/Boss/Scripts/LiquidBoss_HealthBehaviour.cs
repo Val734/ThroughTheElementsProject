@@ -12,38 +12,57 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
     [SerializeField] int timeshealed = 0;
     [SerializeField] int maxTimesHealed = 2;
 
-    //HurtCollider _hCollider;
+    [Header("Debug Settings")]
+    [SerializeField] bool debugHit;
+
+    HurtCollider _hCollider;
     LiquidBoss_Behaviour _boss;
+
+    private void OnValidate()
+    {
+        if(debugHit) 
+        {
+            LoseHealth();
+        }
+    }
 
     private void Awake()
     {
         Debug.Log("VIDAS: " + lives);
-        //_hCollider = GetComponentInChildren<HurtCollider>();
+        _hCollider = GetComponentInChildren<HurtCollider>();
         _boss = GetComponent<LiquidBoss_Behaviour>();
     }
 
     private void OnEnable()
     {
-        //if(_hCollider != null)
-        //{
-        //    _hCollider.onHurt.AddListener(OnHit);
-        //    Debug.Log("HAY HURT");
-        //}
+        if(_hCollider != null)
+        {
+            _hCollider.onHurt.AddListener(OnHit);
+            Debug.Log("HAY HURT");
+        }
     }
 
-    //private void OnHit(int damage)
-    //{
-    //    LoseHealth();
-    //}
+    private void OnHit(int damage)
+    {
+        LoseHealth();
+    }
 
     private void LoseHealth()
     {
-        lives--;
-        Debug.Log("VIDAS: " + lives);
-        if(lives <=0 )
+        if(_boss.state == LiquidBoss_Behaviour.StatesType.OnBattle || _boss.state == LiquidBoss_Behaviour.StatesType.Recovering)
         {
-            Debug.Log("Se ha muerto");
+            lives--;
+            Debug.Log("VIDAS: " + lives);
+            if (lives <= 0)
+            {
+                Dead();
+            }
         }
+    }
+
+    private void Dead()
+    {
+        Debug.Log("Se ha muerto");
     }
 
     public void Healing()
