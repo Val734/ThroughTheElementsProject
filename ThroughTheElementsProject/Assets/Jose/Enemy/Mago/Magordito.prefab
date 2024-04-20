@@ -87,7 +87,7 @@ MonoBehaviour:
   detectionDistance2: 30
   detectionLayerMask:
     serializedVersion: 2
-    m_Bits: 2147483763
+    m_Bits: 59
   Detector: {fileID: 749086862328568636}
   GravitySphere: {fileID: 4185347186737967299, guid: fef286c8c0d940c40bad7025f4293bfc,
     type: 3}
@@ -160,21 +160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fbcd426a46dea2479370b2f6d3f20b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onHit:
+  onHurt:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3410440618670192873}
-        m_TargetAssemblyTypeName: HealthBehaviourScript, Assembly-CSharp
-        m_MethodName: Damage
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &6100249623717800327
 GameObject:
   m_ObjectHideFlags: 0
