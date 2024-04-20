@@ -64,7 +64,8 @@ public class LiquidBoss_Behaviour : MonoBehaviour
         OnBattle,
         WaitingBattle,
         Exploding, 
-        Recovering
+        Recovering,
+        Killed
     }
 
     public StatesType state = StatesType.WaitingBattle;
@@ -101,6 +102,10 @@ public class LiquidBoss_Behaviour : MonoBehaviour
             case StatesType.Recovering:
                 Recovering();
                 break;
+            case StatesType.Killed:
+                Dead();
+                break;
+
         }
     }
 
@@ -142,6 +147,24 @@ public class LiquidBoss_Behaviour : MonoBehaviour
         }
     }
 
+    public void CheckDistance()
+    {
+        Collider[] collider = Physics.OverlapSphere(DistanceChecker.position, detectionDistance, detectionLayerMask);
+        for (int i = 0; i < collider.Length; i++)
+        {
+            if (detectionTags.Contains(collider[i].tag))
+            {
+                detectionPlayerTime += Time.deltaTime;
+                if (detectionPlayerTime >= maxDetectionPlayerTime)
+                {
+                    canAttack = false;
+                    state = StatesType.Exploding;
+                    detectionPlayerTime = 0;
+                }
+            }
+        }
+    }
+
     public void WaitingBattle()
     {
         if (battleStarted)
@@ -171,23 +194,12 @@ public class LiquidBoss_Behaviour : MonoBehaviour
         }
     }
 
-    public void CheckDistance()
+
+    public void Dead()
     {
-        Collider[] collider = Physics.OverlapSphere(DistanceChecker.position, detectionDistance, detectionLayerMask);
-        for (int i = 0; i < collider.Length; i++)
-        {
-            if (detectionTags.Contains(collider[i].tag))
-            {
-                detectionPlayerTime += Time.deltaTime;
-                if(detectionPlayerTime >= maxDetectionPlayerTime)
-                {
-                    canAttack = false;
-                    state = StatesType.Exploding;
-                    detectionPlayerTime = 0;
-                }
-            }
-        }
+
     }
+
     // ------------------------------------ FUNCIONES DE ATAQUES ------------------------------------
     public void OrbAttack()
     {

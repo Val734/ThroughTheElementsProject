@@ -60,7 +60,7 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
             Debug.Log("VIDAS: " + lives);
             if (lives <= 0)
             {
-                Dead();
+                _boss.state = LiquidBoss_Behaviour.StatesType.Killed;
             }
         }
         else
