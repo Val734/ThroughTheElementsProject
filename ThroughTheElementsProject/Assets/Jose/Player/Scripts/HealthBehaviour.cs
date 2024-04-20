@@ -32,7 +32,7 @@ public class HealthBehaviour : MonoBehaviour
     }
     public void Damage(int damage)
     {
-        if(health >= 0)
+        if(health > 0)
         {
             if(!invulnerable)
             {
