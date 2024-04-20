@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SpawnPointBehaviour : MonoBehaviour
+{
+    [SerializeField] SpawnManager _spawnManager;
+
+    private void Awake()
+    {
+        _spawnManager = GetComponentInParent<SpawnManager>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            _spawnManager.ChangeSpawnPoint(transform);
+            gameObject.SetActive(false);
+        }
+    }
+}
