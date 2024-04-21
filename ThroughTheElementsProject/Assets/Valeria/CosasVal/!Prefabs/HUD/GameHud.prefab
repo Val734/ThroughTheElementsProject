@@ -334,7 +334,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7520575682647567753}
   - component: {fileID: 2171869027235570174}
-  - component: {fileID: 1698956291506642967}
   m_Layer: 5
   m_Name: LIfeBar
   m_TagString: Untagged
@@ -415,24 +414,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1698956291506642967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2386128217661169901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050989229506ff54cb1d4a2b57bd6865, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxValue: 100
-  currentValue: 100
-  healthBar: {fileID: 1698956291506642967}
-  EmptyBar:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &2513845258937347305
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,7 +448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -4.1000366, y: -0.3000002}
+  m_AnchoredPosition: {x: -4.1000366, y: -0.29999924}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6581049321239301914
