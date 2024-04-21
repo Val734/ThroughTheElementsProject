@@ -126,6 +126,7 @@ public class PlayerController : MonoBehaviour
     private float attackTime;
     private void Update()
     {
+        Debug.Log(canMove);
         StaminaText.GetComponent<TextMeshProUGUI>().text = "Stamina:" + "" + Mathf.FloorToInt(stamina);
 
         UpdateMovement();
@@ -178,7 +179,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("HurtBool", false);
 
         }
-        else if(!isFreezed)
+        else if(!isFreezed && !playerIsHitted)
         {
             canMove = true;
             canJump=true;
@@ -614,7 +615,10 @@ public class PlayerController : MonoBehaviour
             //animator.SetTrigger("HurtTrigger");
             isDashing = true;
             Dashdirection = Dashdirection = new Vector2(0, -1);
-
+            canJump = false;
+            canMove = false;
+            movementSpeed = 0f;
+            playerCanAttack = false;
 
             StartCoroutine(stopHurt());
 
@@ -625,10 +629,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator stopHurt() 
     {
 
-        canJump = false;
-        canMove = false;
-        movementSpeed = 0f;
-        playerCanAttack = false;
+        
         yield return new WaitForSeconds(0.2f);
         isDashing = false;
 
