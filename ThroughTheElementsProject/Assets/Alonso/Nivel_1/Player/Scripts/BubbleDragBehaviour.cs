@@ -31,13 +31,8 @@ public class BubbleDragBehaviour : MonoBehaviour
             dragTime -= Time.deltaTime;
             if(dragTime > 0 ) 
             {
-                // Calculamos la dirección hacia la burbuja
                 Vector3 direction = (bubble.position - transform.position).normalized;
-
-                // Calculamos el desplazamiento en la dirección calculada
                 Vector3 displacement = direction * Time.deltaTime;
-
-                // Movemos el objeto
                 characterController.Move(displacement);
             }
             else
