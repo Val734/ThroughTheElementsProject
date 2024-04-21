@@ -8,8 +8,8 @@ public class PlasmaStateBehaviour : MonoBehaviour
     [SerializeField] InputActionReference TransformAction;
     [SerializeField] InputActionReference Hability;
 
-    [SerializeField] float detectionRadiusPlasmaOrb = 20f;
-    Collider[] objetosCercanos;
+    [SerializeField] float detectionRadiusPlasmaOrb = 10f;
+    [SerializeField] Collider[] objetosCercanos;
     Transform closestPlasmaOrb;
     float closestPlasmaOrbDistance;
 
@@ -30,7 +30,7 @@ public class PlasmaStateBehaviour : MonoBehaviour
     }
     void Update()
     {
-        if(Hability.action.IsPressed())
+        if(Hability.action.WasPerformedThisFrame())
         {
             objetosCercanos = Physics.OverlapSphere(transform.position, detectionRadiusPlasmaOrb);
             Debug.Log(objetosCercanos.Length);
@@ -42,7 +42,7 @@ public class PlasmaStateBehaviour : MonoBehaviour
                 {
                     if (obj.CompareTag("PlasmaOrb"))
                     {
-                        if(Vector3.Distance(transform.position, obj.transform.position) < closestPlasmaOrbDistance)
+                        if(Vector3.Distance(transform.position, obj.transform.position) <= closestPlasmaOrbDistance)
                         {
                             closestPlasmaOrb = obj.transform;
                             closestPlasmaOrbDistance = Vector3.Distance(transform.position, obj.transform.position);
@@ -54,7 +54,8 @@ public class PlasmaStateBehaviour : MonoBehaviour
                 {
                     while (Vector3.Distance(transform.position, closestPlasmaOrb.transform.position)>=2)
                     {
-                        controller.characterController.Move((closestPlasmaOrb.position-transform.position).normalized);
+                        controller.characterController.Move(closestPlasmaOrb.transform.position- transform.position);
+                        controller.verticalVelocity = 0;
                     }
                 }
             }
