@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Proyectile : MonoBehaviour
 {
-    Rigidbody rb;
+    protected Rigidbody rb;
     Transform player;
     float ForceSpeed = 320f;
     float aimbotForceSpeed = 15f;
