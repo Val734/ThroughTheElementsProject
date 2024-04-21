@@ -27,6 +27,7 @@ public class CaveDoor : MonoBehaviour
         if (keysCollected >= totalKeys)
         {
             OpenDoor();
+            OnDoorOpen.Invoke(); 
         }
     }
 
