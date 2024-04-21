@@ -354,6 +354,13 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
+    Iso: 200
+    ShutterSpeed: 0.005
+    Aperture: 16
+    BladeCount: 5
+    Curvature: {x: 2, y: 11}
+    BarrelClipping: 0.25
+    Anamorphism: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -370,7 +377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187193938}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1467907, y: 0.020909179, z: -0.0031035931, w: 0.9889417}
+  m_LocalRotation: {x: 0.1467907, y: 0.020909196, z: -0.0031035955, w: 0.9889417}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5493,6 +5500,13 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
+    Iso: 200
+    ShutterSpeed: 0.005
+    Aperture: 16
+    BladeCount: 5
+    Curvature: {x: 2, y: 11}
+    BarrelClipping: 0.25
+    Anamorphism: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -10476,7 +10490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422804424}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14679071, y: 0.020909172, z: -0.0031035924, w: 0.9889417}
+  m_LocalRotation: {x: 0.14679071, y: 0.020909205, z: -0.0031035976, w: 0.98894167}
   m_LocalPosition: {x: 461, y: 92.5, z: 266}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10576,6 +10590,13 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
+    Iso: 200
+    ShutterSpeed: 0.005
+    Aperture: 16
+    BladeCount: 5
+    Curvature: {x: 2, y: 11}
+    BarrelClipping: 0.25
+    Anamorphism: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -10592,7 +10613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514922553}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.17524235, y: 0.020811008, z: -0.0037051463, w: 0.9842984}
+  m_LocalRotation: {x: 0.17524235, y: 0.020811008, z: -0.0037051458, w: 0.9842984}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19456,8 +19477,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: PRESS ENTER BUTTON TO BEGIN
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 07c44b7c776c13c44af23abc256a2480, type: 2}
+  m_sharedMaterial: {fileID: -421059375220165546, guid: 07c44b7c776c13c44af23abc256a2480,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19600,6 +19622,13 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
+    Iso: 200
+    ShutterSpeed: 0.005
+    Aperture: 16
+    BladeCount: 5
+    Curvature: {x: 2, y: 11}
+    BarrelClipping: 0.25
+    Anamorphism: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -19720,7 +19749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d9a63f78abb56479c2f853a72e46cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 2578733127200267895, guid: 1b11652b82ec3fe489bbc311702f9d0f, type: 3}
+  menu: {fileID: 3645838164871640775, guid: e943b87101841e54492205b6b630b6ef, type: 3}
 --- !u!4 &1360477421
 Transform:
   m_ObjectHideFlags: 0

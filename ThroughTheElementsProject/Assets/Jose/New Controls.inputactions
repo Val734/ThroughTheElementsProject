@@ -338,9 +338,27 @@
             "id": "24ee53e1-cdd9-44b4-bdfc-2fb0d3e3af0d",
             "actions": [
                 {
-                    "name": "menu",
+                    "name": "LoadMenuScene",
                     "type": "Button",
                     "id": "8c0d2d95-ba53-4378-9720-1fdc1ae33203",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PauseMenu",
+                    "type": "Button",
+                    "id": "b197c4f8-e2f2-4f4e-bed4-dabe0810c369",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interactuar",
+                    "type": "Button",
+                    "id": "974ab987-d4d4-4355-bafb-e5e73da5e894",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -355,7 +373,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "menu",
+                    "action": "LoadMenuScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8d19b787-6c42-4ea1-a188-94b04e4076c2",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7b1d76c7-fcd9-4fe3-beee-d1a4c411bad8",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interactuar",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

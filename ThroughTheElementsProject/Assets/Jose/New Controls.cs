@@ -360,9 +360,27 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             ""id"": ""24ee53e1-cdd9-44b4-bdfc-2fb0d3e3af0d"",
             ""actions"": [
                 {
-                    ""name"": ""menu"",
+                    ""name"": ""LoadMenuScene"",
                     ""type"": ""Button"",
                     ""id"": ""8c0d2d95-ba53-4378-9720-1fdc1ae33203"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PauseMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""b197c4f8-e2f2-4f4e-bed4-dabe0810c369"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interactuar"",
+                    ""type"": ""Button"",
+                    ""id"": ""974ab987-d4d4-4355-bafb-e5e73da5e894"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -377,7 +395,29 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""menu"",
+                    ""action"": ""LoadMenuScene"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d19b787-6c42-4ea1-a188-94b04e4076c2"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PauseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7b1d76c7-fcd9-4fe3-beee-d1a4c411bad8"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interactuar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -404,7 +444,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         m_Player_ChangeSceneAction = m_Player.FindAction("ChangeSceneAction", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
-        m_Menu_menu = m_Menu.FindAction("menu", throwIfNotFound: true);
+        m_Menu_LoadMenuScene = m_Menu.FindAction("LoadMenuScene", throwIfNotFound: true);
+        m_Menu_PauseMenu = m_Menu.FindAction("PauseMenu", throwIfNotFound: true);
+        m_Menu_Interactuar = m_Menu.FindAction("Interactuar", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -616,12 +658,16 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
     // Menu
     private readonly InputActionMap m_Menu;
     private List<IMenuActions> m_MenuActionsCallbackInterfaces = new List<IMenuActions>();
-    private readonly InputAction m_Menu_menu;
+    private readonly InputAction m_Menu_LoadMenuScene;
+    private readonly InputAction m_Menu_PauseMenu;
+    private readonly InputAction m_Menu_Interactuar;
     public struct MenuActions
     {
         private @NewControls m_Wrapper;
         public MenuActions(@NewControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @menu => m_Wrapper.m_Menu_menu;
+        public InputAction @LoadMenuScene => m_Wrapper.m_Menu_LoadMenuScene;
+        public InputAction @PauseMenu => m_Wrapper.m_Menu_PauseMenu;
+        public InputAction @Interactuar => m_Wrapper.m_Menu_Interactuar;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -631,16 +677,28 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_MenuActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_MenuActionsCallbackInterfaces.Add(instance);
-            @menu.started += instance.OnMenu;
-            @menu.performed += instance.OnMenu;
-            @menu.canceled += instance.OnMenu;
+            @LoadMenuScene.started += instance.OnLoadMenuScene;
+            @LoadMenuScene.performed += instance.OnLoadMenuScene;
+            @LoadMenuScene.canceled += instance.OnLoadMenuScene;
+            @PauseMenu.started += instance.OnPauseMenu;
+            @PauseMenu.performed += instance.OnPauseMenu;
+            @PauseMenu.canceled += instance.OnPauseMenu;
+            @Interactuar.started += instance.OnInteractuar;
+            @Interactuar.performed += instance.OnInteractuar;
+            @Interactuar.canceled += instance.OnInteractuar;
         }
 
         private void UnregisterCallbacks(IMenuActions instance)
         {
-            @menu.started -= instance.OnMenu;
-            @menu.performed -= instance.OnMenu;
-            @menu.canceled -= instance.OnMenu;
+            @LoadMenuScene.started -= instance.OnLoadMenuScene;
+            @LoadMenuScene.performed -= instance.OnLoadMenuScene;
+            @LoadMenuScene.canceled -= instance.OnLoadMenuScene;
+            @PauseMenu.started -= instance.OnPauseMenu;
+            @PauseMenu.performed -= instance.OnPauseMenu;
+            @PauseMenu.canceled -= instance.OnPauseMenu;
+            @Interactuar.started -= instance.OnInteractuar;
+            @Interactuar.performed -= instance.OnInteractuar;
+            @Interactuar.canceled -= instance.OnInteractuar;
         }
 
         public void RemoveCallbacks(IMenuActions instance)
@@ -677,6 +735,8 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
     }
     public interface IMenuActions
     {
-        void OnMenu(InputAction.CallbackContext context);
+        void OnLoadMenuScene(InputAction.CallbackContext context);
+        void OnPauseMenu(InputAction.CallbackContext context);
+        void OnInteractuar(InputAction.CallbackContext context);
     }
 }
