@@ -34,19 +34,19 @@ public class GoTo : MonoBehaviour
     }
     public static void GoToLevel1()
     {
-        LevelLoader2.OnLoadLevel("PRUEBA");
+        LevelLoader2.OnLoadLevel("Nivel_1");
     }
     public static void GoToLevel2()
     {
-        LevelLoader2.OnLoadLevel("PRUEBA");
+        LevelLoader2.OnLoadLevel("Zona2P1");
     }
     public static void GoToLevel3()
     {
-        LevelLoader2.OnLoadLevel("PRUEBA");
+        LevelLoader2.OnLoadLevel("ThirdScene");
     }
     public static void GoToLevel4()
     {
-        LevelLoader2.OnLoadLevel("PRUEBA");
+        LevelLoader2.OnLoadLevel("BossFight");
     }
 
     private void Update()
