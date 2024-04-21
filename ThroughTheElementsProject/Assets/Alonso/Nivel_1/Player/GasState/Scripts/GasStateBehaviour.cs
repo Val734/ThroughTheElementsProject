@@ -85,6 +85,7 @@ public class GasStateBehaviour : MonoBehaviour
 
         isOnGasState = true;
         Fog.SetActive(true);
+        Debug.Log("ACTIVADO EL FOG");
     }
 
 }

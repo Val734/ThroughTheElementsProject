@@ -14,7 +14,7 @@ public class StaticTurbineEnemy : MonoBehaviour
 
 
     [Header("Attack Settings")]
-    public float attackTime;
+    public float attackTime = 3f;
     int attack;
     bool canDoAttack;
 
@@ -67,23 +67,30 @@ public class StaticTurbineEnemy : MonoBehaviour
 
     public void CanAttackAgain()
     {
+        BlowPrefab.SetActive(false);
+        AbsorbPrefab.SetActive(false);
         canDoAttack = true;
+        attackTime = 3f;
     }
 
     public void Attacking()
     {
         if(canDoAttack)
         {
-            attack = Random.Range(0, 2);
-            if (attack == 0)
+            attackTime -= Time.deltaTime;
+            if(attackTime < 0)
             {
-                canDoAttack = false;
-                _anim.SetTrigger("Blow_Attack");
-            }
-            else if (attack == 1)
-            {
-                canDoAttack = false;
-                _anim.SetTrigger("Absorb_Attack");
+                attack = Random.Range(0, 2);
+                if (attack == 0)
+                {
+                    canDoAttack = false;
+                    _anim.SetTrigger("Blow_Attack");
+                }
+                else if (attack == 1)
+                {
+                    canDoAttack = false;
+                    _anim.SetTrigger("Absorb_Attack");
+                }
             }
         }
     }
@@ -91,12 +98,12 @@ public class StaticTurbineEnemy : MonoBehaviour
 
     public void BlowAttack()
     {
-        Debug.Log("BlowAttack");
+        BlowPrefab.SetActive(true);
     }
 
     public void AbsorbAttack()
     {
-        Debug.Log("AbsorbAttack");
+        AbsorbPrefab.SetActive(true);
     }
 
 }
