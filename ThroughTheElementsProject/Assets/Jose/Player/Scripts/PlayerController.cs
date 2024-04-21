@@ -126,7 +126,6 @@ public class PlayerController : MonoBehaviour
     private float attackTime;
     private void Update()
     {
-        Debug.Log(canMove);
         StaminaText.GetComponent<TextMeshProUGUI>().text = "Stamina:" + "" + Mathf.FloorToInt(stamina);
 
         UpdateMovement();

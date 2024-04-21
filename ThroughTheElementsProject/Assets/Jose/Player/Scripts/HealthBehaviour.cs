@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class HealthBehaviour : MonoBehaviour
 {
     [SerializeField] public UnityEvent OnDie;
-    [SerializeField] public UnityEvent OnHurt;
+    [SerializeField] public UnityEvent GetHurt;
     [SerializeField] public int maxHealth;
     public int health;
     public bool invulnerable;
@@ -25,20 +25,17 @@ public class HealthBehaviour : MonoBehaviour
     }
     private void OnEnable()
     {
-        hurtCollider.onHurt.AddListener(OnHit);
-    }
-    private void OnHit(int damage)
-    {
-        Damage(damage);
+        hurtCollider.onHurt.AddListener(Damage);
     }
     public void Damage(int damage)
     {
-        if(health > 0)
+
+        if (health > 0)
         {
             if(!invulnerable)
             {
                 health -= damage;
-                OnHurt.Invoke();
+                GetHurt.Invoke();
             }
         }
         else if(health <= 0)

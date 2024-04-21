@@ -11,6 +11,12 @@ public class HitCollider : MonoBehaviour
     List<string> hittableTags = new List<string>{ "PunchingBag","Enemy","Player"};
     public UnityEvent OnhittableObject;
     public int damage;
+    public bool canHit;
+
+    void OnEnable()
+    {
+        canHit = true;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,11 +29,11 @@ public class HitCollider : MonoBehaviour
 
     private void CheckHit(Collider other)
     {
-        if (hittableTags.Contains(other.tag))
+        if (hittableTags.Contains(other.tag) && canHit)
         {
             other.GetComponentInChildren<HurtCollider>()?.NotifyHit(this,damage);
             OnhittableObject.Invoke();
-
+            canHit = false;
 
         }
     }
