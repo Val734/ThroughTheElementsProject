@@ -49,7 +49,6 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
         if(_hCollider != null)
         {
             _hCollider.onHurt.AddListener(OnHit);
-            Debug.Log("HAY HURT");
         }
     }
 

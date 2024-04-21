@@ -15,7 +15,7 @@ public class GeyserBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && other.GetComponent<GasStateBehaviour>().enabled == true)
         {
             originalGravity = other.GetComponent<PlayerController>().gravity;
             other.GetComponent<PlayerController>().gravity = geiserForce;
