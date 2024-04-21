@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BigGravitySphere: 0
+  canDestroy: 0
 --- !u!114 &7443724984664090976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,4 +166,4 @@ MonoBehaviour:
   OnhittableObject:
     m_PersistentCalls:
       m_Calls: []
-  damage: 2
+  damage: 1

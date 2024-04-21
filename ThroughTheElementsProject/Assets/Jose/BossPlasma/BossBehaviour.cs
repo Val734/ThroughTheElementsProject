@@ -28,13 +28,14 @@ public class BossBehaviour : MonoBehaviour
 
     public GameObject Timeline2;
     public GameObject Timeline3;
+    public GameObject Timeline4;
 
     public GameObject particleSystem;
 
     private void Awake()
     {
         attackCount = 0;
-        maxattackCount = 5;
+        maxattackCount = 4;
         isDoingSpecialAttack = false;
     }
     public enum BossFase
@@ -137,6 +138,7 @@ public class BossBehaviour : MonoBehaviour
         else if(fase == BossFase.fase2 && Vector3.Distance(transform.position, Point[1].transform.position) < 1)
         {
             particleSystem.SetActive(false);
+            fase=BossFase.fase3;
         }
         UpdateOrientation();
     }
@@ -157,6 +159,7 @@ public class BossBehaviour : MonoBehaviour
                 desiredOrientation = Point[1].transform.position - transform.position;
                 break;
             case BossFase.fase3:
+                desiredOrientation = Player.transform.position - transform.position;
                 break;
         }
 
@@ -254,9 +257,12 @@ public class BossBehaviour : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("CannonBall") && fase == BossFase.fase2)
+        if (collision.gameObject.CompareTag("CannonBall") && fase == BossFase.fase2 || fase == BossFase.fase3)
         {
             gameObject.GetComponent<HealthBehaviour>().Damage(500);
+            animator.SetTrigger("DieTrigger");
+            Timeline4.SetActive(true);
+
         }
     }
 
