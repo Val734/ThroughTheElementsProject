@@ -11,6 +11,13 @@ public class FallReturnToSpawn : MonoBehaviour
         if(other.CompareTag("Player") || other.CompareTag("CannonBall"))
         {
             Debug.Log("Hola");
+            if(other.CompareTag("CannonBall"))
+            {
+                GameObject Cannon = other.GetComponent<CannonBall>().Cannon;
+                Cannon.GetComponent<CannonWorking>()._cam.gameObject.SetActive(false);
+                Player.GetComponentInChildren<SolidStateBehaviour>().isOnBallTransformation = false;
+                Destroy(other);
+            }
             Player.SetActive(false);
             Player.transform.position=SpawnManager.GetComponent<SpawnManager>().currentSpawnPoint.transform.position;
             Player.SetActive(true);
