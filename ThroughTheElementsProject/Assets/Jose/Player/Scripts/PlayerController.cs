@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     private bool isEnemyLocked;
+    private bool playerIsHitted; 
 
     public UnityEvent OnJump;
 
@@ -98,7 +99,8 @@ public class PlayerController : MonoBehaviour
         stamina = maxStamina;
         animator = GetComponentInChildren<Animator>();
         canMove = true;
-        isFreezed = false; 
+        isFreezed = false;
+        playerIsHitted= false;
 
     }
     private void OnEnable()
@@ -170,8 +172,11 @@ public class PlayerController : MonoBehaviour
             canMove = false;
             canJump = false;
             playerCanAttack = false;
+            playerIsHitted= false;
 
             animator.SetBool("Frozen", true);
+            animator.SetBool("HurtBool", false);
+
         }
         else if(!isFreezed)
         {
@@ -507,24 +512,27 @@ public class PlayerController : MonoBehaviour
 
     public void BeginBaseAttack()
     {
-        if (!comboAttack[0])
+        if (playerCanAttack)
         {
-            isAttacking=true;
-            comboAttack[0] = true;
+            if (!comboAttack[0])
+            {
+                isAttacking = true;
+                comboAttack[0] = true;
 
 
-        }
-        else if (comboAttack[0] && !comboAttack[1])
-        {
-            comboAttack[1] = true;
+            }
+            else if (comboAttack[0] && !comboAttack[1])
+            {
+                comboAttack[1] = true;
 
 
-        }
-        else if (comboAttack[1] && !comboAttack[2])
-        {
-            comboAttack[2] = true;
+            }
+            else if (comboAttack[1] && !comboAttack[2])
+            {
+                comboAttack[2] = true;
 
 
+            }
         }
 
     }
@@ -598,14 +606,16 @@ public class PlayerController : MonoBehaviour
 
     public void GetHurt()
     {
-        if(!isFreezed)
+        playerIsHitted = true; 
+
+        if (playerIsHitted)
         {
-            animator.SetTrigger("HurtTrigger");
+            animator.SetBool("HurtBool", true); 
+            //animator.SetTrigger("HurtTrigger");
             isDashing = true;
             Dashdirection = Dashdirection = new Vector2(0, -1);
-            canJump= false;
-            canMove= false;
-            playerCanAttack = false;
+
+
             StartCoroutine(stopHurt());
 
 
@@ -614,8 +624,11 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator stopHurt() 
     {
+
+        canJump = false;
         canMove = false;
         movementSpeed = 0f;
+        playerCanAttack = false;
         yield return new WaitForSeconds(0.2f);
         isDashing = false;
 
@@ -623,15 +636,20 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         canJump= true;
         playerCanAttack = true;
+        playerIsHitted= false;
 
         movementSpeed = 4f;
+        animator.SetBool("HurtBool", false);
+
 
     }
     public void GetDie()
     {
         if(!isFreezed)
         {
-            animator.SetTrigger("HurtTrigger");
+            animator.SetBool("HurtBool", true);
+
+           // animator.SetTrigger("HurtTrigger");
 
         }
     }

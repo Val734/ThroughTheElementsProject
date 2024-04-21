@@ -12,6 +12,7 @@ public class HealthBehaviour : MonoBehaviour
     public bool invulnerable;
 
     HurtCollider hurtCollider;
+
     private void Awake()
     {
         health = maxHealth;
