@@ -12,7 +12,6 @@ public class GravityCannon : MonoBehaviour
     private void gravityCannon()
     {
         Cannon.GetComponentInChildren<CannonWorking>().haveGravity = true;
-        Debug.Log("ENtra");
     }
     public void RestoreCannon()
     {

@@ -14,12 +14,10 @@ public class HitCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("HA HECHO EL OnTriggerEnter");
         CheckHit(other);
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("HA HECHO EL OnCollisionEnter");
         CheckHit(collision.collider);
     }
 
@@ -29,7 +27,6 @@ public class HitCollider : MonoBehaviour
         {
             other.GetComponentInChildren<HurtCollider>()?.NotifyHit(this,damage);
             OnhittableObject.Invoke();
-            Debug.Log("Hola");
 
 
         }

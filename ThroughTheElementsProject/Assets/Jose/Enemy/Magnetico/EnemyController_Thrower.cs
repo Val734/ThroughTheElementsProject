@@ -31,7 +31,6 @@ public class EnemyController_Thrower : EnemyController
 
     private void CreateOverlap()
     {
-        Debug.Log(isAttacking);
 
         Collider[] colliders2 = Physics.OverlapSphere(transform.position, detectionDistance, detectionLayerMask);
         for (int i = 0; i < colliders2.Length; i++)

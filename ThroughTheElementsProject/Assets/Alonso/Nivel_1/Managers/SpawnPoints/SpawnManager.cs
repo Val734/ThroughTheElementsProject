@@ -7,7 +7,7 @@ public class SpawnManager : MonoBehaviour
 {
     [Header("Spawn Points")]
     [SerializeField] Transform initialSpawnPoint;
-    [SerializeField] Transform currentSpawnPoint;
+    [SerializeField] public Transform currentSpawnPoint;
     [SerializeField] List<Transform> SpawnPoints;
 
     [Header("Player")]
