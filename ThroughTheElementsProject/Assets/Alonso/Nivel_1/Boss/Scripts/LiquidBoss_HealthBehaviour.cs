@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LiquidBoss_HealthBehaviour : MonoBehaviour
 {
+    [SerializeField] public UnityEvent OnBossDie;
+
+
     [Header("Stats")]
     [SerializeField] int lives = 15;
     [SerializeField] int maxLives = 15;
