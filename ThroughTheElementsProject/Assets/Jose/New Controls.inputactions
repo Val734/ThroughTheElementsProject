@@ -332,6 +332,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Menu",
+            "id": "24ee53e1-cdd9-44b4-bdfc-2fb0d3e3af0d",
+            "actions": [
+                {
+                    "name": "menu",
+                    "type": "Button",
+                    "id": "8c0d2d95-ba53-4378-9720-1fdc1ae33203",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8b7dd76f-133c-4a72-89b0-45f858890123",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

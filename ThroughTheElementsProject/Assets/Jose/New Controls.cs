@@ -354,6 +354,34 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Menu"",
+            ""id"": ""24ee53e1-cdd9-44b4-bdfc-2fb0d3e3af0d"",
+            ""actions"": [
+                {
+                    ""name"": ""menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""8c0d2d95-ba53-4378-9720-1fdc1ae33203"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""8b7dd76f-133c-4a72-89b0-45f858890123"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -374,6 +402,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         m_Player_Hability = m_Player.FindAction("Hability", throwIfNotFound: true);
         m_Player_BaseAttack = m_Player.FindAction("BaseAttack", throwIfNotFound: true);
         m_Player_ChangeSceneAction = m_Player.FindAction("ChangeSceneAction", throwIfNotFound: true);
+        // Menu
+        m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
+        m_Menu_menu = m_Menu.FindAction("menu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -581,6 +612,52 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Menu
+    private readonly InputActionMap m_Menu;
+    private List<IMenuActions> m_MenuActionsCallbackInterfaces = new List<IMenuActions>();
+    private readonly InputAction m_Menu_menu;
+    public struct MenuActions
+    {
+        private @NewControls m_Wrapper;
+        public MenuActions(@NewControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @menu => m_Wrapper.m_Menu_menu;
+        public InputActionMap Get() { return m_Wrapper.m_Menu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
+        public void AddCallbacks(IMenuActions instance)
+        {
+            if (instance == null || m_Wrapper.m_MenuActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_MenuActionsCallbackInterfaces.Add(instance);
+            @menu.started += instance.OnMenu;
+            @menu.performed += instance.OnMenu;
+            @menu.canceled += instance.OnMenu;
+        }
+
+        private void UnregisterCallbacks(IMenuActions instance)
+        {
+            @menu.started -= instance.OnMenu;
+            @menu.performed -= instance.OnMenu;
+            @menu.canceled -= instance.OnMenu;
+        }
+
+        public void RemoveCallbacks(IMenuActions instance)
+        {
+            if (m_Wrapper.m_MenuActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IMenuActions instance)
+        {
+            foreach (var item in m_Wrapper.m_MenuActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_MenuActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public MenuActions @Menu => new MenuActions(this);
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -597,5 +674,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         void OnHability(InputAction.CallbackContext context);
         void OnBaseAttack(InputAction.CallbackContext context);
         void OnChangeSceneAction(InputAction.CallbackContext context);
+    }
+    public interface IMenuActions
+    {
+        void OnMenu(InputAction.CallbackContext context);
     }
 }
