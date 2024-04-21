@@ -13,6 +13,7 @@ public class SlashBehaviour : MonoBehaviour
     private void Awake()
     {
         cController = GetComponent<CharacterController>();
+        Destroy(this, 2f);
     }
 
     public void ThrowSlash(Vector3 target)
@@ -30,9 +31,11 @@ public class SlashBehaviour : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if(hit.gameObject.tag == "Player") 
+        if(hit.gameObject.CompareTag("Player")) 
         {
-            //Debug.Log("Ha chocado con una slash");
+            //hit.gameObject.GetComponent<HurtCollider>().NotifyHit(this.hit)
+
+            Debug.Log("HE TOCADO AL PLAYER");
         }
     }
 }

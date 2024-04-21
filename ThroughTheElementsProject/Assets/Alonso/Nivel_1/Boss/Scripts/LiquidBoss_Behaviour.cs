@@ -169,7 +169,6 @@ public class LiquidBoss_Behaviour : MonoBehaviour
     {
         if (battleStarted)
         {
-            //Debug.Log("Esperando");
             initialWaitingTime -= Time.deltaTime;
 
             if (initialWaitingTime < 0)

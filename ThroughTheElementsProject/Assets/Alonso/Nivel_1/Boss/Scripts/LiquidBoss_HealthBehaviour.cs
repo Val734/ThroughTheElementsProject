@@ -12,6 +12,9 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
     [SerializeField] int timeshealed = 0;
     [SerializeField] int maxTimesHealed = 2;
 
+
+    [SerializeField] int hitsRecived;
+
     [Header("Debug Settings")]
     [SerializeField] bool debugHit;
 
@@ -48,8 +51,16 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
 
     public void OnHit(int damage)
     {
-        LoseHealth();
-        Debug.Log("El ON HIT");
+        hitsRecived++;
+        if(hitsRecived <= 2)
+        {
+            LoseHealth();
+            Debug.Log("El ON HIT");
+        }
+        else
+        {
+            _boss.state = LiquidBoss_Behaviour.StatesType.Exploding;
+        }
     }
 
     private void LoseHealth()
