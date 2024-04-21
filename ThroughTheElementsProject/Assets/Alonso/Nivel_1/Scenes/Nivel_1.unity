@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: f52d7894b3c1c1342b1c41dab44bdb24,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -676,6 +677,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Playertrue
       objectReference: {fileID: 0}
+    - target: {fileID: 8612708716701841658, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -974,17 +980,17 @@ PrefabInstance:
     - target: {fileID: 1323831944144603525, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.4323455
+      value: 0.43234548
       objectReference: {fileID: 0}
     - target: {fileID: 1323831944144603525, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5595332
+      value: 0.5595331
       objectReference: {fileID: 0}
     - target: {fileID: 1323831944144603525, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.43234557
+      value: -0.43234554
       objectReference: {fileID: 0}
     - target: {fileID: 2736947160501506120, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
@@ -1506,12 +1512,12 @@ PrefabInstance:
     - target: {fileID: 754159440843848712, guid: 8ad0fda41c1126c4bbfd9ff326917183,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.04925537
+      value: -0.049316406
       objectReference: {fileID: 0}
     - target: {fileID: 754159440843848712, guid: 8ad0fda41c1126c4bbfd9ff326917183,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.6641998
+      value: -0.6641846
       objectReference: {fileID: 0}
     - target: {fileID: 2297720195284727561, guid: 8ad0fda41c1126c4bbfd9ff326917183,
         type: 3}
@@ -1646,7 +1652,7 @@ PrefabInstance:
     - target: {fileID: 4823065920439514333, guid: 8ad0fda41c1126c4bbfd9ff326917183,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.7999973
+      value: -0.7999964
       objectReference: {fileID: 0}
     - target: {fileID: 6973039798667591690, guid: 8ad0fda41c1126c4bbfd9ff326917183,
         type: 3}
@@ -2055,6 +2061,16 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 770618122}
+    - target: {fileID: 1214876544036613106, guid: 2f6eb24c258c18b478e6d156bc2717a2,
+        type: 3}
+      propertyPath: detectionLayerMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1648428157087782927, guid: 2f6eb24c258c18b478e6d156bc2717a2,
+        type: 3}
+      propertyPath: detectionLayerMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1805314839757434097, guid: 2f6eb24c258c18b478e6d156bc2717a2,
         type: 3}
       propertyPath: Player
@@ -2240,6 +2256,11 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 770618122}
+    - target: {fileID: 5147199700083732194, guid: 2f6eb24c258c18b478e6d156bc2717a2,
+        type: 3}
+      propertyPath: detectionLayerMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5178747442421958806, guid: 2f6eb24c258c18b478e6d156bc2717a2,
         type: 3}
       propertyPath: Player
@@ -2340,6 +2361,11 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 770618122}
+    - target: {fileID: 7038866687021313884, guid: 2f6eb24c258c18b478e6d156bc2717a2,
+        type: 3}
+      propertyPath: detectionLayerMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7130873952803818072, guid: 2f6eb24c258c18b478e6d156bc2717a2,
         type: 3}
       propertyPath: Player
@@ -2390,6 +2416,11 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 770618122}
+    - target: {fileID: 8005305866847312797, guid: 2f6eb24c258c18b478e6d156bc2717a2,
+        type: 3}
+      propertyPath: detectionLayerMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8013860680999502667, guid: 2f6eb24c258c18b478e6d156bc2717a2,
         type: 3}
       propertyPath: Player
