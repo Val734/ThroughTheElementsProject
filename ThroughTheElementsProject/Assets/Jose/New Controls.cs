@@ -369,7 +369,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""PauseMenu"",
+                    ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""b197c4f8-e2f2-4f4e-bed4-dabe0810c369"",
                     ""expectedControlType"": ""Button"",
@@ -406,7 +406,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PauseMenu"",
+                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -445,7 +445,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_LoadMenuScene = m_Menu.FindAction("LoadMenuScene", throwIfNotFound: true);
-        m_Menu_PauseMenu = m_Menu.FindAction("PauseMenu", throwIfNotFound: true);
+        m_Menu_Pause = m_Menu.FindAction("Pause", throwIfNotFound: true);
         m_Menu_Interactuar = m_Menu.FindAction("Interactuar", throwIfNotFound: true);
     }
 
@@ -659,14 +659,14 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Menu;
     private List<IMenuActions> m_MenuActionsCallbackInterfaces = new List<IMenuActions>();
     private readonly InputAction m_Menu_LoadMenuScene;
-    private readonly InputAction m_Menu_PauseMenu;
+    private readonly InputAction m_Menu_Pause;
     private readonly InputAction m_Menu_Interactuar;
     public struct MenuActions
     {
         private @NewControls m_Wrapper;
         public MenuActions(@NewControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @LoadMenuScene => m_Wrapper.m_Menu_LoadMenuScene;
-        public InputAction @PauseMenu => m_Wrapper.m_Menu_PauseMenu;
+        public InputAction @Pause => m_Wrapper.m_Menu_Pause;
         public InputAction @Interactuar => m_Wrapper.m_Menu_Interactuar;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
@@ -680,9 +680,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @LoadMenuScene.started += instance.OnLoadMenuScene;
             @LoadMenuScene.performed += instance.OnLoadMenuScene;
             @LoadMenuScene.canceled += instance.OnLoadMenuScene;
-            @PauseMenu.started += instance.OnPauseMenu;
-            @PauseMenu.performed += instance.OnPauseMenu;
-            @PauseMenu.canceled += instance.OnPauseMenu;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
             @Interactuar.started += instance.OnInteractuar;
             @Interactuar.performed += instance.OnInteractuar;
             @Interactuar.canceled += instance.OnInteractuar;
@@ -693,9 +693,9 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
             @LoadMenuScene.started -= instance.OnLoadMenuScene;
             @LoadMenuScene.performed -= instance.OnLoadMenuScene;
             @LoadMenuScene.canceled -= instance.OnLoadMenuScene;
-            @PauseMenu.started -= instance.OnPauseMenu;
-            @PauseMenu.performed -= instance.OnPauseMenu;
-            @PauseMenu.canceled -= instance.OnPauseMenu;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
             @Interactuar.started -= instance.OnInteractuar;
             @Interactuar.performed -= instance.OnInteractuar;
             @Interactuar.canceled -= instance.OnInteractuar;
@@ -736,7 +736,7 @@ public partial class @NewControls: IInputActionCollection2, IDisposable
     public interface IMenuActions
     {
         void OnLoadMenuScene(InputAction.CallbackContext context);
-        void OnPauseMenu(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
         void OnInteractuar(InputAction.CallbackContext context);
     }
 }

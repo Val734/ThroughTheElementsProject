@@ -1434,10 +1434,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1215437884266272628}
     m_Modifications:
+    - target: {fileID: 2008296023097791633, guid: c9ddadf2bd3ffb64e9cff5d58e4b1cc3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2811609194637928710, guid: c9ddadf2bd3ffb64e9cff5d58e4b1cc3,
         type: 3}
       propertyPath: m_Name
       value: GasFog
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811609194637928710, guid: c9ddadf2bd3ffb64e9cff5d58e4b1cc3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3261962116774959967, guid: c9ddadf2bd3ffb64e9cff5d58e4b1cc3,
         type: 3}
