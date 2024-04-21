@@ -849,7 +849,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7391031970223602605}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -923,6 +923,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   damage: 1
+  canHit: 0
 --- !u!1 &7541451900881576492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,21 +1281,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnHurt:
+  GetHurt:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5994443298171214149}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: GetHurt
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   maxHealth: 10
   health: 10
   invulnerable: 0
@@ -1361,6 +1350,7 @@ MonoBehaviour:
   Hability: {fileID: -8276135491581312068, guid: 1b11652b82ec3fe489bbc311702f9d0f,
     type: 3}
   detectionRadiusPlasmaOrb: 20
+  objetosCercanos: []
 --- !u!1 &8705585894288931697
 GameObject:
   m_ObjectHideFlags: 0
