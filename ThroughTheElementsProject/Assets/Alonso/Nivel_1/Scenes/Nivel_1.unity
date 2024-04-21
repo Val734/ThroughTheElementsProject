@@ -409,7 +409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.60898125, y: 0.21505922, z: -0.17630643, w: 0.7428375}
+  m_LocalRotation: {x: 0.60898125, y: 0.21505913, z: -0.17630637, w: 0.7428375}
   m_LocalPosition: {x: 89.11891, y: 16.41, z: 122.855606}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -505,14 +505,48 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4240864284469181003, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
         type: 3}
+      propertyPath: Fog
+      value: 
+      objectReference: {fileID: 2811609194637928710, guid: c9ddadf2bd3ffb64e9cff5d58e4b1cc3,
+        type: 3}
+    - target: {fileID: 4240864284469181003, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
+        type: 3}
+      propertyPath: GasTrowed
+      value: 
+      objectReference: {fileID: 5938315271793430023, guid: 29a7dd35cb2488d41a2ee5951234849c,
+        type: 3}
+    - target: {fileID: 4240864284469181003, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
+        type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4878986103854688153, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
         type: 3}
+      propertyPath: Wave
+      value: 
+      objectReference: {fileID: 345052141}
+    - target: {fileID: 4878986103854688153, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
+        type: 3}
+      propertyPath: Swirl
+      value: 
+      objectReference: {fileID: 345052140}
+    - target: {fileID: 4878986103854688153, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
+        type: 3}
+      propertyPath: Hability
+      value: 
+      objectReference: {fileID: -8276135491581312068, guid: 1b11652b82ec3fe489bbc311702f9d0f,
+        type: 3}
+    - target: {fileID: 4878986103854688153, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
+        type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4878986103854688153, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
+        type: 3}
+      propertyPath: TransformAction
+      value: 
+      objectReference: {fileID: 402426088312635539, guid: 1b11652b82ec3fe489bbc311702f9d0f,
+        type: 3}
     - target: {fileID: 5994443298171214149, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
         type: 3}
       propertyPath: LockCamera
@@ -593,6 +627,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69f7291a4929a8a46ac0b9e81c0e35dd, type: 3}
+--- !u!1 &345052140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7541451900881576492, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 345052139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &345052141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2048685394465591256, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 345052139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,7 +926,7 @@ PrefabInstance:
     - target: {fileID: 4245597458435873279, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.21505915
+      value: 0.21505913
       objectReference: {fileID: 0}
     - target: {fileID: 4245597458435873279, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
@@ -900,12 +946,12 @@ PrefabInstance:
     - target: {fileID: 5951546926392677722, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.22483262
+      value: 0.22483258
       objectReference: {fileID: 0}
     - target: {fileID: 5951546926392677722, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.16366036
+      value: -0.16366033
       objectReference: {fileID: 0}
     - target: {fileID: 8404380248752583426, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
@@ -1225,16 +1271,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LiquidBoss
       objectReference: {fileID: 0}
-    - target: {fileID: 7085066902078993928, guid: 3a81d508e75dde949aa011f2898c7682,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 8102901652635197322, guid: 3a81d508e75dde949aa011f2898c7682,
         type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 770618132}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

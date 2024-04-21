@@ -197,7 +197,7 @@ public class LiquidBoss_Behaviour : MonoBehaviour
 
     public void Dead()
     {
-
+        gameObject.SetActive(false);
     }
 
     // ------------------------------------ FUNCIONES DE ATAQUES ------------------------------------
