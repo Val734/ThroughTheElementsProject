@@ -11,8 +11,6 @@ public class EnemyController_Snow : EnemyController
     bool activated;
     float localSpeed = 0f;
     Vector3 initialPosition;
-    private bool isAlive;
-    private float disappear = 5f;
 
     protected override void ChildAwake()
     {
@@ -22,20 +20,6 @@ public class EnemyController_Snow : EnemyController
 
     protected override void ChildUpdate()
     {
-        if (isAlive == false)
-        {
-            state = State.Dead;
-        }
-
-        if (!isAlive)
-        {
-            disappear -= Time.deltaTime;
-            if (disappear < 0)
-            {
-                Debug.Log("activar particulas para que la palme y se vaya alv");
-                gameObject.SetActive(false);
-            }
-        }
         // Aquí puedes agregar lógica adicional para el comportamiento de patrulla
     }
 
@@ -74,7 +58,6 @@ public class EnemyController_Snow : EnemyController
     IEnumerator waitToAttack()
     {
         localSpeed = 0;
-        yield return new WaitForSeconds(2);
         hitCollider.gameObject.SetActive(true);
         yield return new WaitForSeconds(2);
         hitCollider.gameObject.SetActive(false);
@@ -84,7 +67,7 @@ public class EnemyController_Snow : EnemyController
     void ReturnToInitialPosition()
     {
         // Vuelve al punto inicial
-        transform.position = initialPosition;
+        //transform.position = initialPosition;
         activated = false;
         // Reactiva la cápsula y desactiva la esfera para volver al comportamiento inicial
         capsuleCollider.enabled = true;

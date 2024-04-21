@@ -113,7 +113,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!136 &2359632389868280954
 CapsuleCollider:
@@ -175,7 +175,7 @@ MonoBehaviour:
   maxWanderPosition: 10
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   rb: {fileID: 2197017355460023651}
   capsuleCollider: {fileID: 2359632389868280954}
   sphereCollider: {fileID: 2917947286666031631}
@@ -195,7 +195,7 @@ MonoBehaviour:
   OnDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1725293184252066711}
+      - m_Target: {fileID: 4582433293435579766}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -396,8 +396,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3566017, y: 1.6782907, z: 2.1081884}
-  m_Center: {x: -0.17830065, y: 1.9828606, z: -0.6501952}
+  m_Size: {x: 1.988019, y: 1.6782907, z: 2.1081884}
+  m_Center: {x: -0.044545747, y: 1.9828606, z: -0.6501952}
 --- !u!114 &1082176817551779117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,12 +423,12 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  damage: 0
+  damage: 1
 --- !u!1 &4582433293435579766
 GameObject:
   m_ObjectHideFlags: 0
