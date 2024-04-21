@@ -2109,12 +2109,12 @@ PrefabInstance:
     - target: {fileID: 2331122310512368903, guid: b7d19fc97b434ab4d864568e086b20c2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.75060666
+      value: -0.7506066
       objectReference: {fileID: 0}
     - target: {fileID: 2331122310512368903, guid: b7d19fc97b434ab4d864568e086b20c2,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.17719416
+      value: 0.17719415
       objectReference: {fileID: 0}
     - target: {fileID: 2335333651750216004, guid: b7d19fc97b434ab4d864568e086b20c2,
         type: 3}
@@ -2229,12 +2229,12 @@ PrefabInstance:
     - target: {fileID: 2668676143911235597, guid: b7d19fc97b434ab4d864568e086b20c2,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.61951864
+      value: 0.6195186
       objectReference: {fileID: 0}
     - target: {fileID: 2668676143911235597, guid: b7d19fc97b434ab4d864568e086b20c2,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.14624849
+      value: 0.1462485
       objectReference: {fileID: 0}
     - target: {fileID: 2668676143911235597, guid: b7d19fc97b434ab4d864568e086b20c2,
         type: 3}
@@ -2244,7 +2244,7 @@ PrefabInstance:
     - target: {fileID: 2668676143911235597, guid: b7d19fc97b434ab4d864568e086b20c2,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.17719416
+      value: 0.1771942
       objectReference: {fileID: 0}
     - target: {fileID: 2704805275708672272, guid: b7d19fc97b434ab4d864568e086b20c2,
         type: 3}
@@ -2755,6 +2755,41 @@ PrefabInstance:
         type: 3}
       propertyPath: maxHealth
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931047352276994047, guid: b7d19fc97b434ab4d864568e086b20c2,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931047352276994047, guid: b7d19fc97b434ab4d864568e086b20c2,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931047352276994047, guid: b7d19fc97b434ab4d864568e086b20c2,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 192383616}
+    - target: {fileID: 4931047352276994047, guid: b7d19fc97b434ab4d864568e086b20c2,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931047352276994047, guid: b7d19fc97b434ab4d864568e086b20c2,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DiePlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931047352276994047, guid: b7d19fc97b434ab4d864568e086b20c2,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: FallReturnToSpawn, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931047352276994047, guid: b7d19fc97b434ab4d864568e086b20c2,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4961453482913083676, guid: b7d19fc97b434ab4d864568e086b20c2,
         type: 3}
@@ -3384,7 +3419,7 @@ PrefabInstance:
     - target: {fileID: 8641747102393198768, guid: b7d19fc97b434ab4d864568e086b20c2,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.17719416
+      value: 0.17719415
       objectReference: {fileID: 0}
     - target: {fileID: 8691140999667788384, guid: b7d19fc97b434ab4d864568e086b20c2,
         type: 3}

@@ -17,14 +17,12 @@ public class FallReturnToSpawn : MonoBehaviour
 
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Hola");
 
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("CannonBall"))
-        {
-            Player.SetActive(true);
-            Player.transform.position = SpawnManager.GetComponent<SpawnManager>().currentSpawnPoint.transform.position;
-        }
+    public void DiePlayer()
+    {
+        Player.SetActive(false);
+        Player.GetComponent<HealthBehaviour>().health = Player.GetComponent<HealthBehaviour>().maxHealth;
+        Player.transform.position = SpawnManager.GetComponent<SpawnManager>().currentSpawnPoint.transform.position;
+        Player.SetActive(true);
     }
 }
