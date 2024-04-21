@@ -6,8 +6,7 @@ using UnityEngine.InputSystem;
 using static UnityEngine.GraphicsBuffer;
 using Cinemachine;
 using TMPro;
-using UnityEngine.TextCore.Text;
-using static UnityEditor.PlayerSettings.SplashScreen;
+
 using System;
 
 public class PlayerController : MonoBehaviour
