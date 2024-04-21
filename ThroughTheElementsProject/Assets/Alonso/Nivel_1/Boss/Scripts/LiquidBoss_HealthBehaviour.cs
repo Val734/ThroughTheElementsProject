@@ -76,6 +76,7 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
             if (lives <= 0)
             {
                 _boss.state = LiquidBoss_Behaviour.StatesType.Killed;
+                OnBossDie.Invoke();
             }
         }
         else
