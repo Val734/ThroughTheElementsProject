@@ -8,12 +8,11 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] InputActionReference Pause;
-    public GameObject options_menu;
-
+    public GameObject pausa;
 
     private void Start()
     {
-        options_menu.SetActive(false);
+        pausa.SetActive(false);
         Time.timeScale = 1f;
 
     }
@@ -32,21 +31,21 @@ public class PauseMenu : MonoBehaviour
 
     public void OpenPauseMenu(InputAction.CallbackContext context)
     {
-        if (!options_menu.activeSelf)
+        if (!pausa.activeSelf)
         {
-            options_menu.SetActive(true);
+            pausa.SetActive(true);
             Time.timeScale = 0f;
         }
         else
         {
-            options_menu.SetActive(false);
+            pausa.SetActive(false);
             Time.timeScale = 1f;
         }
     }
 
     public void ClosePauseMenu()
     {
-        options_menu.SetActive(false);
+        pausa.SetActive(false);
         Time.timeScale = 1f;
     }
 
@@ -56,5 +55,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
+    public void OnResume()
+    {
+        Time.timeScale = 1f;
+    }
 }

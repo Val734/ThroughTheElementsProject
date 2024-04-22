@@ -17,6 +17,7 @@ public class GoTo : MonoBehaviour
     }
     public void GoToGameplay()
     {
+        Time.timeScale = 1f;
         LevelLoader.OnLoadLevel("MainMenu");
     }
     public void GoToSettings()
