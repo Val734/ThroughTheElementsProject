@@ -64,7 +64,7 @@ public class EnemyController_Freeze : EnemyController
         }
         UpdateOrientation();
 
-        Debug.Log("el sevaaaaaaaaaaaaaaaaaaa" + goToPlayerForAttack); 
+       // Debug.Log("el sevaaaaaaaaaaaaaaaaaaa" + goToPlayerForAttack); 
     }
 
     protected override float ReturnSpeed()

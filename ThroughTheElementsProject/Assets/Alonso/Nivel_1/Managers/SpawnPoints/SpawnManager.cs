@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events; 
 
 public class SpawnManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class SpawnManager : MonoBehaviour
 
     [Header("PRUEBA")]
     public bool PRUEBAS;
+
+    public UnityEvent AfterRespawn; 
 
     private void OnValidate()
     {
@@ -38,16 +41,24 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-
+     
     public void ChangeSpawnPoint(Transform newSpawnPoint)
     {
         currentSpawnPoint = newSpawnPoint;
+
     }
 
 
     public void RespawnPlayer()
     {
+        Player.gameObject.GetComponent<CharacterController>().enabled = false; 
         Player.position = currentSpawnPoint.position;
         PRUEBAS = false;
+        Player.gameObject.GetComponent<CharacterController>().enabled = true;
+        Debug.Log("eeeeeeeeeeeeeeee");
+        AfterRespawn.Invoke();
     }
+
+
+
 }
