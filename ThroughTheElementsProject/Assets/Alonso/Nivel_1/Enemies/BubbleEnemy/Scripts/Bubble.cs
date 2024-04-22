@@ -15,6 +15,7 @@ public class Bubble : Proyectile
         if (collision.gameObject.CompareTag("Player"))
         {
             playerHitted = true;
+            collision.GetComponent<CharacterController>().enabled = false;
             collision.GetComponent<BubbleDragBehaviour>().ActivateBubbleDragged(transform, goingUpTime);
         }
         else

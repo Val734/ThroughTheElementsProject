@@ -30,14 +30,17 @@ public class BubbleDragBehaviour : MonoBehaviour
             dragTime -= Time.deltaTime;
             if(dragTime > 0 ) 
             {
-                Vector3 direction = (bubble.position - transform.position).normalized;
-                Vector3 displacement = direction * Time.deltaTime;
-                characterController.Move(displacement);
+                //Vector3 direction = (bubble.position - transform.position).normalized;
+                //Vector3 displacement = direction * Time.deltaTime;
+                //characterController.Move(displacement);
+
+                transform.position = bubble.position;
             }
             else
             {
                 dragStarted = false;
                 dragTime = initialDragTime;
+                characterController.enabled = true;
             }
         }
     }
