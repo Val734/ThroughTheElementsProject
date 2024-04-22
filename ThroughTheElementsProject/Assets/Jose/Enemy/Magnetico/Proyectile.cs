@@ -8,24 +8,22 @@ public class Proyectile : MonoBehaviour
     Transform player;
     float ForceSpeed = 320f;
     float aimbotForceSpeed = 15f;
+    Transform targetPosition;
 
-    private void Awake()
+    void Awake()
     {
+        Debug.Log("EL PROYECTIL HA HECHO EL AWAKE");
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody>();
+
+        targetPosition = player.transform;
+
     }
     public void Throw(Vector3 horizontal, Vector3 vertical)
     {
-        Vector3 horizontalForce = horizontal;
+        rb.AddForce(horizontal * ForceSpeed + vertical * ForceSpeed);
 
-        Vector3 verticalForce = vertical;
-
-        rb.AddForce(horizontalForce * ForceSpeed);
-
-    }
-    private void Update()
-    {
-        Vector3 directionToPlayer=(player.position - transform.position).normalized;
-        rb.AddForce(directionToPlayer.x*aimbotForceSpeed,0f,0f);
+        Vector3 directionToPlayer = (targetPosition.position - transform.position).normalized;
+        rb.AddForce(0f, 0f, directionToPlayer.x * aimbotForceSpeed);
     }
 }

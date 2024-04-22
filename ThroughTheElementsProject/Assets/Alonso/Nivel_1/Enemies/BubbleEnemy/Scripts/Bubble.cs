@@ -18,7 +18,7 @@ public class Bubble : Proyectile
             collision.GetComponent<CharacterController>().enabled = false;
             collision.GetComponent<BubbleDragBehaviour>().ActivateBubbleDragged(transform, goingUpTime);
         }
-        else
+        else if (collision.gameObject.CompareTag("Floor"))
         {
             Destroy(gameObject);
         }
