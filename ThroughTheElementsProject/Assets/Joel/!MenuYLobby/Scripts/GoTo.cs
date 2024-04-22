@@ -6,16 +6,7 @@ using UnityEngine.InputSystem;
 public class GoTo : MonoBehaviour
 {
     /*Este script es el GoTo basicamente aqui haceis una funcion para la escena que querais ir*/
-    [SerializeField] InputActionReference menu;
-    private void OnEnable()
-    {
-        menu.action.Enable();
-    }
-    private void OnDisable()
-    {
-        menu.action.Disable();
-    }
-    public void GoToGameplay()
+    public static void GoToGameplay()
     {
         Time.timeScale = 1f;
         LevelLoader.OnLoadLevel("MainMenu");
@@ -48,11 +39,5 @@ public class GoTo : MonoBehaviour
     public static void GoToLevel4()
     {
         LevelLoader2.OnLoadLevel("BossFight");
-    }
-
-    private void Update()
-    {
-        if (menu.action.triggered == true) { GoToGameplay(); }
-
     }
 }
