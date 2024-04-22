@@ -122,7 +122,7 @@ MonoBehaviour:
   detectionDistance: 3
   detectionLayerMask:
     serializedVersion: 2
-    m_Bits: 59
+    m_Bits: 8
   detectionTags:
   - Player
   target: {fileID: 0}
@@ -444,7 +444,7 @@ MonoBehaviour:
   OnDie:
     m_PersistentCalls:
       m_Calls: []
-  OnHurt:
+  GetHurt:
     m_PersistentCalls:
       m_Calls: []
   maxHealth: 2
