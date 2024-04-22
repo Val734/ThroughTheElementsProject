@@ -16,7 +16,11 @@ public class Proyectile : MonoBehaviour
     }
     public void Throw(Vector3 horizontal, Vector3 vertical)
     {
-        rb.AddForce(Vector3.forward * ForceSpeed);
+        Vector3 horizontalForce = horizontal;
+
+        Vector3 verticalForce = vertical;
+
+        rb.AddForce(horizontalForce * ForceSpeed);
 
     }
     private void Update()

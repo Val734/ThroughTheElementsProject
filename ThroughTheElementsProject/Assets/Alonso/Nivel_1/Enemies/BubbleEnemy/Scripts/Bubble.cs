@@ -10,7 +10,6 @@ public class Bubble : Proyectile
     public float verticalForce = 1f;
     float intervalAscentTime = 0.1f;
 
-
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))

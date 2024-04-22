@@ -8,7 +8,6 @@ public class BubbleDragBehaviour : MonoBehaviour
     public bool dragStarted;
     public float dragTime;
     public float initialDragTime;
-
     CharacterController characterController;
 
     private void Awake()
