@@ -15,7 +15,6 @@ public class TurbineBehaviour : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-
         StopTurbine();
     }
     private void StartTurbine(Collider other)

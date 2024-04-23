@@ -243,6 +243,10 @@ public class PlayerController : MonoBehaviour
                 currentVelocity = moveXZ * velocityToApply;
                 velocity = currentVelocity;
             }
+            else
+            {
+                currentVelocity = pushDirection * flySpeed;
+            }
 
             characterController.Move(currentVelocity * Time.deltaTime);
 
