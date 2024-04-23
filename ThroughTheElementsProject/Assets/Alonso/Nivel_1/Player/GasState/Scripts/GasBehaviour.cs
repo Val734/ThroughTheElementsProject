@@ -4,15 +4,50 @@ using UnityEngine;
 
 public class GasBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Awake()
+    [SerializeField] float gasSpeed = 5000f;
+    [SerializeField] float gasLifeTime = 4f;
+
+    [Header("Attack Settings")]
+    [SerializeField] float intervalTime = 1f;
+    [SerializeField] float colliderEnabledTime;
+    [SerializeField] float colliderDisabledTime;
+
+
+    Rigidbody rb;
+    SphereCollider sphereCollider;
+
+    private void Awake()
     {
-        Destroy(gameObject, 2f);
+        rb = GetComponent<Rigidbody>();
+        sphereCollider = rb.GetComponent<SphereCollider>();
+        sphereCollider.enabled = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
+    private void Update()
+    {
+        rb.MovePosition(transform.position + transform.forward * gasSpeed * Time.deltaTime);
+
+        colliderEnabledTime -= Time.deltaTime;
+        if(colliderEnabledTime < 0)
+        {
+            sphereCollider.enabled = false;
+
+            colliderDisabledTime -= Time.deltaTime;
+            if(colliderDisabledTime < 0)
+            {
+                sphereCollider.enabled = true;
+                colliderEnabledTime = intervalTime;
+                colliderDisabledTime = intervalTime;
+            }
+        }
+
+
+        gasLifeTime -= Time.deltaTime;
+        if(gasLifeTime < 0) 
+        {
+            Destroy(gameObject);
+        }
     }
+
 }
