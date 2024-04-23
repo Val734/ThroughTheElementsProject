@@ -123,134 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &64104905
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 64104907}
-  - component: {fileID: 64104906}
-  m_Layer: 0
-  m_Name: Audio Source
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &64104906
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64104905}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a61d983289c0f8c428c72df0c957e762, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &64104907
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64104905}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 632.7972, y: 517.53723, z: 16.910536}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &377107002
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +392,17 @@ MonoBehaviour:
     Frelijj\nAdrian Asensio\nValeria Rodriguez\nJose Cazorla\nJoel Caceres\n\r\n\n\n\nAdrian
     Asensio\n\rAlonso Frelijj\nValeria Rodriguez\nJose Cazorla\nJoel Caceres\n\n\r\n\n\n\n\n\nAlonso
     Frelijj\nAdrian Asensio\nValeria Rodriguez\nJose Cazorla\nJoel Caceres\r\n\r\n\n\n\nAlonso
-    Frelijj\nAdrian Asensio\nValeria Rodriguez\nJose Cazorla\nJoel Caceres\n\r\n\n\r\n\n\r\n\n\n\n\n\n\n\n\n\n\n"
+    Frelijj\nAdrian Asensio\nValeria Rodriguez\nJose Cazorla\nJoel Caceres\n\r\n\nMini
+    golem - By DMIK\nGolem Hielo - By ArtHiraeth\nGolem Fuego - By ArtHiraeth\nGolemPiedra
+    - By KaidaStudios\nMutante - By DogHeart\nBaston - By Zsky\nJefe Liquido - By
+    Inalaatzu\nEnemigo Turbina Liquido - By Paburoviii\nLiquido Burbuja - By KaidaStudios\nJefe
+    Solido - By ArtHiraeth\nEnemigo Bola - By Ez-Do-1\nMinigolem Solido - By DoggyHow\nJefe
+    Plasma - By DudeHtm\nEnemigo Kamikaze - By Dessjit\nEnemigo Mago - By ManoeldarochadeOliveira\nEnemigo
+    Magnetico - By Zenet3D\nArena Jefe - By Leonardo Olivieri Carvalho\nRocas Cueva
+    - Wonder Games\nRocas 2.0 - ManuFactura K4\nPortales - By ReversedInt\nEfectos
+    Portales - By Hovl Studio\nStylized Meadows Mega Art Pack - EmacEArt\nLow-Poly
+    Nature - By Oode Studios\nStylized Low Poly Nature Lite - By JustCreate\nLow
+    Poly: Woods LifeStyle - By Rad-Coders\n\n\n\nGabriel Aguilar\n\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9e007cd70ea7de447a3deb4f2b05e2b1, type: 2}
   m_sharedMaterial: {fileID: -7570838092417864415, guid: 9e007cd70ea7de447a3deb4f2b05e2b1,
@@ -530,8 +412,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285464655
-  m_fontColor: {r: 0.3080944, g: 0, b: 0.4339623, a: 1}
+    rgba: 4278230015
+  m_fontColor: {r: 1, g: 0.60640585, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -597,6 +479,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597362377}
+  m_CullTransparentMesh: 1
+--- !u!1 &998259252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 998259253}
+  - component: {fileID: 998259255}
+  - component: {fileID: 998259254}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &998259253
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998259252}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1759000468}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &998259254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998259252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7411765}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &998259255
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998259252}
   m_CullTransparentMesh: 1
 --- !u!1 &1088649567
 GameObject:
@@ -819,6 +776,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1425312456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1425312458}
+  - component: {fileID: 1425312457}
+  m_Layer: 0
+  m_Name: VideoPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!328 &1425312457
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425312456}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: 2740ca44d672a2b458f65666052591d8, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 533708452}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 1
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 1
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
+--- !u!4 &1425312458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425312456}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -888.5319, y: 2764.153, z: -20.620815}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1759000468}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1448724722
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,10 +1022,11 @@ MonoBehaviour:
   m_text: "Through The Elements\n\r\nDesarrollado por MapaMundi Studios\r\n\r\nEquipo
     de Desarrollo\r\n\r\n\n\n\n\n\nDirector Creativo\n\n\n\r\nDisenyo de Juego\n\n\n\r\n\n\n\nProgramacion\n\n\n\r\nDisenyo
     de Arte\n\n\n\r\n\n\nMusica Original\n\n\r\nDisenyo de Niveles\r\n\n\r\n\n\n\n\nEscritura
-    y Narrativa\r\n\n\n\r\n\n\n\n\n\nDisenyo de Personajes\r\n\n\n\r\n\n\n\nProduccion\r\n\r\n\n\r\n\n\n\nAgradecimientos
+    y Narrativa\r\n\n\n\r\n\n\n\n\n\nDisenyo de Personajes\r\n\n\n\r\n\n\n\nProduccion\r\n\r\n\n\r\n\nListado
+    de Assets\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEfectos Especiales\n\n\nAgradecimientos
     Especiales\r\n\r\n\n\n\n\nA nuestras familias y seres queridos por su apoyo incondicional.\r\nA
-    la comunidad de jugadores por inspirarnos d\xEDa a d\xEDa.\r\nY a ti, valiente
-    aventurero, por embarcarte en este viaje \xE9pico.\r\n\r\n\n\n\n\n\n\n\n\n\n\n\n\xA1Gracias
+    la comunidad de jugadores por inspirarnos dia a dia.\r\nY a ti, valiente aventurero,
+    por embarcarte en este viaje epico.\r\n\r\n\n\n\n\n\n\n\n\n\n\n\n\xA1Gracias
     por jugar!\r\n\r\n\xA9 2024 Mapamundi Studios. Todos los derechos reservados."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9e007cd70ea7de447a3deb4f2b05e2b1, type: 2}
@@ -1011,8 +1037,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285464655
-  m_fontColor: {r: 0.3080944, g: 0, b: 0.4339623, a: 1}
+    rgba: 4278219775
+  m_fontColor: {r: 1, g: 0.4529095, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1173,6 +1199,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1425312458}
+  - {fileID: 998259253}
   - {fileID: 2092224860}
   - {fileID: 1196157241}
   m_Father: {fileID: 0}
@@ -1456,5 +1484,4 @@ SceneRoots:
   - {fileID: 1947452517}
   - {fileID: 1759000468}
   - {fileID: 377107004}
-  - {fileID: 64104907}
   - {fileID: 1088649569}
