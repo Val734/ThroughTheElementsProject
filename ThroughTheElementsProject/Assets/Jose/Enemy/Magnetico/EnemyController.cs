@@ -48,9 +48,13 @@ public abstract class EnemyController : MonoBehaviour
         switch (state)
         {
             case State.Wandering:
-                MoveToTarget(wanderPosition);
-                UpdateOrientation();
-                VerticalMovement();
+                if(characterController.enabled)
+                { 
+                    MoveToTarget(wanderPosition);
+                    UpdateOrientation();
+                    VerticalMovement();
+                }
+                
 
                 if (Vector3.Distance(wanderPosition, transform.position) < minDistanceToCheckWander)
                 {

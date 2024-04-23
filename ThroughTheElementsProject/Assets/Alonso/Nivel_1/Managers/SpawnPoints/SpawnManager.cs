@@ -18,7 +18,6 @@ public class SpawnManager : MonoBehaviour
     [Header("PRUEBA")]
     public bool PRUEBAS;
 
-    public UnityEvent AfterRespawn; 
 
     private void OnValidate()
     {
@@ -56,9 +55,15 @@ public class SpawnManager : MonoBehaviour
         PRUEBAS = false;
         Player.gameObject.GetComponent<CharacterController>().enabled = true;
         Debug.Log("eeeeeeeeeeeeeeee");
-        AfterRespawn.Invoke();
     }
 
-
+    public void DiePlayer()
+    {
+        Debug.Log("Hola");
+        Player.gameObject.SetActive(false);
+        Player.gameObject.GetComponent<HealthBehaviour>().health = Player.GetComponent<HealthBehaviour>().maxHealth;
+        Player.gameObject.transform.position = currentSpawnPoint.transform.position;
+        Player.gameObject.SetActive(true);
+    }
 
 }

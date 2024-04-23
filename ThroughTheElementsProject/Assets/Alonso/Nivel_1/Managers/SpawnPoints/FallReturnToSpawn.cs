@@ -25,11 +25,11 @@ public class FallReturnToSpawn : MonoBehaviour
         }
     }
 
-    public void DiePlayer()
-    {
-        Player.SetActive(false);
-        Player.GetComponent<HealthBehaviour>().health = Player.GetComponent<HealthBehaviour>().maxHealth;
-        Player.transform.position = SpawnManager.GetComponent<SpawnManager>().currentSpawnPoint.transform.position;
-        Player.SetActive(true);
-    }
+    //public void DiePlayer()
+    //{
+    //    Player.SetActive(false);
+    //    Player.GetComponent<HealthBehaviour>().health = Player.GetComponent<HealthBehaviour>().maxHealth;
+    //    Player.transform.position = SpawnManager.GetComponent<SpawnManager>().currentSpawnPoint.transform.position;
+    //    Player.SetActive(true);
+    //}
 }

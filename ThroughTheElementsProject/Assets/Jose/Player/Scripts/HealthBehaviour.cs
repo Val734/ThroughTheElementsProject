@@ -38,7 +38,7 @@ public class HealthBehaviour : MonoBehaviour
                 GetHurt.Invoke();
             }
         }
-        else if(health <= 0)
+        if(health <= 0)
         {
             health = 0;
             OnDie.Invoke();
