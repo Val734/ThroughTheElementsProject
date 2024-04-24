@@ -46,7 +46,7 @@ public class ChangeScene : MonoBehaviour
     {
         if (ChangeSceneAction.action.triggered && playerCanChangeScene)
         {
-            navigateToNextScene.NavigateToNextScene();
+            
         }
     }
 

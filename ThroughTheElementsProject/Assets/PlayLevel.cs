@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 public class PlayLevel : MonoBehaviour
 {
     [SerializeField] InputActionReference menu;
+    [SerializeField] GoTo gt;
     private void OnEnable()
     {
         menu.action.Enable();
@@ -19,7 +20,7 @@ public class PlayLevel : MonoBehaviour
 
     private void Update()
     {
-        if(menu.action.triggered) { GoTo.GoToScene("MainMenu"); }
+        if(menu.action.triggered) { gt.GoToScene(); }
     }
     // Start is called before the first frame update
 

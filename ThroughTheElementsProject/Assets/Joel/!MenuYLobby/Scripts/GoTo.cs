@@ -5,11 +5,11 @@ using UnityEngine.InputSystem;
 
 public class GoTo : MonoBehaviour
 {
-   
-   public static void GoToScene(string s)
-    {
+    public string scene;
+   public void GoToScene()
+   {
 
-        LevelLoader.OnLoadLevel(s);
+        LevelLoader.OnLoadLevel(scene);
             
-    }
+   }
 }
