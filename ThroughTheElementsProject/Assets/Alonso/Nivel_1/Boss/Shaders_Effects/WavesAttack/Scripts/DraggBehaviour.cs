@@ -5,6 +5,7 @@ public class DraggBehaviour : MonoBehaviour
     [SerializeField] float lifeTime = 10f;
     [SerializeField] float speed = 5f;
     [SerializeField] float dragTime;
+    bool dragging = false;
     Rigidbody rb;
 
     GameObject player;
@@ -20,6 +21,7 @@ public class DraggBehaviour : MonoBehaviour
         lifeTime -= Time.deltaTime;
         if (lifeTime < 0)
         {
+            player.GetComponent<DragabbleBehaviour>().ActivateWaveDrag(transform, -1f);
             Destroy(gameObject);
         }
     }
@@ -30,6 +32,7 @@ public class DraggBehaviour : MonoBehaviour
         {
             player = other.gameObject;
             player.GetComponent<DragabbleBehaviour>().ActivateWaveDrag(transform, dragTime);
+
         }
     }
 }
