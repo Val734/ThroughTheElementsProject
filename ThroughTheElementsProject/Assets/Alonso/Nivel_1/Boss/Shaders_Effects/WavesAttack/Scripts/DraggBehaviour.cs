@@ -4,6 +4,7 @@ public class DraggBehaviour : MonoBehaviour
 {
     [SerializeField] float lifeTime = 10f;
     [SerializeField] float speed = 5f;
+    [SerializeField] float dragTime;
     Rigidbody rb;
 
     GameObject player;
@@ -28,8 +29,7 @@ public class DraggBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             player = other.gameObject;
-            player.GetComponent<DragabbleBehaviour>().ActivateWaveDrag(transform);
-            Debug.Log("Player Tiggered");
+            player.GetComponent<DragabbleBehaviour>().ActivateWaveDrag(transform, dragTime);
         }
     }
 }

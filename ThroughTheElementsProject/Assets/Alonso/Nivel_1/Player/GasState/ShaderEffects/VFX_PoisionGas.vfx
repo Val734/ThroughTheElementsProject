@@ -17,10 +17,10 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: 437
+    x: 448
     y: -190
-    width: 930
-    height: 1563
+    width: 919
+    height: 1544
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,7 +184,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614569}
   - {fileID: 8926484042661614580}
   - {fileID: 8926484042661614645}
-  m_UIPosition: {x: 941.3827, y: 114.57214}
+  m_UIPosition: {x: 938, y: 6}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1628,7 +1628,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.05
+      m_SerializableObject: 0
     m_Space: 2147483647
   m_Property:
     name: FresnelPower_
@@ -1662,7 +1662,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 7
+      m_SerializableObject: 2
     m_Space: 2147483647
   m_Property:
     name: VoronoiScale_
@@ -1882,7 +1882,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 437, y: 897}
+  m_UIPosition: {x: 448, y: 861}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -2201,7 +2201,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.397609144449234,"g":0.025453908368945123,"b":0.4745098054409027,"a":1.0},"time":0.0},{"color":{"r":0.22291995584964753,"g":0.027901388704776765,"b":0.5377358198165894,"a":1.0},"time":0.9970549941062927}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.26232418417930605,"g":0.036221783608198169,"b":0.3130597174167633,"a":1.0},"time":0.0},{"color":{"r":0.22291995584964753,"g":0.027901388704776765,"b":0.5377358198165894,"a":1.0},"time":0.9970549941062927}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: gradient

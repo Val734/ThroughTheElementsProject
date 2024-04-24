@@ -19,11 +19,12 @@ public class DragabbleBehaviour : MonoBehaviour
         characterController = GetComponent<CharacterController>();
     }
 
-    public void ActivateWaveDrag(Transform waveHitted) // AÑADIR EL TIEMPO DE DRAG
+    public void ActivateWaveDrag(Transform waveHitted, float time) // AÑADIR EL TIEMPO DE DRAG
     {
         dragStarted = true;
         wave = waveHitted;
         distanceFromWave = transform.position - waveHitted.position;
+        dragTime = time;
     }
 
     private void Update()

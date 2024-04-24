@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gasSpeed: 2
   gasLifeTime: 3
+  intervalTime: 1
   colliderEnabledTime: 0.5
   colliderDisabledTime: 0.5
 --- !u!135 &5874076101958609596
@@ -115,7 +116,6 @@ MonoBehaviour:
   hittableTags:
   - PunchingBag
   - Enemy
-  - Player
   OnhittableObject:
     m_PersistentCalls:
       m_Calls: []
