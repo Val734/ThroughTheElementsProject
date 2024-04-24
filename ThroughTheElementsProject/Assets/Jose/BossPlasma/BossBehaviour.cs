@@ -32,6 +32,7 @@ public class BossBehaviour : MonoBehaviour
 
     public GameObject particleSystem;
 
+
     private void Awake()
     {
         attackCount = 0;
@@ -259,9 +260,11 @@ public class BossBehaviour : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("CannonBall") && fase == BossFase.fase2 || fase == BossFase.fase3)
         {
+            rb.isKinematic = false;
             gameObject.GetComponent<HealthBehaviour>().Damage(500);
             animator.SetTrigger("DieTrigger");
             Timeline4.SetActive(true);
+
 
         }
     }
