@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WaveBehaviour : MonoBehaviour
+public class DraggBehaviour : MonoBehaviour
 {
     [SerializeField] float lifeTime = 10f;
     [SerializeField] float speed = 5f;
@@ -28,7 +28,7 @@ public class WaveBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             player = other.gameObject;
-            player.GetComponent<WaveDragBehaviour>().ActivateWaveDrag(transform);
+            player.GetComponent<DragabbleBehaviour>().ActivateWaveDrag(transform);
             Debug.Log("Player Tiggered");
         }
     }

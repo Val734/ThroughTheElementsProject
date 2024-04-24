@@ -15,12 +15,18 @@ public class GasBehaviour : MonoBehaviour
 
     Rigidbody rb;
     SphereCollider sphereCollider;
+    HitCollider hitCollider;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         sphereCollider = rb.GetComponent<SphereCollider>();
+        hitCollider = rb.GetComponent<HitCollider>();
+
+        hitCollider.OnhittableObject.AddListener(PruebaHitCollider);
+
         sphereCollider.enabled = true;
+        hitCollider.enabled = true;
     }
 
 
@@ -32,11 +38,13 @@ public class GasBehaviour : MonoBehaviour
         if(colliderEnabledTime < 0)
         {
             sphereCollider.enabled = false;
+            hitCollider.enabled= false;
 
             colliderDisabledTime -= Time.deltaTime;
             if(colliderDisabledTime < 0)
             {
                 sphereCollider.enabled = true;
+                hitCollider.enabled = true;
                 colliderEnabledTime = intervalTime;
                 colliderDisabledTime = intervalTime;
             }
@@ -48,6 +56,11 @@ public class GasBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void PruebaHitCollider()
+    {
+        Debug.Log("HA HECHO UN HIT COLLIDER");
     }
 
 }

@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class WaveDragBehaviour : MonoBehaviour
+public class DragabbleBehaviour : MonoBehaviour
 {
     //AQUI TENDRE QUE PILLAR LA DIFERENCIA DE POSICION DE LA OLA Y EL PLAYER 
     //LUEGO MOVER EL TRANSFORM PARA QUE SE MUEVA CON LA OLA USANDO EL c_Controller
 
     float initialdragTime = 3f;
-    [SerializeField] float dragTime = 3f;
+    [SerializeField] float dragTime;
     bool dragStarted = false;
 
     Vector3 distanceFromWave;
@@ -19,7 +19,7 @@ public class WaveDragBehaviour : MonoBehaviour
         characterController = GetComponent<CharacterController>();
     }
 
-    public void ActivateWaveDrag(Transform waveHitted)
+    public void ActivateWaveDrag(Transform waveHitted) // AÑADIR EL TIEMPO DE DRAG
     {
         dragStarted = true;
         wave = waveHitted;
