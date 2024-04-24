@@ -10,7 +10,7 @@ public class Loading : MonoBehaviour
     {
         string nextLevelToLoad = LevelLoader.nextLevel;
 
-        StartCoroutine(this.MakeTheLoad(nextLevelToLoad));
+        StartCoroutine(MakeTheLoad(nextLevelToLoad));
     }
 
     IEnumerator MakeTheLoad(string level)

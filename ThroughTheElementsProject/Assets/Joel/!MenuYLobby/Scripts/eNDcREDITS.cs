@@ -11,7 +11,6 @@ public class eNDcREDITS : MonoBehaviour
     IEnumerator EndCredits()
     {
         yield return new WaitForSeconds(60);
-
-        GoTo.GoToGameplay();
+    
     }
 }
