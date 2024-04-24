@@ -10,13 +10,10 @@ public class ChangeScene : MonoBehaviour
     public UnityEvent ChangeNextScene;
     public UnityEvent NotChangeNextScene;
     [SerializeField] InputActionReference ChangeSceneAction;
-    [SerializeField] NavigateToAfterTimeOrPress navigateToNextScene;
+    [SerializeField] GoTo gt;
     [SerializeField] bool playerCanChangeScene;
 
-    private void Awake()
-    {
-       navigateToNextScene=GetComponent<NavigateToAfterTimeOrPress>();
-    }
+
     public void OnEnable()
     {
         ChangeSceneAction.action.Enable(); 
@@ -46,7 +43,7 @@ public class ChangeScene : MonoBehaviour
     {
         if (ChangeSceneAction.action.triggered && playerCanChangeScene)
         {
-            
+            gt.GoToScene();
         }
     }
 
