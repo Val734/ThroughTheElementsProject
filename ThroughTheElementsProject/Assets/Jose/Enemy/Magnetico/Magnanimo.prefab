@@ -115,7 +115,7 @@ MonoBehaviour:
   isRobotThrower: 1
   projectilePrefab: {fileID: 1072432757515619055, guid: 26b8e07e96d50df43a18198dcaba340d,
     type: 3}
-  detectionDistance: 15
+  detectionDistance: 10
   detectionLayerMask:
     serializedVersion: 2
     m_Bits: 51
@@ -135,19 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHurt:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1811930145889999751}
-        m_TargetAssemblyTypeName: HealthBehaviour, Assembly-CSharp
-        m_MethodName: Damage
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1811930145889999751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +153,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5672548739681152686}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: set_isStatic
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -319,8 +307,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aabc09c78012f6d4f829c6b91077cf3d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2858475442377167069}
   m_SourcePrefab: {fileID: 100100000, guid: aabc09c78012f6d4f829c6b91077cf3d, type: 3}
+--- !u!1 &5775029109520867930 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aabc09c78012f6d4f829c6b91077cf3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6693597753597304587}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2858475442377167069
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5775029109520867930}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dfe6a2f260d26844c806ebebcbdb04ae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &6588439477259630816 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aabc09c78012f6d4f829c6b91077cf3d,

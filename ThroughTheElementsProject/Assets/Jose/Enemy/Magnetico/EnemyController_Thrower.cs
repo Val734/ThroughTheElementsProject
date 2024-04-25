@@ -21,10 +21,12 @@ public class EnemyController_Thrower : EnemyController
 
     private bool isAttacking;
 
+    Animator animator;
+
 
     protected override void ChildAwake()
     {
-        
+        animator=GetComponentInChildren<Animator>();
     }
 
     protected override void ChildUpdate()
@@ -56,10 +58,10 @@ public class EnemyController_Thrower : EnemyController
     
     IEnumerator waitToAttack()
     {
-        
 
+        animator.SetTrigger("AttackTrigger");
         localSpeed = 0;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3.5f);
         GameObject projectile = Instantiate(projectilePrefab, transform.forward + gameObject.transform.position, Quaternion.identity);
         isAttacking = false;
         if (isBubbleThrower)

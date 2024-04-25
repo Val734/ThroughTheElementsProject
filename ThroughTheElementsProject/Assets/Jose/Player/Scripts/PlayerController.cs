@@ -464,7 +464,7 @@ public class PlayerController : MonoBehaviour
     {
         if (stamina < maxStamina)
         {
-            stamina += 10f * Time.deltaTime;
+            stamina += 30f * Time.deltaTime;
             stamina = Mathf.Clamp(stamina, 0f, maxStamina);
         }
     }
@@ -636,7 +636,7 @@ public class PlayerController : MonoBehaviour
         isDashing = false;
         canMove = false;
         movementSpeed = 0f;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         canMove = true;
         canJump= true;
         playerCanAttack = true;
@@ -654,6 +654,18 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("HurtBool", true);
 
            // animator.SetTrigger("HurtTrigger");
+
+        }
+    }
+    public void RestoreCamera()
+    {
+        lastTarget = null;
+        if (isEnemyLocked)
+        {
+            target = null;
+            orientationMode = OrientationMode.CameraForward;
+            isEnemyLocked = false;
+
 
         }
     }
