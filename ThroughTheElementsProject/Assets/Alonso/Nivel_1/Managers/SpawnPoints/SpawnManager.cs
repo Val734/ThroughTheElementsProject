@@ -63,6 +63,7 @@ public class SpawnManager : MonoBehaviour
         Player.gameObject.SetActive(false);
         Player.gameObject.GetComponent<HealthBehaviour>().health = Player.GetComponent<HealthBehaviour>().maxHealth;
         Player.gameObject.transform.position = currentSpawnPoint.transform.position;
+        Player.gameObject.GetComponent<PlayerController>().isDashing = false;
         Player.gameObject.SetActive(true);
     }
 

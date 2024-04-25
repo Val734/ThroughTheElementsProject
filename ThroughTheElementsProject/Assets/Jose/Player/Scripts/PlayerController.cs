@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject target;
     [SerializeField] GameObject lastTarget;
 
-    private bool isDashing;
+    public bool isDashing;
     private Vector2 Dashdirection;
 
 
@@ -546,33 +546,33 @@ public class PlayerController : MonoBehaviour
             if (comboAttack[0])
             {
                 attackTime += Time.deltaTime;
-                if (attackTime > 0f && attackTime < 0.4f && characterController.isGrounded)
+                if (attackTime > 0f && attackTime < 0.4f)
                 {
 
                     canMove = false;
                     animator.SetBool("AttackBool", true);
                     AttackHit.gameObject.SetActive(true);
                 }
-                else if (attackTime > 0.4f && attackTime < 0.8f && characterController.isGrounded)
+                else if (attackTime > 0.4f && attackTime < 0.8f)
                 {
                     AttackHit.gameObject.SetActive(false);
                 }
-                else if (attackTime > 0.8f && attackTime < 1f && comboAttack[1] && characterController.isGrounded)
+                else if (attackTime > 0.8f && attackTime < 1f && comboAttack[1])
                 {
                     AttackHit.gameObject.SetActive(true);
 
                 }
-                else if (attackTime > 1f && attackTime < 1.3f && comboAttack[1] && characterController.isGrounded)
+                else if (attackTime > 1f && attackTime < 1.3f && comboAttack[1])
                 {
                     animator.SetBool("AttackBool", true);
                     AttackHit.gameObject.SetActive(false);
                 }
-                else if (attackTime > 1.3f && attackTime < 2f && comboAttack[1] && comboAttack[2] && characterController.isGrounded)
+                else if (attackTime > 1.3f && attackTime < 2f && comboAttack[1] && comboAttack[2])
                 {
                     AttackHit.gameObject.SetActive(true);
                     animator.SetBool("AttackBool", true);
                 }
-                else if (attackTime > 2f && comboAttack[1] && comboAttack[2] && characterController.isGrounded)
+                else if (attackTime > 2f && comboAttack[1] && comboAttack[2])
                 {
                     animator.SetBool("AttackBool", false);
                     AttackHit.gameObject.SetActive(false);
@@ -629,6 +629,8 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator stopHurt() 
     {
+
+        
         yield return new WaitForSeconds(0.2f);
         isDashing = false;
         canMove = false;
@@ -651,19 +653,6 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("HurtBool", true);
 
            // animator.SetTrigger("HurtTrigger");
-
-        }
-    }
-
-    public void RestoreCamera()
-    {
-        lastTarget = null;
-        if (isEnemyLocked)
-        {
-            target = null;
-            orientationMode = OrientationMode.CameraForward;
-            isEnemyLocked = false;
-
 
         }
     }

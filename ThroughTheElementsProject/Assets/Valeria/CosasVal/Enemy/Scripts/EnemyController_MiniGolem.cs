@@ -13,8 +13,8 @@ public class EnemyController_MiniGolem : EnemyController
 
     float localSpeed = 2f;
     private float disappear = 5f;
-    private float timeBetweenAttacks = 0.5f; // Tiempo entre ataques en segundos
-    private float attackTimer = 0f; // Temporizador para controlar el tiempo entre ataques
+    private float timeBetweenAttacks = 1f;
+    private float attackTimer = 0f; 
     private bool isAttacking; 
     enum Look
     {
@@ -46,15 +46,15 @@ public class EnemyController_MiniGolem : EnemyController
 
             if (attackTimer <= -0.5f && isAttacking)
             {
+                Debug.Log("NO ME MUEVO");
                 attackTimer = timeBetweenAttacks; 
-                localSpeed = 2;
+                localSpeed = 0;
                 hitCollider.gameObject.SetActive(false);
                 isAttacking=false;
 
             }
             else
             {
-                // Contar hacia abajo el temporizador de ataque
                 attackTimer -= Time.deltaTime;
             }
         }
@@ -75,7 +75,7 @@ public class EnemyController_MiniGolem : EnemyController
 
         if (!isPlayerInRange)
         {
-            localSpeed = 2f; // Restablecer la velocidad cuando el jugador no está en rango
+            localSpeed = 2f; 
         }
 
         UpdateOrientation();
