@@ -40,8 +40,8 @@ public class EnemyController_MiniGolem : EnemyController
                 // Atacar si el temporizador ha alcanzado cero
                 animator.SetTrigger("Attacking");
                 localSpeed = 0;
+                isAttacking = true;
                 hitCollider.gameObject.SetActive(true);
-                // Restablecer el temporizador de ataque
             }
 
             if (attackTimer <= -0.5f && isAttacking)
@@ -49,6 +49,7 @@ public class EnemyController_MiniGolem : EnemyController
                 attackTimer = timeBetweenAttacks; 
                 localSpeed = 2;
                 hitCollider.gameObject.SetActive(false);
+                isAttacking=false;
 
             }
             else
@@ -71,6 +72,12 @@ public class EnemyController_MiniGolem : EnemyController
         {
             state = State.Dead;
         }
+
+        if (!isPlayerInRange)
+        {
+            localSpeed = 2f; // Restablecer la velocidad cuando el jugador no está en rango
+        }
+
         UpdateOrientation();
 
     }
@@ -101,6 +108,7 @@ public class EnemyController_MiniGolem : EnemyController
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
+
         }
     }
 
