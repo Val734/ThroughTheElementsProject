@@ -203,14 +203,23 @@ public class BossBehaviour : MonoBehaviour
             animator.SetTrigger("JumpAttackTrigger");
 
         }
+        
         yield return new WaitForSeconds(0.4f);
-        rb.AddForce((Player.transform.position - gameObject.transform.position) * 50*3, ForceMode.Impulse);
+        rb.AddForce((Player.transform.position - gameObject.transform.position) * 50*5, ForceMode.Impulse);
+        yield return new WaitForSeconds(0.4f);
+        rb.constraints = RigidbodyConstraints.FreezePositionX |
+                         RigidbodyConstraints.FreezePositionZ |
+                         RigidbodyConstraints.FreezeRotationX |
+                         RigidbodyConstraints.FreezeRotationY |
+                         RigidbodyConstraints.FreezeRotationZ;
         yield return new WaitForSeconds(2f);
         
         yield return new WaitForSeconds(1.8f);
         fase = BossFase.fase1;
         isAtaccking = false;
-
+        rb.constraints = RigidbodyConstraints.FreezeRotationX |
+                         RigidbodyConstraints.FreezeRotationY |
+                         RigidbodyConstraints.FreezeRotationZ;
 
     }
 

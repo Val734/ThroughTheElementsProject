@@ -125,6 +125,7 @@ public class PlayerController : MonoBehaviour
     private float attackTime;
     private void Update()
     {
+        Debug.Log(playerIsHitted);
         StaminaText.GetComponent<TextMeshProUGUI>().text = "Stamina:" + "" + Mathf.FloorToInt(stamina);
 
         UpdateMovement();
@@ -546,33 +547,33 @@ public class PlayerController : MonoBehaviour
             if (comboAttack[0])
             {
                 attackTime += Time.deltaTime;
-                if (attackTime > 0f && attackTime < 0.4f)
+                if (attackTime > 0f && attackTime < 0.4f && !playerIsHitted && characterController.isGrounded)
                 {
 
                     canMove = false;
                     animator.SetBool("AttackBool", true);
                     AttackHit.gameObject.SetActive(true);
                 }
-                else if (attackTime > 0.4f && attackTime < 0.8f)
+                else if (attackTime > 0.4f && attackTime < 0.8f && !playerIsHitted && characterController.isGrounded)
                 {
                     AttackHit.gameObject.SetActive(false);
                 }
-                else if (attackTime > 0.8f && attackTime < 1f && comboAttack[1])
+                else if (attackTime > 0.8f && attackTime < 1f && comboAttack[1] && !playerIsHitted && characterController.isGrounded)
                 {
                     AttackHit.gameObject.SetActive(true);
 
                 }
-                else if (attackTime > 1f && attackTime < 1.3f && comboAttack[1])
+                else if (attackTime > 1f && attackTime < 1.3f && comboAttack[1] && !playerIsHitted && characterController.isGrounded)
                 {
                     animator.SetBool("AttackBool", true);
                     AttackHit.gameObject.SetActive(false);
                 }
-                else if (attackTime > 1.3f && attackTime < 2f && comboAttack[1] && comboAttack[2])
+                else if (attackTime > 1.3f && attackTime < 2f && comboAttack[1] && comboAttack[2] && !playerIsHitted && characterController.isGrounded)
                 {
                     AttackHit.gameObject.SetActive(true);
                     animator.SetBool("AttackBool", true);
                 }
-                else if (attackTime > 2f && comboAttack[1] && comboAttack[2])
+                else if (attackTime > 2f && comboAttack[1] && comboAttack[2] && !playerIsHitted && characterController.isGrounded)
                 {
                     animator.SetBool("AttackBool", false);
                     AttackHit.gameObject.SetActive(false);
