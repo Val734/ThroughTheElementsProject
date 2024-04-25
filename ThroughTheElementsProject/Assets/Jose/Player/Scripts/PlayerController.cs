@@ -546,33 +546,33 @@ public class PlayerController : MonoBehaviour
             if (comboAttack[0])
             {
                 attackTime += Time.deltaTime;
-                if (attackTime > 0f && attackTime < 0.4f)
+                if (attackTime > 0f && attackTime < 0.4f && characterController.isGrounded)
                 {
 
                     canMove = false;
                     animator.SetBool("AttackBool", true);
                     AttackHit.gameObject.SetActive(true);
                 }
-                else if (attackTime > 0.4f && attackTime < 0.8f)
+                else if (attackTime > 0.4f && attackTime < 0.8f && characterController.isGrounded)
                 {
                     AttackHit.gameObject.SetActive(false);
                 }
-                else if (attackTime > 0.8f && attackTime < 1f && comboAttack[1])
+                else if (attackTime > 0.8f && attackTime < 1f && comboAttack[1] && characterController.isGrounded)
                 {
                     AttackHit.gameObject.SetActive(true);
 
                 }
-                else if (attackTime > 1f && attackTime < 1.3f && comboAttack[1])
+                else if (attackTime > 1f && attackTime < 1.3f && comboAttack[1] && characterController.isGrounded)
                 {
                     animator.SetBool("AttackBool", true);
                     AttackHit.gameObject.SetActive(false);
                 }
-                else if (attackTime > 1.3f && attackTime < 2f && comboAttack[1] && comboAttack[2])
+                else if (attackTime > 1.3f && attackTime < 2f && comboAttack[1] && comboAttack[2] && characterController.isGrounded)
                 {
                     AttackHit.gameObject.SetActive(true);
                     animator.SetBool("AttackBool", true);
                 }
-                else if (attackTime > 2f && comboAttack[1] && comboAttack[2])
+                else if (attackTime > 2f && comboAttack[1] && comboAttack[2] && characterController.isGrounded)
                 {
                     animator.SetBool("AttackBool", false);
                     AttackHit.gameObject.SetActive(false);
