@@ -618,8 +618,7 @@ public class PlayerController : MonoBehaviour
             isDashing = true;
             Dashdirection = Dashdirection = new Vector2(0, -1);
             canJump = false;
-            canMove = false;
-            movementSpeed = 0f;
+
             playerCanAttack = false;
 
             StartCoroutine(stopHurt());
@@ -630,11 +629,10 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator stopHurt() 
     {
-
-        
         yield return new WaitForSeconds(0.2f);
         isDashing = false;
-
+        canMove = false;
+        movementSpeed = 0f;
         yield return new WaitForSeconds(2f);
         canMove = true;
         canJump= true;

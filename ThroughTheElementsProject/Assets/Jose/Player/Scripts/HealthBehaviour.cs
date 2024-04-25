@@ -42,7 +42,6 @@ public class HealthBehaviour : MonoBehaviour
         {
             health = 0;
             OnDie.Invoke();
-            Debug.Log("aaaaaaaaaa" + health); 
 
         }
 
