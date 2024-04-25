@@ -11,7 +11,7 @@ public class HitCollider : MonoBehaviour
     List<string> hittableTags = new List<string>{ "PunchingBag","Enemy","Player"};
     public UnityEvent OnhittableObject;
     public int damage;
-    public bool canHit;
+    private bool canHit;
 
     void OnEnable()
     {
@@ -36,5 +36,10 @@ public class HitCollider : MonoBehaviour
             canHit = false;
 
         }
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
 }
