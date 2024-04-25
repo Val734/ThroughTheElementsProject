@@ -88,6 +88,7 @@ MonoBehaviour:
   aimingSystem: {fileID: 4468299814077901855}
   _cam: {fileID: 4239291544870822325}
   MainCamera: {fileID: 0}
+  haveGravity: 0
 --- !u!65 &315646660095571424
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -183,7 +184,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6403a43fb562cb34a9c63f11f55a7880, type: 2}
+  - {fileID: 2100000, guid: 65ce5e55787d14a45b68e8f0a36bab41, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

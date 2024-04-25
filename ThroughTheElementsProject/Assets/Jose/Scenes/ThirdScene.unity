@@ -129,6 +129,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7187279578896859028}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &392018535 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 804140615597043978, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+    type: 3}
+  m_PrefabInstance: {fileID: 7187279578896859028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d368ff5bad09a479606ff4feccd07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &416168144
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,8 +234,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -232,8 +254,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RestoreCamera
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -242,8 +279,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3650748785005780402, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -370,8 +417,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -380,8 +437,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RestoreCamera
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -390,8 +462,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3650748785005780402, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -512,8 +594,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -522,8 +614,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RestoreCamera
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -532,8 +639,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3650748785005780402, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -726,8 +843,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -736,8 +863,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RestoreCamera
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -746,8 +888,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3650748785005780402, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -862,8 +1014,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -872,8 +1034,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RestoreCamera
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -882,8 +1059,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3650748785005780402, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -998,8 +1185,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -1008,8 +1205,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RestoreCamera
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -1018,8 +1230,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3650748785005780402, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -1130,6 +1352,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7187279578896859028}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1482208791 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8807711384312500434, guid: 4903c977600a9bc429f242fdec37d4fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 1756683397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1553292914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1140,8 +1368,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -1150,8 +1388,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RestoreCamera
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -1160,8 +1413,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3650748785005780402, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -1266,6 +1529,134 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1553292914}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1561157197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1561157199}
+  - component: {fileID: 1561157198}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1561157198
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561157197}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 30e3d1b92bb983b4891092a43bc55cfa, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1561157199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561157197}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.0262972, y: -62.174717, z: -13.889864}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1657070892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1276,8 +1667,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -1286,8 +1687,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RestoreCamera
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -1296,8 +1712,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3650748785005780402, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -1510,7 +1936,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1438288060}
     m_Modifications:
     - target: {fileID: 7073580493046172597, guid: 4903c977600a9bc429f242fdec37d4fa,
         type: 3}
@@ -1520,17 +1946,17 @@ PrefabInstance:
     - target: {fileID: 8807711384312500434, guid: 4903c977600a9bc429f242fdec37d4fa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 605
+      value: 58.381042
       objectReference: {fileID: 0}
     - target: {fileID: 8807711384312500434, guid: 4903c977600a9bc429f242fdec37d4fa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 213.5
+      value: 191.01347
       objectReference: {fileID: 0}
     - target: {fileID: 8807711384312500434, guid: 4903c977600a9bc429f242fdec37d4fa,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -146.01987
       objectReference: {fileID: 0}
     - target: {fileID: 8807711384312500434, guid: 4903c977600a9bc429f242fdec37d4fa,
         type: 3}
@@ -1540,17 +1966,17 @@ PrefabInstance:
     - target: {fileID: 8807711384312500434, guid: 4903c977600a9bc429f242fdec37d4fa,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8807711384312500434, guid: 4903c977600a9bc429f242fdec37d4fa,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8807711384312500434, guid: 4903c977600a9bc429f242fdec37d4fa,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8807711384312500434, guid: 4903c977600a9bc429f242fdec37d4fa,
         type: 3}
@@ -1665,8 +2091,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -1675,8 +2111,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RestoreCamera
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -1685,8 +2136,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811930145889999751, guid: f8dbc631abe942d4e88af5b38477c9d8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3650748785005780402, guid: f8dbc631abe942d4e88af5b38477c9d8,
         type: 3}
@@ -1905,6 +2366,76 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -71.06261
       objectReference: {fileID: 0}
+    - target: {fileID: 254832804536142449, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 254832804536142449, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254832804536142449, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 254832804536142449, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254832804536142449, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: RestoreCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 254832804536142449, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 254832804536142449, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 328053410714976181, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 328053410714976181, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 328053410714976181, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 328053410714976181, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 328053410714976181, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RestoreCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 328053410714976181, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 328053410714976181, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 349832040404673355, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -2105,6 +2636,41 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6bc4d28f143fceb4cb1a849132f02316, type: 2}
+    - target: {fileID: 2800148264232093691, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800148264232093691, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800148264232093691, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 2800148264232093691, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800148264232093691, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RestoreCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800148264232093691, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800148264232093691, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2869978026331428708, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2195,6 +2761,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -4.438961
       objectReference: {fileID: 0}
+    - target: {fileID: 3339749554987369844, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3339749554987369844, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3339749554987369844, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 3339749554987369844, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3339749554987369844, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: RestoreCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 3339749554987369844, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3339749554987369844, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3432070578122769453, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2238,22 +2839,22 @@ PrefabInstance:
     - target: {fileID: 3615228351744190826, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.48623672
+      value: 0.48623696
       objectReference: {fileID: 0}
     - target: {fileID: 3615228351744190826, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.114784904
+      value: 0.11478497
       objectReference: {fileID: 0}
     - target: {fileID: 3615228351744190826, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.84308213
+      value: 0.843082
       objectReference: {fileID: 0}
     - target: {fileID: 3615228351744190826, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.19902468
+      value: -0.19902466
       objectReference: {fileID: 0}
     - target: {fileID: 3621686532484599651, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
@@ -2348,22 +2949,57 @@ PrefabInstance:
     - target: {fileID: 3997818487431136352, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.48623672
+      value: 0.48623696
       objectReference: {fileID: 0}
     - target: {fileID: 3997818487431136352, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.114784904
+      value: 0.11478497
       objectReference: {fileID: 0}
     - target: {fileID: 3997818487431136352, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.84308213
+      value: 0.843082
       objectReference: {fileID: 0}
     - target: {fileID: 3997818487431136352, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.19902468
+      value: -0.19902466
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004580672772769448, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004580672772769448, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004580672772769448, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 4004580672772769448, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004580672772769448, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RestoreCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004580672772769448, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004580672772769448, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4111479658498274833, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
@@ -2385,6 +3021,41 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6bc4d28f143fceb4cb1a849132f02316, type: 2}
+    - target: {fileID: 4239160708068376691, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239160708068376691, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239160708068376691, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 4239160708068376691, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239160708068376691, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RestoreCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239160708068376691, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239160708068376691, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4284457499755477187, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2665,6 +3336,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 33.799828
       objectReference: {fileID: 0}
+    - target: {fileID: 6365765451572871259, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365765451572871259, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365765451572871259, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 6365765451572871259, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365765451572871259, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: RestoreCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365765451572871259, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365765451572871259, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6650876645303001095, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2679,6 +3385,76 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -14.124105
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693955166816975915, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693955166816975915, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693955166816975915, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 6693955166816975915, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693955166816975915, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: RestoreCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693955166816975915, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693955166816975915, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707934060232840987, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707934060232840987, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707934060232840987, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 392018535}
+    - target: {fileID: 6707934060232840987, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707934060232840987, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: RestoreCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707934060232840987, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707934060232840987, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6975920707790778839, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
@@ -2698,22 +3474,22 @@ PrefabInstance:
     - target: {fileID: 6975920707790778839, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.48623672
+      value: 0.48623696
       objectReference: {fileID: 0}
     - target: {fileID: 6975920707790778839, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.11478491
+      value: 0.11478497
       objectReference: {fileID: 0}
     - target: {fileID: 6975920707790778839, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.84308213
+      value: 0.843082
       objectReference: {fileID: 0}
     - target: {fileID: 6975920707790778839, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.19902469
+      value: -0.19902466
       objectReference: {fileID: 0}
     - target: {fileID: 7143603472974840462, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
@@ -3081,6 +3857,10 @@ PrefabInstance:
         type: 3}
       insertIndex: 21
       addedObject: {fileID: 1734462553}
+    - targetCorrespondingSourceObject: {fileID: 7705663373704309398, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1482208791}
     - targetCorrespondingSourceObject: {fileID: 2392949831178684822, guid: d6019d05b286d2a4ca1efac9dbc9dde8,
         type: 3}
       insertIndex: 8
@@ -3172,4 +3952,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 7187279578896859028}
-  - {fileID: 1756683397}
+  - {fileID: 1561157199}

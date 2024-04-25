@@ -654,4 +654,17 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
+    public void RestoreCamera()
+    {
+        lastTarget = null;
+        if (isEnemyLocked)
+        {
+            target = null;
+            orientationMode = OrientationMode.CameraForward;
+            isEnemyLocked = false;
+
+
+        }
+    }
 }
