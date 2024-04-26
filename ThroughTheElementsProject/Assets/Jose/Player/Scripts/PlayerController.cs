@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     private bool isEnemyLocked;
-    private bool playerIsHitted; 
+    public bool playerIsHitted; 
 
     public UnityEvent OnJump;
 
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
     public bool canJump=true;
 
     private Animator animator;
-    private bool canMove;
+    public bool canMove;
     private bool isAttacking;
 
     [SerializeField] float flySpeed;

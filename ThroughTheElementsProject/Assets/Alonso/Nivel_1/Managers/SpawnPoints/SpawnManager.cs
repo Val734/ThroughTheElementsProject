@@ -64,7 +64,14 @@ public class SpawnManager : MonoBehaviour
         Player.gameObject.GetComponent<HealthBehaviour>().health = Player.GetComponent<HealthBehaviour>().maxHealth;
         Player.gameObject.transform.position = currentSpawnPoint.transform.position;
         Player.gameObject.GetComponent<PlayerController>().isDashing = false;
+        Player.gameObject.GetComponent<PlayerController>().canMove = true;
+        Player.gameObject.GetComponent<PlayerController>().canJump = true;
+        Player.gameObject.GetComponent<PlayerController>().playerCanAttack = true;
+        Player.gameObject.GetComponent<PlayerController>().playerIsHitted = false;
         Player.gameObject.SetActive(true);
     }
-
+    
+        
+        
+        
 }
