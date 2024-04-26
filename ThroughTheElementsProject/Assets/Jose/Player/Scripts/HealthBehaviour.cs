@@ -48,6 +48,6 @@ public class HealthBehaviour : MonoBehaviour
     }
     public void Heal(int heal)
     {
-        health -= heal;
+        health += heal;
     }
 }

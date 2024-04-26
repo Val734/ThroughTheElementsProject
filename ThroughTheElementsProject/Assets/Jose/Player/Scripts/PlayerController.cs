@@ -669,4 +669,20 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
+    public void RestorePlayer()
+    {
+        target = null;
+        orientationMode = OrientationMode.CameraForward;
+        isEnemyLocked = false;
+        isDashing = false;
+        stamina = maxStamina;
+        canMove = true;
+        isFreezed = false;
+        playerIsHitted = false;
+        canJump = true;
+        playerCanAttack = true;
+        movementSpeed = 4f;
+        animator.SetBool("HurtBool", false);
+    }
 }
