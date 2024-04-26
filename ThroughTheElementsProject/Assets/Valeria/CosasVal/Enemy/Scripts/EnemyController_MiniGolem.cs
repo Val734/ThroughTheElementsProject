@@ -9,6 +9,7 @@ public class EnemyController_MiniGolem : EnemyController
     private Animator animator;
     private bool isAlive;
     private bool isPlayerInRange;
+    private bool playerDetected = false;
     GameObject player;
 
     float localSpeed = 2f;
@@ -33,6 +34,35 @@ public class EnemyController_MiniGolem : EnemyController
 
     protected override void ChildUpdate()
     {
+        playerDetected = false;
+        Collider[] entitiesInRange = Physics.OverlapSphere(transform.position,1);
+        if(entitiesInRange.Length > 1)
+        {
+            foreach (Collider entitie in entitiesInRange)
+            {
+                if (entitie.CompareTag("Player"))
+                {
+                    isPlayerInRange = true;
+                    playerDetected = true;
+                }
+            }
+            if(!playerDetected && isPlayerInRange)
+            {
+                isPlayerInRange = false;
+            }
+        }
+        else if(entitiesInRange.Length == 1)
+        {
+            if (entitiesInRange[0].CompareTag("Player"))
+            {
+                isPlayerInRange = true;
+            }
+            else if(isPlayerInRange)
+            {
+                isPlayerInRange = false;
+            }
+        }
+        
         if (isAlive && isPlayerInRange)
         {
             if (attackTimer <= 0f && !isAttacking)
@@ -58,25 +88,21 @@ public class EnemyController_MiniGolem : EnemyController
                 attackTimer -= Time.deltaTime;
             }
         }
-
-        if (!isAlive)
+        else if (!isPlayerInRange)
+        {
+            localSpeed = 2f;
+        }
+        else if (!isAlive)
         {
             disappear -= Time.deltaTime;
+            state = State.Dead;
             if (disappear < 0)
             {
                 Debug.Log("activar particulas para que la palme y se vaya alv");
                 gameObject.SetActive(false);
             }
         }
-        if (isAlive == false)
-        {
-            state = State.Dead;
-        }
-
-        if (!isPlayerInRange)
-        {
-            localSpeed = 2f; 
-        }
+        
 
         UpdateOrientation();
 
@@ -92,23 +118,6 @@ public class EnemyController_MiniGolem : EnemyController
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = true;
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isPlayerInRange = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isPlayerInRange = false;
-
         }
     }
 
