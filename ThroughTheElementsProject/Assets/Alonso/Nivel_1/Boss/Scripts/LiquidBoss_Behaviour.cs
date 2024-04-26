@@ -55,6 +55,8 @@ public class LiquidBoss_Behaviour : MonoBehaviour
     [SerializeField] float currentattackIntervalTime = 0f;
     public int attackType;
 
+    Transform spikeTarget;
+
     [Header("Recovering Settings")]
     public float recoveryTime = 5f;
 
@@ -151,6 +153,7 @@ public class LiquidBoss_Behaviour : MonoBehaviour
             }
             else if(attack == 2)
             {
+                spikeTarget = Player;
                 _anim.SetTrigger("SpikeAttack");
             }
             currentattackIntervalTime = 0;
@@ -243,6 +246,6 @@ public class LiquidBoss_Behaviour : MonoBehaviour
 
     public void SpikeAttack()
     {
-        Instantiate(SpikeAttackPrefab, Player.transform.position, Quaternion.identity);
+        Instantiate(SpikeAttackPrefab, spikeTarget.position, Quaternion.identity);
     }
 }

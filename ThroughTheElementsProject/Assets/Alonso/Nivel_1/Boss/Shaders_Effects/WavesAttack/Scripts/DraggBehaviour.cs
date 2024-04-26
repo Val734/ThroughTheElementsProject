@@ -20,7 +20,7 @@ public class DraggBehaviour : MonoBehaviour
         lifeTime -= Time.deltaTime;
         if (lifeTime < 0)
         {
-            player.GetComponent<DragabbleBehaviour>().ActivateWaveDrag(transform, -1f);
+            player.GetComponent<DragabbleBehaviour>().DesactivateDrag();    
             Destroy(gameObject);
         }
     }
@@ -30,7 +30,7 @@ public class DraggBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             player = other.gameObject;
-            player.GetComponent<DragabbleBehaviour>().ActivateWaveDrag(transform, dragTime);
+            player.GetComponent<DragabbleBehaviour>().ActivateDrag(transform, dragTime);
 
         }
     }
