@@ -7,7 +7,7 @@ public class CannonBall : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Cannon;
-    
+
 
     public void Start()
     {
@@ -16,17 +16,17 @@ public class CannonBall : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground") )
+        if (collision.gameObject.CompareTag("Ground"))
         {
-            
-            Player.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y+2f, gameObject.transform.position.z);
+
+            Player.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 2f, gameObject.transform.position.z);
             Player.SetActive(true);
             Cannon.GetComponent<CannonWorking>()._cam.gameObject.SetActive(false);
             Player.GetComponentInChildren<SolidStateBehaviour>().isOnBallTransformation = false;
             Destroy(gameObject);
 
         }
-        
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -35,17 +35,23 @@ public class CannonBall : MonoBehaviour
 
             //Player.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 2f, gameObject.transform.position.z);
             //Player.SetActive(true);
-            Cannon.GetComponent<CannonWorking>()._cam.gameObject.SetActive(false);
             Player.GetComponentInChildren<SolidStateBehaviour>().isOnBallTransformation = true;
             other.gameObject.GetComponentInChildren<CannonWorking>().CannonPlayer(Player);
-            Destroy(gameObject);
-
+            StartCoroutine(CameraCannon()); 
         }
     }
     IEnumerator Coll()
     {
         yield return new WaitForSeconds(0.1f);
         gameObject.GetComponent<Collider>().enabled = true;
+
+    }
+    IEnumerator CameraCannon()
+    {
+        yield return new WaitForSeconds(0.4f);
+        Cannon.GetComponent<CannonWorking>()._cam.gameObject.SetActive(false);
+        Destroy(gameObject);
+
 
     }
 }

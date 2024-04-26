@@ -13,7 +13,7 @@ public class CannonWorking : MonoBehaviour
     private const int N_TRAJECTORY_POINTS = 10;
 
     public Camera _cam;
-    public GameObject MainCamera;
+    //public GameObject MainCamera;
     private bool _pressingMouse = false;
 
     private Vector3 _initialVelocity;
@@ -27,7 +27,7 @@ public class CannonWorking : MonoBehaviour
 
     void Start()
     {
-        MainCamera=Camera.main.gameObject;
+        //MainCamera=Camera.main.gameObject;
         isPlayerIn = false;
         lineRenderer.positionCount = N_TRAJECTORY_POINTS;
         lineRenderer.enabled = false;
@@ -87,7 +87,7 @@ public class CannonWorking : MonoBehaviour
             cannonBall.GetComponent<CannonBall>().Cannon = gameObject;
             aimingSystem.SetActive(false);
             isPlayerIn = false;
-            MainCamera.SetActive(true);
+            //MainCamera.SetActive(true);
         }
 
             
@@ -122,7 +122,7 @@ public class CannonWorking : MonoBehaviour
         if (!haveGravity)
         {
             Debug.Log("Hola");
-            MainCamera.SetActive(false);
+            //MainCamera.SetActive(false);
             Player = other.gameObject;
             _cam.gameObject.SetActive(true);
             aimingSystem.SetActive(true);
