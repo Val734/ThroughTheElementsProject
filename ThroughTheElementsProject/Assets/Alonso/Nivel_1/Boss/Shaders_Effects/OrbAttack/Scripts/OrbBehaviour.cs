@@ -16,7 +16,7 @@ public class OrbBehaviour : MonoBehaviour
     float lifeTime = 10f;
 
     [Header("Target Settings")]
-    public Vector3 orbTargetPosition;
+    Vector3 orbTargetPosition;
 
     // LAUNCH SETTINGS
     bool isThrowed;
@@ -73,6 +73,11 @@ public class OrbBehaviour : MonoBehaviour
             Debug.Log("Ahora tiene que instanciar la Explosion de agua para que haga un efecto como que ha explotado el orbe");
 
             Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log("Ha chocado con algo que no es el player");
+            Destroy (gameObject);
         }
     }
 }
