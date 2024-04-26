@@ -14,7 +14,7 @@ public class EnemyController_MiniGolem : EnemyController
 
     float localSpeed = 2f;
     private float disappear = 5f;
-    private float timeBetweenAttacks = 1f;
+    private float timeBetweenAttacks = 0.01f;
     private float attackTimer = 0f; 
     private bool isAttacking; 
     enum Look
