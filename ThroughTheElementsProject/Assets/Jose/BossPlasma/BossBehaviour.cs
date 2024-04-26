@@ -239,7 +239,7 @@ public class BossBehaviour : MonoBehaviour
         GameObject rock = Instantiate(Rock, new Vector3(Point[0].transform.position.x, Point[0].transform.position.y + 5, Point[0].transform.position.z), Quaternion.identity);
         rock.GetComponent<Fracture>().Boss = gameObject;
         
-        StartCoroutine(RestoreBoss(15,rock));
+        StartCoroutine(RestoreBoss(25,rock));
 
 
     }
