@@ -5,7 +5,6 @@ public class DraggBehaviour : MonoBehaviour
     [SerializeField] float lifeTime = 10f;
     [SerializeField] float speed = 5f;
     [SerializeField] float dragTime;
-    bool dragging = false;
     Rigidbody rb;
 
     GameObject player;

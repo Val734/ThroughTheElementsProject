@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FallReturnToSpawn : MonoBehaviour
 {
+    public BossBattleController battleController;
     public GameObject SpawnManager;
     public GameObject Player;
     private void OnTriggerEnter(Collider other)
@@ -21,7 +22,12 @@ public class FallReturnToSpawn : MonoBehaviour
             Player.SetActive(false);
             Player.transform.position=SpawnManager.GetComponent<SpawnManager>().currentSpawnPoint.transform.position;
             Player.SetActive(true);
-
+            
+            if(battleController)
+            {
+                Debug.Log("HA CAIDO EL TONTO DEL PLAYER");
+                battleController.ChangeToStateWaiting();
+            }
         }
     }
 

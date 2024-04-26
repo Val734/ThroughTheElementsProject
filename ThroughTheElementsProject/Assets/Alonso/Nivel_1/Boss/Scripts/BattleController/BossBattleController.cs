@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BossBattleController : MonoBehaviour
 {
-    public bool PRUEBA;
     public LiquidBoss_Behaviour boss;
 
     private void Awake()
@@ -12,12 +11,12 @@ public class BossBattleController : MonoBehaviour
         boss = GetComponentInParent<LiquidBoss_Behaviour>();
     }
 
-    private void OnValidate()
+    public void ChangeToStateWaiting()
     {
-        if (boss != null) 
-        {
-            boss.battleStarted = true;
-        }
+        Debug.Log(" ----------------------------- LA PUTA FUNCION YA FUNCIONA -----------------------------");
+        boss.state = LiquidBoss_Behaviour.StatesType.PlayerKilled;
+        boss.playerOnArea = false;
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -26,6 +25,7 @@ public class BossBattleController : MonoBehaviour
         {
             Debug.Log("El Jugador Ha pasado por aqui");
             boss.battleStarted = true;
+            boss.playerOnArea = true;
         }
     }
 }

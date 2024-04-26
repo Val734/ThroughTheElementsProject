@@ -21,7 +21,9 @@ public class Proyectile : MonoBehaviour
     }
     public void Throw(Vector3 horizontal, Vector3 vertical)
     {
-        rb.AddForce(Vector3.forward * ForceSpeed);
+
+
+        rb.AddForce(horizontal * ForceSpeed);
 
         Vector3 directionToPlayer = (targetPosition.position - transform.position).normalized;
         rb.AddForce(0f, 0f, directionToPlayer.x * aimbotForceSpeed);

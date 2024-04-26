@@ -48,6 +48,7 @@ public class LiquidBoss_Behaviour : MonoBehaviour
     [Header("Behaviour Settings")]
     public bool battleStarted; // ESTE ES PARA DETERMINAR CUANDO EMPIEZA EL BOSS A PEGARTE
     public bool canAttack; // ESTE BOOLEANO TENDRÁ QUE DESACTIVARSE CADA VEZ QUE UNA ANIMACIÓN SE TERMINA PARA QUE PUEDA HACER OTRO ATAQUE 
+    public bool playerOnArea; // ESTE BOOLEANO SE UTILIZA PARA VER QUE EL PLAYER ESTÁ DENTRO DE LA ZONA Y ASÍ CUANDO MUERA PODRÁ VOLVER
     
     public float initialWaitingTime; // ESTE TIEMPO SIRVE PARA PODER EMPEZAR LA PARTIDA UN POCO DESPUÉS DE QUE EL JUGADOR HAYA PASADO AL CAMPO DE BATALLA 
     public float attackIntervalTime = 3f; // ESTE ES PARA QUE HAYA CIERTO TIEMPO ENTRE LOS ATAQUES
@@ -63,7 +64,8 @@ public class LiquidBoss_Behaviour : MonoBehaviour
         WaitingBattle,
         Exploding, 
         Recovering,
-        Killed
+        Killed,
+        PlayerKilled
     }
 
     public StatesType state = StatesType.WaitingBattle;
@@ -85,26 +87,36 @@ public class LiquidBoss_Behaviour : MonoBehaviour
 
     public void Update()
     {
-        switch(state)
+        if(playerOnArea)
         {
-            case StatesType.WaitingBattle:
-                WaitingBattle();
-                break;
-            case StatesType.OnBattle:
-                OnBattle();
-                CheckDistance();
-                break;
-            case StatesType.Exploding:
-                Exploding();
-                break;
-            case StatesType.Recovering:
-                Recovering();
-                break;
-            case StatesType.Killed:
-                Dead();
-                break;
-
+            switch (state)
+            {
+                case StatesType.WaitingBattle:
+                    WaitingBattle();
+                    break;
+                case StatesType.OnBattle:
+                    OnBattle();
+                    CheckDistance();
+                    break;
+                case StatesType.Exploding:
+                    Exploding();
+                    break;
+                case StatesType.Recovering:
+                    Recovering();
+                    break;
+                case StatesType.Killed:
+                    Dead();
+                    break;
+                case StatesType.PlayerKilled:
+                    WaitingPlayer();
+                    break;
+            }
         }
+    }
+
+    private void WaitingPlayer()
+    {
+        playerOnArea = false;
     }
 
     int attack;
