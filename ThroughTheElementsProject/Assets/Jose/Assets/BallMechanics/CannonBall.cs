@@ -7,6 +7,7 @@ public class CannonBall : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Cannon;
+    private GameObject LastCannon;
 
 
     public void Start()
@@ -23,6 +24,7 @@ public class CannonBall : MonoBehaviour
             Player.SetActive(true);
             Cannon.GetComponent<CannonWorking>()._cam.gameObject.SetActive(false);
             Player.GetComponentInChildren<SolidStateBehaviour>().isOnBallTransformation = false;
+            LastCannon = null;
             Destroy(gameObject);
 
         }
@@ -48,8 +50,17 @@ public class CannonBall : MonoBehaviour
     }
     IEnumerator CameraCannon()
     {
-        yield return new WaitForSeconds(0.4f);
-        Cannon.GetComponent<CannonWorking>()._cam.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        if (LastCannon != null)
+        {
+            LastCannon = Cannon;
+        }
+        else if(Cannon !=LastCannon)
+        {
+            Cannon.GetComponent<CannonWorking>()._cam.gameObject.SetActive(false);
+            LastCannon = Cannon;
+
+        }
         Destroy(gameObject);
 
 
