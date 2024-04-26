@@ -99,11 +99,11 @@ public class EnemyController_Freeze : EnemyController
         frost.Play();
 
         hitCollider.gameObject.SetActive(true);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.5f);
         hitCollider.gameObject.SetActive(false);
         look= Look.normal;
         localSpeed = 2;
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
 
         goToPlayerForAttack = true;
 
