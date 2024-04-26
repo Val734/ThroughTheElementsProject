@@ -212,6 +212,8 @@ public class BossBehaviour : MonoBehaviour
                          RigidbodyConstraints.FreezeRotationX |
                          RigidbodyConstraints.FreezeRotationY |
                          RigidbodyConstraints.FreezeRotationZ;
+        rb.isKinematic = false;
+
         yield return new WaitForSeconds(2f);
         
         yield return new WaitForSeconds(1.8f);
@@ -220,6 +222,8 @@ public class BossBehaviour : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezeRotationX |
                          RigidbodyConstraints.FreezeRotationY |
                          RigidbodyConstraints.FreezeRotationZ;
+        rb.isKinematic = true;
+
 
     }
 
