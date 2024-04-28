@@ -246,6 +246,6 @@ public class LiquidBoss_Behaviour : MonoBehaviour
 
     public void SpikeAttack()
     {
-        Instantiate(SpikeAttackPrefab, spikeTarget.position, Quaternion.identity);
+        GameObject newSpike = Instantiate(SpikeAttackPrefab, spikeTarget.position, Quaternion.identity);
     }
 }

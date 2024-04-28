@@ -21,6 +21,7 @@ public class OrbBehaviour : MonoBehaviour
     // LAUNCH SETTINGS
     bool isThrowed;
     float waitTime = 0.7f;
+    public GameObject onDestroyExplosion;
 
     private void Awake()
     {
@@ -66,19 +67,8 @@ public class OrbBehaviour : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if(hit.gameObject.CompareTag("Player")) 
-        {
-            Debug.Log("Ha chocado y tendrá que hacer lo del Hurt Collider");
-
-            Debug.Log("Ahora tiene que instanciar la Explosion de agua para que haga un efecto como que ha explotado el orbe");
-
-            Destroy(gameObject);
-        }
-        else
-        {
-            Debug.Log("Ha chocado con algo que no es el player");
-            Destroy (gameObject);
-        }
+        Instantiate(onDestroyExplosion,transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
 

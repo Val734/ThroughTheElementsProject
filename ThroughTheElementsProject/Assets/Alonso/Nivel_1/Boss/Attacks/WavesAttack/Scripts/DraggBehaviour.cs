@@ -20,7 +20,10 @@ public class DraggBehaviour : MonoBehaviour
         lifeTime -= Time.deltaTime;
         if (lifeTime < 0)
         {
-            player.GetComponent<DragabbleBehaviour>().DesactivateDrag();    
+            if(player != null) 
+            {
+                player.GetComponent<DragabbleBehaviour>().DesactivateDrag();    
+            }
             Destroy(gameObject);
         }
     }

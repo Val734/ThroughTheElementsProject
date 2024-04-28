@@ -29,13 +29,15 @@ public class SlashBehaviour : MonoBehaviour
         }       
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if(hit.gameObject.CompareTag("Player")) 
-        {
-            //hit.gameObject.GetComponent<HurtCollider>().NotifyHit(this.hit)
+    //private void OnControllerColliderHit(ControllerColliderHit hit)
+    //{
+    //    if(hit.gameObject.CompareTag("Player")) 
+    //    {
+    //        int damage = this.GetComponent<HitCollider>().damage;
 
-            Debug.Log("HE TOCADO AL PLAYER");
-        }
-    }
+    //        hit.gameObject.GetComponent<HurtCollider>().NotifyHit(this., damage);
+
+    //        Debug.Log("HE TOCADO AL PLAYER");
+    //    }
+    //}
 }
