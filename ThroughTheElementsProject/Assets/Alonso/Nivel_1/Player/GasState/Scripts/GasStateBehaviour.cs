@@ -11,7 +11,6 @@ public class GasStateBehaviour : MonoBehaviour
     [SerializeField] InputActionReference Hability;
 
     public GameObject GasTrowed;
-
     public GameObject Fog;
 
     private Animator animator;
@@ -34,6 +33,8 @@ public class GasStateBehaviour : MonoBehaviour
         controller.gravity = -9.8f;
         controller.canJump = true;
         isOnGasState = false;
+        GasTrowed.gameObject.SetActive(false);
+        Fog.gameObject.SetActive(false);
     }
 
     void Update()

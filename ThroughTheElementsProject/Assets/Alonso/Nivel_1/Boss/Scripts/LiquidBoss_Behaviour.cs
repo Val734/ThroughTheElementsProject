@@ -151,8 +151,13 @@ public class LiquidBoss_Behaviour : MonoBehaviour
             {
                 OrbAttack();
             }
-            else if(attack == 2)
+            else if(attack == 2 )
             {
+                if(Player.GetComponent<CharacterController>().isGrounded)
+                {
+                    Debug.Log("ESTÁ EN EL SUELO ");
+                }
+
                 spikeTarget = Player;
                 _anim.SetTrigger("SpikeAttack");
             }
@@ -168,7 +173,7 @@ public class LiquidBoss_Behaviour : MonoBehaviour
             if (detectionTags.Contains(collider[i].tag))
             {
                 detectionPlayerTime += Time.deltaTime;
-                if (detectionPlayerTime >= maxDetectionPlayerTime)
+                if (detectionPlayerTime >= maxDetectionPlayerTime && canAttack)
                 {
                     canAttack = false;
                     state = StatesType.Exploding;
@@ -246,6 +251,6 @@ public class LiquidBoss_Behaviour : MonoBehaviour
 
     public void SpikeAttack()
     {
-        GameObject newSpike = Instantiate(SpikeAttackPrefab, spikeTarget.position, Quaternion.identity);
+        Instantiate(SpikeAttackPrefab, spikeTarget.position, Quaternion.identity);
     }
 }
