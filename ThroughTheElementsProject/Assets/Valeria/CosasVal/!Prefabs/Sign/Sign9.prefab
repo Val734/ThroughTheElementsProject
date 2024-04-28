@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2558641812782132758, guid: 31ec98c02e8f2f943a484908e7f569b0, type: 2}
+  - {fileID: -7570838092417864415, guid: 9e007cd70ea7de447a3deb4f2b05e2b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,19 +99,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Did you know that for activate your liquid state, you must to press '2',
-    and once transformed, if you press 'Q' you'll activate the Super Jump.
+  m_text: 'Press SPACE to jump. '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 31ec98c02e8f2f943a484908e7f569b0, type: 2}
-  m_sharedMaterial: {fileID: 2558641812782132758, guid: 31ec98c02e8f2f943a484908e7f569b0,
+  m_fontAsset: {fileID: 11400000, guid: 9e007cd70ea7de447a3deb4f2b05e2b1, type: 2}
+  m_sharedMaterial: {fileID: -7570838092417864415, guid: 9e007cd70ea7de447a3deb4f2b05e2b1,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282122065
-  m_fontColor: {r: 0.31793976, g: 1, b: 0.23113209, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -128,15 +127,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11.75
+  m_fontSize: 20
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 11
-  m_fontSizeMax: 72
+  m_fontSizeMax: 20
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 32
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -184,37 +183,37 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 19c16d9e6c0f97a42bcab6109896d61d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2652
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19c16d9e6c0f97a42bcab6109896d61d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2652
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19c16d9e6c0f97a42bcab6109896d61d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2652
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19c16d9e6c0f97a42bcab6109896d61d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.199404
+      value: 140.29
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19c16d9e6c0f97a42bcab6109896d61d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.895536
+      value: 6.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19c16d9e6c0f97a42bcab6109896d61d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.8616943
+      value: 49.81
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19c16d9e6c0f97a42bcab6109896d61d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.47812605
+      value: 0.318493
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19c16d9e6c0f97a42bcab6109896d61d,
         type: 3}
@@ -224,7 +223,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 19c16d9e6c0f97a42bcab6109896d61d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.87829125
+      value: 0.94792527
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19c16d9e6c0f97a42bcab6109896d61d,
         type: 3}
@@ -239,13 +238,23 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 19c16d9e6c0f97a42bcab6109896d61d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -122.874
+      value: 142.856
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19c16d9e6c0f97a42bcab6109896d61d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 19c16d9e6c0f97a42bcab6109896d61d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3daa330127e0a474e96d1edd65171deb, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 19c16d9e6c0f97a42bcab6109896d61d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e0a337d21b11bb4c9c47a1ccc00fd73, type: 2}
     - target: {fileID: 919132149155446097, guid: 19c16d9e6c0f97a42bcab6109896d61d,
         type: 3}
       propertyPath: m_Name
