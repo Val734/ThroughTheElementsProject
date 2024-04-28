@@ -14,6 +14,7 @@ public class CannonBall : MonoBehaviour
     {
         gameObject.GetComponent<Collider>().enabled = false;
         StartCoroutine(Coll());
+        LastCannon = Cannon;
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -51,14 +52,9 @@ public class CannonBall : MonoBehaviour
     IEnumerator CameraCannon()
     {
         yield return new WaitForSeconds(0.1f);
-        if (LastCannon != null)
-        {
-            LastCannon = Cannon;
-        }
-        else if(Cannon !=LastCannon)
+        if(Cannon != gameObject)
         {
             Cannon.GetComponent<CannonWorking>()._cam.gameObject.SetActive(false);
-            LastCannon = Cannon;
 
         }
         Destroy(gameObject);
