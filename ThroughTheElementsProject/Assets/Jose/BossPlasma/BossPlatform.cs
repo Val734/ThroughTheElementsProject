@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossPlatform : MonoBehaviour
 {
     public bool playerIsInPlatform;
+    public GameObject healthbar;
     public GameObject Escenary;
     public GameObject timeLine;
     private void OnTriggerEnter(Collider other)
@@ -12,6 +13,7 @@ public class BossPlatform : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             playerIsInPlatform = true;
+            healthbar.SetActive(true);
             timeLine.SetActive(true);  
             Escenary.SetActive(false);
         }

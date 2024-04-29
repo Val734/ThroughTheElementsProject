@@ -151,6 +151,8 @@ MonoBehaviour:
   Rock: {fileID: 5088785953716078452, guid: b31bb4b021ef65f4fbaf7f2d7e56f967, type: 3}
   Timeline2: {fileID: 0}
   Timeline3: {fileID: 0}
+  Timeline4: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!114 &2880693939634454668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,21 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fbcd426a46dea2479370b2f6d3f20b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onHit:
+  onHurt:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2659668774924275767}
-        m_TargetAssemblyTypeName: HealthBehaviourScript, Assembly-CSharp
-        m_MethodName: Damage
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2659668774924275767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,10 +183,11 @@ MonoBehaviour:
   OnDie:
     m_PersistentCalls:
       m_Calls: []
-  OnHurt:
+  GetHurt:
     m_PersistentCalls:
       m_Calls: []
   maxHealth: 30
+  healthbar: {fileID: 0}
   health: 0
   invulnerable: 0
 --- !u!1 &3476719683939561610
