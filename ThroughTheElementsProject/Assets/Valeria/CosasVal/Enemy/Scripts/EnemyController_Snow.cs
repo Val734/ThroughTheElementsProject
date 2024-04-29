@@ -7,6 +7,7 @@ public class EnemyController_Snow : EnemyController
     [SerializeField] CapsuleCollider capsuleCollider;
     [SerializeField] SphereCollider sphereCollider;
     [SerializeField] GameObject hitCollider;
+    [SerializeField] GameObject healthbar;
 
     bool activated;
     float localSpeed = 0f;
@@ -44,6 +45,7 @@ public class EnemyController_Snow : EnemyController
     IEnumerator ChangeColliders()
     {
         yield return new WaitForSeconds(1);
+        healthbar.SetActive(true);
         capsuleCollider.enabled = false;
         sphereCollider.enabled = true;
         characterController.enabled = true;
