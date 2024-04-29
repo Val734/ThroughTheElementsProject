@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 892306575797419132}
   - component: {fileID: 1852592282307074306}
   - component: {fileID: 8754468551907903249}
+  - component: {fileID: 71243466155908301}
   m_Layer: 0
   m_Name: PortalOne
   m_TagString: Untagged
@@ -100,8 +101,21 @@ MonoBehaviour:
         m_CallState: 2
   ChangeSceneAction: {fileID: -4989577344597039909, guid: 1b11652b82ec3fe489bbc311702f9d0f,
     type: 3}
-  navigateToNextScene: {fileID: 0}
+  gt: {fileID: 0}
   playerCanChangeScene: 0
+--- !u!114 &71243466155908301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516168718587668166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d9a63f78abb56479c2f853a72e46cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: Ending
 --- !u!1 &4130239556686452119
 GameObject:
   m_ObjectHideFlags: 0

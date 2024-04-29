@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 8903449741633459306}
   - component: {fileID: 7940522685210156137}
   - component: {fileID: 8654005705506364757}
+  - component: {fileID: 133653640085469316}
   m_Layer: 0
   m_Name: PortalEight
   m_TagString: Untagged
@@ -289,5 +290,18 @@ MonoBehaviour:
         m_CallState: 2
   ChangeSceneAction: {fileID: -4989577344597039909, guid: 1b11652b82ec3fe489bbc311702f9d0f,
     type: 3}
-  navigateToNextScene: {fileID: 0}
+  gt: {fileID: 0}
   playerCanChangeScene: 0
+--- !u!114 &133653640085469316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8125822979606793936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d9a63f78abb56479c2f853a72e46cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: Nivel_1
