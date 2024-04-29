@@ -239,11 +239,15 @@ public class BossBehaviour : MonoBehaviour
     {
         particleSystem.SetActive(true);
         yield return new WaitForSeconds(8f);
-        animator.SetTrigger("ChargeTrigger");
-        GameObject rock = Instantiate(Rock, new Vector3(Point[0].transform.position.x, Point[0].transform.position.y + 5, Point[0].transform.position.z), Quaternion.identity);
-        rock.GetComponent<Fracture>().Boss = gameObject;
+        if(fase != BossFase.fase2 || fase != BossFase.fase3)
+        {
+            animator.SetTrigger("ChargeTrigger");
+            GameObject rock = Instantiate(Rock, new Vector3(Point[0].transform.position.x, Point[0].transform.position.y + 5, Point[0].transform.position.z), Quaternion.identity);
+            rock.GetComponent<Fracture>().Boss = gameObject;
+
+            StartCoroutine(RestoreBoss(25, rock));
+        }
         
-        StartCoroutine(RestoreBoss(25,rock));
 
 
     }
@@ -260,11 +264,15 @@ public class BossBehaviour : MonoBehaviour
     }
     IEnumerator RestoreBoss(int seconds,GameObject rock)
     {
+
         yield return new WaitForSeconds(seconds);
         if(rock != null)
         {
             Destroy(rock);
-            gameObject.GetComponent<HealthBehaviour>().Heal(15);
+            if (fase != BossFase.fase2 || fase != BossFase.fase3)
+            {
+                gameObject.GetComponent<HealthBehaviour>().Heal(15);
+            }
             StopSpecialAttack();
 
         }

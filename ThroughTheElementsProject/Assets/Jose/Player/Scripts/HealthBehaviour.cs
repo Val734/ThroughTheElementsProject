@@ -37,14 +37,21 @@ public class HealthBehaviour : MonoBehaviour
             {
                 health -= damage;
                 GetHurt.Invoke();
-                healthbar.UpdateHealthbar(maxHealth, health);
+                if(healthbar != null)
+                {
+                    healthbar.UpdateHealthbar(maxHealth, health);
+
+                }
             }
         }
         if(health <= 0)
         {
             health = 0;
             OnDie.Invoke();
-            healthbar.UpdateHealthbar(maxHealth, health);
+            if (healthbar != null)
+            {
+                healthbar.UpdateHealthbar(maxHealth, health);
+            }
 
         }
 
@@ -52,6 +59,9 @@ public class HealthBehaviour : MonoBehaviour
     public void Heal(int heal)
     {
         health += heal;
-        healthbar.UpdateHealthbar(maxHealth, health);
+        if (healthbar != null)
+        {
+            healthbar.UpdateHealthbar(maxHealth, health);
+        }
     }
 }

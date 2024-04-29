@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpawnPointBehaviour : MonoBehaviour
 {
     [SerializeField] SpawnManager _spawnManager;
+    public UnityEvent OnSpawn;
+
 
     private void Awake()
     {
@@ -17,6 +20,7 @@ public class SpawnPointBehaviour : MonoBehaviour
         {
             _spawnManager.ChangeSpawnPoint(transform);
             gameObject.SetActive(false);
+            OnSpawn.Invoke();
         }
     }
 }
