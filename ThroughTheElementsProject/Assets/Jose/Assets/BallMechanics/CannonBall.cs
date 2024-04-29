@@ -7,14 +7,13 @@ public class CannonBall : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Cannon;
-    private GameObject LastCannon;
+    private GameObject NextCannon;
 
 
     public void Start()
     {
         gameObject.GetComponent<Collider>().enabled = false;
         StartCoroutine(Coll());
-        LastCannon = Cannon;
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -25,7 +24,7 @@ public class CannonBall : MonoBehaviour
             Player.SetActive(true);
             Cannon.GetComponent<CannonWorking>()._cam.gameObject.SetActive(false);
             Player.GetComponentInChildren<SolidStateBehaviour>().isOnBallTransformation = false;
-            LastCannon = null;
+            NextCannon = null;
             Destroy(gameObject);
 
         }
@@ -40,6 +39,7 @@ public class CannonBall : MonoBehaviour
             //Player.SetActive(true);
             Player.GetComponentInChildren<SolidStateBehaviour>().isOnBallTransformation = true;
             other.gameObject.GetComponentInChildren<CannonWorking>().CannonPlayer(Player);
+            NextCannon = other.gameObject;
             StartCoroutine(CameraCannon()); 
         }
     }
@@ -52,8 +52,9 @@ public class CannonBall : MonoBehaviour
     IEnumerator CameraCannon()
     {
         yield return new WaitForSeconds(0.1f);
-        if(Cannon != gameObject)
+        if (Cannon.gameObject != NextCannon.gameObject)
         {
+
             Cannon.GetComponent<CannonWorking>()._cam.gameObject.SetActive(false);
 
         }
