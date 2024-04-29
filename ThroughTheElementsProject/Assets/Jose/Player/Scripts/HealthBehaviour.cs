@@ -59,9 +59,14 @@ public class HealthBehaviour : MonoBehaviour
     public void Heal(int heal)
     {
         health += heal;
-        if (healthbar != null)
+        if (healthbar != null )
         {
+            if(health>= maxHealth)
+            {
+                health=maxHealth;
+            }
             healthbar.UpdateHealthbar(maxHealth, health);
+
         }
     }
 }
