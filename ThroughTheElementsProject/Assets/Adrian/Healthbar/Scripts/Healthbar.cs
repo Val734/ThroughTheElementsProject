@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class Healthbar : MonoBehaviour
 {
     [SerializeField] Image healthbarSprite;
-    [SerializeField] float reduceSpeed = 2f;
+    [SerializeField] float reduceSpeed = 1f;
+    [SerializeField] bool playerHealthbar;
     float target = 1f;
     private Camera camera;
     private void Awake()
@@ -15,7 +16,10 @@ public class Healthbar : MonoBehaviour
     }
     private void Update()
     {
-        transform.rotation = Quaternion.LookRotation(transform.position - camera.transform.position);
+        if(!playerHealthbar)
+        {
+            transform.rotation = Quaternion.LookRotation(transform.position - camera.transform.position);
+        }
         healthbarSprite.fillAmount = Mathf.MoveTowards(healthbarSprite.fillAmount, target, reduceSpeed);
     }
     public void UpdateHealthbar(float maxHealth, float currentHealth)

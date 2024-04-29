@@ -11,7 +11,7 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject StaminaText;
+    public Healthbar StaminaBar;
     [SerializeField] public float stamina;
     [SerializeField] public float maxStamina=50;
    // [SerializeField] ParticleSystem frost;
@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Debug.Log(playerIsHitted);
-        StaminaText.GetComponent<TextMeshProUGUI>().text = "Stamina:" + "" + Mathf.FloorToInt(stamina);
+        StaminaBar.UpdateHealthbar(maxStamina, stamina);
 
         UpdateMovement();
         UpdateVerticalVelocity();
