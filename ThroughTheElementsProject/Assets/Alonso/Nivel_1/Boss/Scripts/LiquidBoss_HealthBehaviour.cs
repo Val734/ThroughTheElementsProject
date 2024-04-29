@@ -16,7 +16,7 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
     [SerializeField] int timeshealed = 0;
     [SerializeField] int maxTimesHealed = 2;
 
-
+    [SerializeField] Healthbar healthbar;
     [SerializeField] int hitsRecived;
 
     [Header("Debug Settings")]
@@ -42,6 +42,7 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
     {
         _hCollider = GetComponentInChildren<HurtCollider>();
         _boss = GetComponent<LiquidBoss_Behaviour>();
+        healthbar.UpdateHealthbar(maxLives, lives);
     }
 
     private void OnEnable()
@@ -55,7 +56,7 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
     public void OnHit(int damage)
     {
         hitsRecived++;
-        if(hitsRecived <= 2)
+        if (hitsRecived <= 2)
         {
             LoseHealth();
             Debug.Log("El ON HIT");
@@ -71,6 +72,7 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
         if(_boss.state == LiquidBoss_Behaviour.StatesType.OnBattle || _boss.state == LiquidBoss_Behaviour.StatesType.Recovering)
         {
             lives--;
+            healthbar.UpdateHealthbar(maxLives, lives);
             Debug.Log("VIDAS: " + lives);
             if (lives <= 0)
             {
@@ -102,6 +104,7 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
                 {
                     lives++;
                     timeshealed++;
+                    healthbar.UpdateHealthbar(maxLives, lives);
                 }
                 if (lives > maxLives)
                 {

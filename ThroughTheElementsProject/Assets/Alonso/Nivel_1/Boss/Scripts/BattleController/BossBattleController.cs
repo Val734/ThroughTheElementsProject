@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossBattleController : MonoBehaviour
 {
     public LiquidBoss_Behaviour boss;
+    public GameObject healthbar;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class BossBattleController : MonoBehaviour
             Debug.Log("El Jugador Ha pasado por aqui");
             boss.battleStarted = true;
             boss.playerOnArea = true;
+            healthbar.SetActive(true);
         }
     }
 }
