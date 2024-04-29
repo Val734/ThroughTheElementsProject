@@ -11,6 +11,8 @@ public class EnemyController_Thrower : EnemyController
     [Header("Atacking Settings")]
     [SerializeField] GameObject projectilePrefab;
 
+    [SerializeField] float throwTime; // EL JOSE TIENE QUE PONER 3.5F
+
     float localSpeed = 2f;
 
     [SerializeField] public float detectionDistance = 5f;
@@ -61,7 +63,7 @@ public class EnemyController_Thrower : EnemyController
 
         animator.SetTrigger("AttackTrigger");
         localSpeed = 0;
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(throwTime);
         GameObject projectile = Instantiate(projectilePrefab, transform.forward + gameObject.transform.position, Quaternion.identity);
         isAttacking = false;
         if (isBubbleThrower)

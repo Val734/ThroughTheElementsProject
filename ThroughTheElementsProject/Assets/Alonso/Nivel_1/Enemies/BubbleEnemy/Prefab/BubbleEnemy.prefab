@@ -236,6 +236,7 @@ MonoBehaviour:
   isRobotThrower: 0
   projectilePrefab: {fileID: 2567851599757480715, guid: b1c8d76ac3d4b0c4d9728a1d466ac319,
     type: 3}
+  throwTime: 0.7
   detectionDistance: 5
   detectionLayerMask:
     serializedVersion: 2
@@ -375,6 +376,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4175514268155605475, guid: 8694f5a378b288c419a3d166adb4c8b0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c1f1b369fceeebc499cb830d90ef3059, type: 2}
+    - target: {fileID: 4175514268155605475, guid: 8694f5a378b288c419a3d166adb4c8b0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6fc8a3aa855d3ff448e2bf03a190a963, type: 2}
+    - target: {fileID: 4175514268155605475, guid: 8694f5a378b288c419a3d166adb4c8b0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 822a81481020fa441b9faee6aceaaca6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
