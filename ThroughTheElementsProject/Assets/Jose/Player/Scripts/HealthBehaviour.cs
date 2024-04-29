@@ -8,6 +8,7 @@ public class HealthBehaviour : MonoBehaviour
     [SerializeField] public UnityEvent OnDie;
     [SerializeField] public UnityEvent GetHurt;
     [SerializeField] public int maxHealth;
+    [SerializeField] Healthbar healthbar;
     public int health;
     public bool invulnerable;
 
@@ -36,12 +37,14 @@ public class HealthBehaviour : MonoBehaviour
             {
                 health -= damage;
                 GetHurt.Invoke();
+                healthbar.UpdateHealthbar(maxHealth, health);
             }
         }
         if(health <= 0)
         {
             health = 0;
             OnDie.Invoke();
+            healthbar.UpdateHealthbar(maxHealth, health);
 
         }
 
@@ -49,5 +52,6 @@ public class HealthBehaviour : MonoBehaviour
     public void Heal(int heal)
     {
         health += heal;
+        healthbar.UpdateHealthbar(maxHealth, health);
     }
 }
