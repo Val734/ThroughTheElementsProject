@@ -70,7 +70,7 @@ public class LiquidBoss_Behaviour : MonoBehaviour
         PlayerKilled
     }
 
-    public StatesType state = StatesType.WaitingBattle;
+    public StatesType state;
 
     private void Awake()
     {
@@ -79,6 +79,7 @@ public class LiquidBoss_Behaviour : MonoBehaviour
         battleStarted = false;
         canAttack = true;
 
+        state = StatesType.WaitingBattle;
         currentattackIntervalTime = attackIntervalTime;
     }
 
@@ -89,6 +90,8 @@ public class LiquidBoss_Behaviour : MonoBehaviour
 
     public void Update()
     {
+        Debug.Log("El boss está "+state);
+
         if(playerOnArea)
         {
             switch (state)
@@ -167,17 +170,20 @@ public class LiquidBoss_Behaviour : MonoBehaviour
 
     public void CheckDistance()
     {
-        Collider[] collider = Physics.OverlapSphere(DistanceChecker.position, detectionDistance, detectionLayerMask);
-        for (int i = 0; i < collider.Length; i++)
+        if(canAttack)
         {
-            if (detectionTags.Contains(collider[i].tag))
+            Collider[] collider = Physics.OverlapSphere(DistanceChecker.position, detectionDistance, detectionLayerMask);
+            for (int i = 0; i < collider.Length; i++)
             {
-                detectionPlayerTime += Time.deltaTime;
-                if (detectionPlayerTime >= maxDetectionPlayerTime && canAttack)
+                if (detectionTags.Contains(collider[i].tag))
                 {
-                    canAttack = false;
-                    state = StatesType.Exploding;
-                    detectionPlayerTime = 0;
+                    detectionPlayerTime += Time.deltaTime;
+                    if (detectionPlayerTime >= maxDetectionPlayerTime && canAttack)
+                    {
+                        canAttack = false;
+                        state = StatesType.Exploding;
+                        detectionPlayerTime = 0;
+                    }
                 }
             }
         }
@@ -197,10 +203,13 @@ public class LiquidBoss_Behaviour : MonoBehaviour
     }
 
     public void Exploding()
-    {
-        _anim.SetTrigger("WaveAttack");
-        Instantiate(bodyOrbPrefab, bodyOrbSpawn.position, Quaternion.identity);
-        state = StatesType.Recovering;
+    {   
+        if(canAttack)
+        {
+            _anim.SetTrigger("WaveAttack");
+            Instantiate(bodyOrbPrefab, bodyOrbSpawn.position, Quaternion.identity);
+            state = StatesType.Recovering;
+        }
     }
 
     public void Recovering()
@@ -210,7 +219,6 @@ public class LiquidBoss_Behaviour : MonoBehaviour
             _bossHealthBehaviour.Healing();
         }
     }
-
 
     public void Dead()
     {

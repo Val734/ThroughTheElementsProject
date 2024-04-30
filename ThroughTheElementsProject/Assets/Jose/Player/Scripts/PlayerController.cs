@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
     private float attackTime;
     private void Update()
     {
-        Debug.Log(playerIsHitted);
+        //Debug.Log(playerIsHitted);
         StaminaBar.UpdateHealthbar(maxStamina, stamina);
 
         UpdateMovement();

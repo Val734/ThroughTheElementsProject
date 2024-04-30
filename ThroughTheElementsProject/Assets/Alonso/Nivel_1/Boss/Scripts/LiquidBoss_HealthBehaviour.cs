@@ -25,19 +25,6 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
     HurtCollider _hCollider;
     LiquidBoss_Behaviour _boss;
 
-    private void OnValidate()
-    {
-        if(debugHit) 
-        {
-            Prueba();
-        }
-    }
-
-    private void Prueba()
-    {
-        _hCollider.onHurt.Invoke(1);
-    }
-
     private void Awake()
     {
         _hCollider = GetComponentInChildren<HurtCollider>();
@@ -73,7 +60,6 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
         {
             lives--;
             healthbar.UpdateHealthbar(maxLives, lives);
-            Debug.Log("VIDAS: " + lives);
             if (lives <= 0)
             {
                 _boss.state = LiquidBoss_Behaviour.StatesType.Killed;
@@ -98,10 +84,11 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
         {
             if(timeshealed < maxTimesHealed)
             {
-                int probabilityOfBeingCured = Random.Range(0, 10);
+                int probabilityOfBeingCured = Random.Range(0, 20);
 
                 if (probabilityOfBeingCured < 2)
                 {
+                    Debug.Log("ME HE CURADO");
                     lives++;
                     timeshealed++;
                     healthbar.UpdateHealthbar(maxLives, lives);

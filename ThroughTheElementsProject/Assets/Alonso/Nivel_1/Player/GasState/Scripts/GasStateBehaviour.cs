@@ -26,6 +26,7 @@ public class GasStateBehaviour : MonoBehaviour
         isOnGasState = false;
         TransformAction.action.Enable();
         Hability.action.Enable();
+        GasTrowed.gameObject.SetActive(true);
     }
 
     private void OnDisable()
