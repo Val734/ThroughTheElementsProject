@@ -91,7 +91,7 @@ public class EnemyController_Robot : EnemyController
         canAttack = false;
         gameObject.GetComponent<HealthBehaviour>().healthbar = null;
         Visuals.GetComponent<Rigidbody>().isKinematic=false;
-        Visuals.GetComponent<Collider>().enabled=false;
+        Visuals.GetComponent<BoxCollider>().enabled=true;
         for (int i = 0; i < Visuals.transform.childCount; i++)
         {
             Transform child = Visuals.transform.GetChild(i);

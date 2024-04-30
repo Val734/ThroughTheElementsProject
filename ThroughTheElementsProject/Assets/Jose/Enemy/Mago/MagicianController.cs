@@ -16,6 +16,10 @@ public class MagicianController : MonoBehaviour
     public GameObject GravitySphere;
     public GameObject BigGravitySphere;
 
+    public GameObject Visuals;
+
+    public bool isAlive;
+
     public enum OrientationMode
     {
         CameraForward,
@@ -34,9 +38,27 @@ public class MagicianController : MonoBehaviour
 
     private void Awake()
     {
+        isAlive = true;
         animator =  GetComponentInChildren<Animator>();
         canAttack = true;
         canCreateGravity = true;
+
+        for (int i = 0; i < Visuals.transform.childCount; i++)
+        {
+            Transform child = Visuals.transform.GetChild(i);
+
+            Collider childCollider = child.GetComponent<Collider>();
+            if (childCollider != null)
+            {
+                childCollider.enabled = false;
+            }
+
+            Rigidbody childRigidbody = child.GetComponent<Rigidbody>();
+            if (childRigidbody != null)
+            {
+                childRigidbody.isKinematic = true;
+            }
+        }
     }
     private void Update()
     {
@@ -47,22 +69,26 @@ public class MagicianController : MonoBehaviour
 
     private void GravityToPlayer()
     {
-        Collider[] colliders2 = Physics.OverlapSphere(Detector.transform.position, detectionDistance2, detectionLayerMask);
-        for (int i = 0; i < colliders2.Length; i++)
+        if(isAlive)
         {
-            if (colliders2[i].CompareTag("Player") && canCreateGravity)
+            Collider[] colliders2 = Physics.OverlapSphere(Detector.transform.position, detectionDistance2, detectionLayerMask);
+            for (int i = 0; i < colliders2.Length; i++)
             {
-                if(canAttack==false)
+                if (colliders2[i].CompareTag("Player") && canCreateGravity)
                 {
-                    animator.SetTrigger("GravityTrigger");
-                    GameObject bigGravitySphere = Instantiate(BigGravitySphere, colliders2[i].transform.position, Quaternion.identity);
+                    if (canAttack == false)
+                    {
+                        animator.SetTrigger("GravityTrigger");
+                        GameObject bigGravitySphere = Instantiate(BigGravitySphere, colliders2[i].transform.position, Quaternion.identity);
 
-                    canCreateGravity = false;
-                    StartCoroutine(RestoreGravity());
+                        canCreateGravity = false;
+                        StartCoroutine(RestoreGravity());
+                    }
+
                 }
-                
             }
         }
+        
     }
 
     private void DetectPlayer()
@@ -72,9 +98,13 @@ public class MagicianController : MonoBehaviour
         {
             if (colliders[i].CompareTag("Player"))
             {
-                Player = colliders[i].gameObject;
-                orientationMode=OrientationMode.ToTarget;
-                Attack();
+                if(isAlive)
+                {
+                    Player = colliders[i].gameObject;
+                    orientationMode = OrientationMode.ToTarget;
+                    Attack();
+                }
+                
             }
         }
         
@@ -151,4 +181,30 @@ public class MagicianController : MonoBehaviour
         littleGravitySphere.GetComponent<GravitySphere>().ThrowBall(direction);
         canAttack=true;
     }
+
+    public void DestroyedMagician()
+    {
+        isAlive = false;
+        canCreateGravity=false;
+        canAttack = false;
+        gameObject.GetComponent<CharacterController>().enabled = false;
+        gameObject.GetComponent<HealthBehaviour>().healthbar = null;
+        for (int i = 0; i < Visuals.transform.childCount; i++)
+        {
+            Transform child = Visuals.transform.GetChild(i);
+
+            Collider childCollider = child.GetComponent<Collider>();
+            if (childCollider != null)
+            {
+                childCollider.enabled = true;
+            }
+
+            Rigidbody childRigidbody = child.GetComponent<Rigidbody>();
+            if (childRigidbody != null)
+            {
+                childRigidbody.isKinematic = false;
+            }
+        }
+    }
+
 }
