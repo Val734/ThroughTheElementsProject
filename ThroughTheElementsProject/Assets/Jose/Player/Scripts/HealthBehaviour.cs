@@ -8,7 +8,7 @@ public class HealthBehaviour : MonoBehaviour
     [SerializeField] public UnityEvent OnDie;
     [SerializeField] public UnityEvent GetHurt;
     [SerializeField] public int maxHealth;
-    [SerializeField] Healthbar healthbar;
+    [SerializeField] public Healthbar healthbar;
     public int health;
     public bool invulnerable;
 
