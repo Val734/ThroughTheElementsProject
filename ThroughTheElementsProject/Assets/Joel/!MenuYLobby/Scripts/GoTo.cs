@@ -8,7 +8,7 @@ public class GoTo : MonoBehaviour
     public string scene;
    public void GoToScene()
    {
-
+        Time.timeScale = 1.0f;
         LevelLoader.OnLoadLevel(scene);
             
    }
