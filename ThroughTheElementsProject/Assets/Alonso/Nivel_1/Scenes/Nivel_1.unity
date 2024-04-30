@@ -840,7 +840,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0000055369014, y: 0.773342, z: -0.6339891, w: 0.0000067539304}
+  m_LocalRotation: {x: 0.00000554781, y: 0.773342, z: -0.6339891, w: 0.0000067672368}
   m_LocalPosition: {x: 26.11998, y: 24.27, z: 101.28999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1006,13 +1006,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2278642041065190759, guid: dbcf46dd9a9953f4c96b9d8ef9698a2d,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278642041065190759, guid: dbcf46dd9a9953f4c96b9d8ef9698a2d,
+        type: 3}
       propertyPath: m_TagString
       value: PortalFive
       objectReference: {fileID: 0}
     - target: {fileID: 3618252621839932236, guid: dbcf46dd9a9953f4c96b9d8ef9698a2d,
         type: 3}
+      propertyPath: gt
+      value: 
+      objectReference: {fileID: 1689373925}
+    - target: {fileID: 3618252621839932236, guid: dbcf46dd9a9953f4c96b9d8ef9698a2d,
+        type: 3}
       propertyPath: playerCanChangeScene
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3618252621839932236, guid: dbcf46dd9a9953f4c96b9d8ef9698a2d,
         type: 3}
@@ -1024,11 +1034,22 @@ PrefabInstance:
       propertyPath: NotChangeNextScene.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1210597774}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5246509152509886773, guid: dbcf46dd9a9953f4c96b9d8ef9698a2d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2278642041065190759, guid: dbcf46dd9a9953f4c96b9d8ef9698a2d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1689373925}
   m_SourcePrefab: {fileID: 100100000, guid: dbcf46dd9a9953f4c96b9d8ef9698a2d, type: 3}
+--- !u!1 &337203492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2278642041065190759, guid: dbcf46dd9a9953f4c96b9d8ef9698a2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 337203491}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &345052139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2181,12 +2202,12 @@ PrefabInstance:
     - target: {fileID: 4245597458435873279, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000006757257
+      value: 0.00000676391
       objectReference: {fileID: 0}
     - target: {fileID: 4245597458435873279, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000005539628
+      value: 0.0000055450823
       objectReference: {fileID: 0}
     - target: {fileID: 4245597458435873279, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
@@ -2216,12 +2237,12 @@ PrefabInstance:
     - target: {fileID: 5951546926392677722, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000007096499
+      value: 0.000007039142
       objectReference: {fileID: 0}
     - target: {fileID: 5951546926392677722, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00000516569
+      value: 0.0000051239394
       objectReference: {fileID: 0}
     - target: {fileID: 5951546926392677722, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
@@ -3621,6 +3642,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 337203491}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1689373925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337203492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d9a63f78abb56479c2f853a72e46cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: MainMenu
 --- !u!1 &1727846958 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1855710351377478, guid: 5c9211eb71cff4f4996a21d92317f601,
