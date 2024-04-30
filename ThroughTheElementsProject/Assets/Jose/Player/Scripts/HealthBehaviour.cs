@@ -69,4 +69,9 @@ public class HealthBehaviour : MonoBehaviour
 
         }
     }
+
+    public void RestoreHealth()
+    {
+        health = maxHealth;
+    }
 }
