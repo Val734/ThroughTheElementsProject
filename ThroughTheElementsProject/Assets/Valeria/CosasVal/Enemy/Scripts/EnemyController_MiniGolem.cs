@@ -92,17 +92,17 @@ public class EnemyController_MiniGolem : EnemyController
         {
             localSpeed = 2f;
         }
-        else if (!isAlive)
+        
+        if (!isAlive)
         {
             disappear -= Time.deltaTime;
             state = State.Dead;
             if (disappear < 0)
             {
-                Debug.Log("activar particulas para que la palme y se vaya alv");
-                gameObject.SetActive(false);
+                Debug.Log("activar particulas para que la palme y se vayaaaa");
+                Destroy(gameObject);
             }
         }
-        
 
         UpdateOrientation();
 
@@ -129,6 +129,7 @@ public class EnemyController_MiniGolem : EnemyController
     public void Die()
     {
         animator.SetTrigger("Die");
+        hitCollider.gameObject.SetActive(false);
         isAlive = false;
         localSpeed = 0;
     }

@@ -23,7 +23,7 @@ public class SpawnManager : MonoBehaviour
     {
         if(PRUEBAS) 
         {
-            RespawnPlayer();
+            //RespawnPlayer();
         }
     }
 
@@ -48,13 +48,13 @@ public class SpawnManager : MonoBehaviour
     }
 
 
-    public void RespawnPlayer()
-    {
-        Player.gameObject.SetActive(false);
-        Player.gameObject.transform.position = currentSpawnPoint.transform.position;
-        Player.gameObject.GetComponent<PlayerController>().RestorePlayer();
-        Player.gameObject.SetActive(true);
-    }
+   // public void RespawnPlayer()
+   // {
+   //     Player.gameObject.SetActive(false);
+   //     Player.gameObject.transform.position = currentSpawnPoint.transform.position;
+   //     Player.gameObject.GetComponent<PlayerController>().RestorePlayer();
+   //     Player.gameObject.SetActive(true);
+   // }
 
     public void DiePlayer()
     {

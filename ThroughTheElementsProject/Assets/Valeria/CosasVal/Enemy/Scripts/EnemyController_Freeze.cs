@@ -59,7 +59,7 @@ public class EnemyController_Freeze : EnemyController
             if (disappear < 0)
             {
                 Debug.Log("activar particulas para que la palme y se vaya alv");
-                gameObject.SetActive(false);
+                Destroy(gameObject);
             }
         }
         UpdateOrientation();
