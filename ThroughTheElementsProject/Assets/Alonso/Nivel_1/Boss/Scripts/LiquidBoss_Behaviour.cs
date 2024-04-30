@@ -48,6 +48,7 @@ public class LiquidBoss_Behaviour : MonoBehaviour
     [Header("Behaviour Settings")]
     public bool battleStarted; // ESTE ES PARA DETERMINAR CUANDO EMPIEZA EL BOSS A PEGARTE
     public bool canAttack; // ESTE BOOLEANO TENDRÁ QUE DESACTIVARSE CADA VEZ QUE UNA ANIMACIÓN SE TERMINA PARA QUE PUEDA HACER OTRO ATAQUE 
+    public bool canHeal; // ESTE BOOLEANO TENDRÁ QUE DESACTIVARSE PARA EVITAR QUE EL BOSS SE CURE DEMASIADAS VECES
     public bool playerOnArea; // ESTE BOOLEANO SE UTILIZA PARA VER QUE EL PLAYER ESTÁ DENTRO DE LA ZONA Y ASÍ CUANDO MUERA PODRÁ VOLVER
     
     public float initialWaitingTime; // ESTE TIEMPO SIRVE PARA PODER EMPEZAR LA PARTIDA UN POCO DESPUÉS DE QUE EL JUGADOR HAYA PASADO AL CAMPO DE BATALLA 
@@ -206,9 +207,10 @@ public class LiquidBoss_Behaviour : MonoBehaviour
     {   
         if(canAttack)
         {
+            state = StatesType.Recovering;
             _anim.SetTrigger("WaveAttack");
             Instantiate(bodyOrbPrefab, bodyOrbSpawn.position, Quaternion.identity);
-            state = StatesType.Recovering;
+            canAttack = false;
         }
     }
 

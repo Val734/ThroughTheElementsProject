@@ -47,9 +47,7 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
         {
             LoseHealth();
             Debug.Log("El ON HIT");
-        }
-        else
-        {
+            hitsRecived = 0;
             _boss.state = LiquidBoss_Behaviour.StatesType.Exploding;
         }
     }
