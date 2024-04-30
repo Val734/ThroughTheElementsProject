@@ -72,7 +72,7 @@ public class EnemyController_Robot : EnemyController
         yield return new WaitForSeconds(throwTime);
         GameObject projectile = Instantiate(projectilePrefab, transform.forward + gameObject.transform.position, Quaternion.identity);
         isAttacking = false;
-        if(isRobotThrower && canAttack)
+        if(isRobotThrower && canAttack && state != State.Dead)
         {
             Vector3 direction = Player.transform.position - gameObject.transform.position;
             projectile.GetComponent<Rigidbody>().AddForce(direction*2.5f, ForceMode.VelocityChange);

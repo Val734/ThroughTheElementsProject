@@ -17,6 +17,7 @@ public class MagicianController : MonoBehaviour
     public GameObject BigGravitySphere;
 
     public GameObject Visuals;
+    public GameObject MagicCircle;
 
     public bool isAlive;
 
@@ -43,40 +44,27 @@ public class MagicianController : MonoBehaviour
         canAttack = true;
         canCreateGravity = true;
 
-        for (int i = 0; i < Visuals.transform.childCount; i++)
-        {
-            Transform child = Visuals.transform.GetChild(i);
-
-            Collider childCollider = child.GetComponent<Collider>();
-            if (childCollider != null)
-            {
-                childCollider.enabled = false;
-            }
-
-            Rigidbody childRigidbody = child.GetComponent<Rigidbody>();
-            if (childRigidbody != null)
-            {
-                childRigidbody.isKinematic = true;
-            }
-        }
+        UnRagDoll();
     }
     private void Update()
     {
-        UpdateOrientation();
-        GravityToPlayer();
-        DetectPlayer();
+        if(isAlive)
+        {
+            UpdateOrientation();
+            GravityToPlayer();
+            DetectPlayer();
+        }
+        
     }
 
     private void GravityToPlayer()
     {
-        if(isAlive)
-        {
             Collider[] colliders2 = Physics.OverlapSphere(Detector.transform.position, detectionDistance2, detectionLayerMask);
             for (int i = 0; i < colliders2.Length; i++)
             {
                 if (colliders2[i].CompareTag("Player") && canCreateGravity)
                 {
-                    if (canAttack == false)
+                    if (canAttack == false && isAlive)
                     {
                         animator.SetTrigger("GravityTrigger");
                         GameObject bigGravitySphere = Instantiate(BigGravitySphere, colliders2[i].transform.position, Quaternion.identity);
@@ -87,26 +75,28 @@ public class MagicianController : MonoBehaviour
 
                 }
             }
-        }
+        
         
     }
 
     private void DetectPlayer()
     {
-        Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, detectionDistance, detectionLayerMask);
-        for (int i = 0; i < colliders.Length; i++)
-        {
-            if (colliders[i].CompareTag("Player"))
+            Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, detectionDistance, detectionLayerMask);
+            for (int i = 0; i < colliders.Length; i++)
             {
-                if(isAlive)
+                if (colliders[i].CompareTag("Player"))
                 {
-                    Player = colliders[i].gameObject;
-                    orientationMode = OrientationMode.ToTarget;
-                    Attack();
+                    if (isAlive)
+                    {
+                        Player = colliders[i].gameObject;
+                        orientationMode = OrientationMode.ToTarget;
+                        Attack();
+                    }
+
                 }
-                
             }
-        }
+        
+        
         
 
     }
@@ -145,7 +135,7 @@ public class MagicianController : MonoBehaviour
 
     private void Attack()
     {
-        if(canAttack)
+        if(canAttack && isAlive)
         {
             
             StartCoroutine(RestartAttack());
@@ -175,36 +165,59 @@ public class MagicianController : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         animator.SetTrigger("AttackTrigger");
-        yield return new WaitForSeconds(2);            
-        GameObject littleGravitySphere = Instantiate(GravitySphere, transform.position, Quaternion.identity);
-        Vector3 direction = Player.transform.position - gameObject.transform.position;
-        littleGravitySphere.GetComponent<GravitySphere>().ThrowBall(direction);
-        canAttack=true;
+        yield return new WaitForSeconds(2);  
+        if(isAlive)
+        {
+            GameObject littleGravitySphere = Instantiate(GravitySphere, transform.position, Quaternion.identity);
+            Vector3 direction = Player.transform.position - gameObject.transform.position;
+            littleGravitySphere.GetComponent<GravitySphere>().ThrowBall(direction);
+            canAttack = true;
+        }
+            
+        
+        
     }
 
     public void DestroyedMagician()
     {
-        isAlive = false;
-        canCreateGravity=false;
         canAttack = false;
+        orientationMode = OrientationMode.CameraForward;
+        isAlive = false;
+        Debug.Log(isAlive);
+        MagicCircle.SetActive(false);
         gameObject.GetComponent<CharacterController>().enabled = false;
         gameObject.GetComponent<HealthBehaviour>().healthbar = null;
-        for (int i = 0; i < Visuals.transform.childCount; i++)
-        {
-            Transform child = Visuals.transform.GetChild(i);
 
-            Collider childCollider = child.GetComponent<Collider>();
-            if (childCollider != null)
-            {
-                childCollider.enabled = true;
-            }
-
-            Rigidbody childRigidbody = child.GetComponent<Rigidbody>();
-            if (childRigidbody != null)
-            {
-                childRigidbody.isKinematic = false;
-            }
-        }
+        Ragdollize();
     }
+    private void UnRagDoll()
+    {
+        Collider[] coll = Visuals.GetComponentsInChildren<Collider>();
+        Rigidbody[] rigid = Visuals.GetComponentsInChildren<Rigidbody>();
 
+        for (int i = 0; i < coll.Length; i++)
+        {
+            coll[i].enabled = false;
+            rigid[i].isKinematic = true;
+        }
+
+        Debug.Log("Hola");
+        animator.enabled = true;
+
+    }
+    private void Ragdollize()
+    {
+        //Activa collider y rigbody
+        //Animator Disable
+        Collider[] coll = Visuals.GetComponentsInChildren<Collider>();
+        Rigidbody[] rigid = Visuals.GetComponentsInChildren<Rigidbody>();
+
+        for (int i = 0; i < coll.Length; i++)
+        {
+            coll[i].enabled = true;
+            rigid[i].isKinematic = false;
+        }
+        animator.enabled = false;
+
+    }
 }
