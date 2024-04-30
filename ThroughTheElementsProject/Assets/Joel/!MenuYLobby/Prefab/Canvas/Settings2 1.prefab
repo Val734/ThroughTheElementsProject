@@ -3308,7 +3308,6 @@ GameObject:
   - component: {fileID: 5457263608165511925}
   - component: {fileID: 5494692732271789264}
   - component: {fileID: 2535178258167993659}
-  - component: {fileID: 7273091999960560490}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3430,19 +3429,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7273091999960560490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6297114043603474725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc4ff2bc5914da9419c03f054416febf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene: MainMenu
 --- !u!1 &6519135462399376491
 GameObject:
   m_ObjectHideFlags: 0
