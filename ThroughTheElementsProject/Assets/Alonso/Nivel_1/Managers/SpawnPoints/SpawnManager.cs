@@ -50,17 +50,17 @@ public class SpawnManager : MonoBehaviour
 
     public void RespawnPlayer()
     {
-        Player.gameObject.GetComponent<CharacterController>().enabled = false; 
-        Player.position = currentSpawnPoint.position;
-        PRUEBAS = false;
-        Player.gameObject.GetComponent<CharacterController>().enabled = true;
-        Debug.Log("eeeeeeeeeeeeeeee");
+        Player.gameObject.SetActive(false);
+        Player.gameObject.transform.position = currentSpawnPoint.transform.position;
+        Player.gameObject.GetComponent<PlayerController>().RestorePlayer();
+        Player.gameObject.SetActive(true);
     }
 
     public void DiePlayer()
     {
         Debug.Log("Hola");
         Player.gameObject.SetActive(false);
+        Player.gameObject.GetComponent<HealthBehaviour>().RestoreHealth();
         Player.gameObject.transform.position = currentSpawnPoint.transform.position;
         Player.gameObject.GetComponent<PlayerController>().RestorePlayer();
         Player.gameObject.SetActive(true);

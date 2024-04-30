@@ -10,7 +10,7 @@ public class HurtCollider : MonoBehaviour
     internal void NotifyHit(HitCollider hitCollider, int damage)
     {
         onHurt.Invoke(damage);
-        Debug.Log("ON HURT");
+        Debug.Log(damage);
 
     }
     public void OnDestroy()

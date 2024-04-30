@@ -46,7 +46,6 @@ public class HealthBehaviour : MonoBehaviour
         }
         if(health <= 0)
         {
-            health = 0;
             OnDie.Invoke();
             if (healthbar != null)
             {
@@ -73,5 +72,15 @@ public class HealthBehaviour : MonoBehaviour
     public void RestoreHealth()
     {
         health = maxHealth;
+        if (healthbar != null)
+        {
+            healthbar.UpdateHealthbar(maxHealth, health);
+        }
     }
+
+    private void OnDisable()
+    {
+        hurtCollider.onHurt.RemoveListener(Damage);
+    }
+
 }
