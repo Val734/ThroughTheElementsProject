@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0041125403, g: 0.009480359, b: 0.028650783, a: 1}
+  m_IndirectSpecularColor: {r: 0.0041125403, g: 0.009480342, b: 0.028650783, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -609,6 +609,21 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3132927756000558183, guid: d7e7bf53c4424aa41adf1e622f8eb536,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132927756000558183, guid: d7e7bf53c4424aa41adf1e622f8eb536,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132927756000558183, guid: d7e7bf53c4424aa41adf1e622f8eb536,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3323503700873787926, guid: d7e7bf53c4424aa41adf1e622f8eb536,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -642,7 +657,7 @@ PrefabInstance:
     - target: {fileID: 3323503700873787926, guid: d7e7bf53c4424aa41adf1e622f8eb536,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3456320137031446852, guid: d7e7bf53c4424aa41adf1e622f8eb536,
         type: 3}
@@ -678,6 +693,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460678725878798633, guid: d7e7bf53c4424aa41adf1e622f8eb536,
+        type: 3}
+      propertyPath: defaultValue
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4688746919727727206, guid: d7e7bf53c4424aa41adf1e622f8eb536,
         type: 3}
@@ -904,6 +924,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -33.9636
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806228312348188279, guid: d7e7bf53c4424aa41adf1e622f8eb536,
+        type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: d8ca1d40993c3cb489f3e305ec29e22d,
+        type: 2}
+    - target: {fileID: 6806228312348188279, guid: d7e7bf53c4424aa41adf1e622f8eb536,
+        type: 3}
+      propertyPath: defaultValue
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806228312348188279, guid: d7e7bf53c4424aa41adf1e622f8eb536,
+        type: 3}
+      propertyPath: playerPrefsKey
+      value: SFX_Volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806228312348188279, guid: d7e7bf53c4424aa41adf1e622f8eb536,
+        type: 3}
+      propertyPath: exposedParameterName
+      value: SFX_Volume
       objectReference: {fileID: 0}
     - target: {fileID: 6842013615008029043, guid: d7e7bf53c4424aa41adf1e622f8eb536,
         type: 3}
