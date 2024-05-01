@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
 using static PlayerController;
 using static UnityEngine.UI.Image;
@@ -32,6 +33,8 @@ public class BossBehaviour : MonoBehaviour
 
     public GameObject particleSystem;
 
+    public UnityEvent onHit;
+    public UnityEvent onTransform;
 
     private void Awake()
     {
@@ -66,9 +69,7 @@ public class BossBehaviour : MonoBehaviour
 
         if (fase == BossFase.fase1 && isFightingPlayer && Vector3.Distance(Player.transform.position, transform.position) <= 8 && !isAtaccking && attackCount < maxattackCount && !isDoingSpecialAttack)
         {
-            attackCount++;
             Attack();
-            isAtaccking = true;
 
 
 
@@ -186,8 +187,13 @@ public class BossBehaviour : MonoBehaviour
     private void Attack()
     {
 
-        
-        StartCoroutine(AttackCoroutine());
+        if(!isAtaccking)
+        {
+            attackCount++;
+            StartCoroutine(AttackCoroutine());
+            isAtaccking = true;
+
+        }
     }
     IEnumerator AttackCoroutine()
     {
@@ -213,10 +219,12 @@ public class BossBehaviour : MonoBehaviour
                          RigidbodyConstraints.FreezeRotationY |
                          RigidbodyConstraints.FreezeRotationZ;
         rb.isKinematic = false;
+        yield return new WaitForSeconds(0.4f);
 
-        yield return new WaitForSeconds(2f);
-        
-        yield return new WaitForSeconds(1.8f);
+        onHit.Invoke();
+
+        yield return new WaitForSeconds(4.6f);
+
         fase = BossFase.fase1;
         isAtaccking = false;
         rb.constraints = RigidbodyConstraints.FreezeRotationX |
@@ -238,7 +246,9 @@ public class BossBehaviour : MonoBehaviour
     IEnumerator ChargeSpecialAttack()
     {
         particleSystem.SetActive(true);
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(7.5f);
+        onTransform.Invoke();
+        yield return new WaitForSeconds(0.5f);
         if(fase != BossFase.fase2 || fase != BossFase.fase3)
         {
             animator.SetTrigger("ChargeTrigger");
@@ -281,6 +291,7 @@ public class BossBehaviour : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("CannonBall") && fase == BossFase.fase2 || fase == BossFase.fase3)
         {
+            onTransform.Invoke();
             rb.isKinematic = false;
             gameObject.GetComponent<HealthBehaviour>().Damage(500);
             animator.SetTrigger("DieTrigger");

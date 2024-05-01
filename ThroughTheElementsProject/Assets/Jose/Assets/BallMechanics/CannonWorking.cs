@@ -123,6 +123,7 @@ public class CannonWorking : MonoBehaviour
     {
         if (!haveGravity)
         {
+            OnShoot.Invoke();
             Debug.Log("Hola");
             //MainCamera.SetActive(false);
             Player = other.gameObject;

@@ -23,6 +23,7 @@ public class MagicianController : MonoBehaviour
     public bool isAlive;
 
     public UnityEvent onShoot;
+    public UnityEvent onDie;
     public UnityEvent onCreateGravity;
 
     public enum OrientationMode
@@ -194,7 +195,7 @@ public class MagicianController : MonoBehaviour
         MagicCircle.SetActive(false);
         gameObject.GetComponent<CharacterController>().enabled = false;
         gameObject.GetComponent<HealthBehaviour>().healthbar = null;
-
+        onDie.Invoke();
         Ragdollize();
     }
     private void UnRagDoll()

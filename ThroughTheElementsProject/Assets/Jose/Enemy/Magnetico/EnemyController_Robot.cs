@@ -29,6 +29,9 @@ public class EnemyController_Robot : EnemyController
     public GameObject Visuals;
 
     public UnityEvent OnShoot;
+    public UnityEvent onDie;
+
+    public bool isDead;
 
 
     protected override void ChildAwake()
@@ -76,7 +79,7 @@ public class EnemyController_Robot : EnemyController
         OnShoot.Invoke();
         GameObject projectile = Instantiate(projectilePrefab, transform.forward + gameObject.transform.position, Quaternion.identity);
         isAttacking = false;
-        if(isRobotThrower && canAttack && state != State.Dead)
+        if(isRobotThrower && canAttack && state != State.Dead && !isDead)
         {
             Vector3 direction = Player.transform.position - gameObject.transform.position;
             projectile.GetComponent<Rigidbody>().AddForce(direction*2.5f, ForceMode.VelocityChange);
@@ -87,6 +90,7 @@ public class EnemyController_Robot : EnemyController
 
     public void DestroyedRobot()
     {
+        isDead = true;
         state = State.Dead;
         canAttack = false;
         gameObject.GetComponent<HealthBehaviour>().healthbar = null;
@@ -107,8 +111,10 @@ public class EnemyController_Robot : EnemyController
             {
                 childRigidbody.isKinematic = false;
             }
-            StartCoroutine(FinishDestroy());
         }
+        onDie.Invoke();
+        StartCoroutine(FinishDestroy());
+
     }
 
     IEnumerator FinishDestroy()
