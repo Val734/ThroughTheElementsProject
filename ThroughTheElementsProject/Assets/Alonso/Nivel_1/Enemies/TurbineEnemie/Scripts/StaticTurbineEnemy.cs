@@ -17,7 +17,8 @@ public class StaticTurbineEnemy : MonoBehaviour
     int attack;
     bool canDoAttack;
 
-    [Header("Prefabs")]
+    [Header("Prefabs Settings")]
+    public Transform blowSpawnPoint;
     public GameObject BlowPrefab;
     public GameObject AbsorbPrefab;
 
@@ -97,7 +98,8 @@ public class StaticTurbineEnemy : MonoBehaviour
 
     public void BlowAttack()
     {
-        BlowPrefab.SetActive(true);
+        Debug.Log("BLOW ATTACK");
+        Instantiate(BlowPrefab, blowSpawnPoint, false);
     }
 
     public void AbsorbAttack()

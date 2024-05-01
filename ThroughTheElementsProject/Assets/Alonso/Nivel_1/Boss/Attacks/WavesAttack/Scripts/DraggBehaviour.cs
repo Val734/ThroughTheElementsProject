@@ -7,6 +7,9 @@ public class DraggBehaviour : MonoBehaviour
     [SerializeField] float dragTime;
     Rigidbody rb;
 
+    // ESTE BOOLEANO ES PARA PODER DEFINIR QUE OBJETOS SE DESTRUIRAN AL TERMINAR EL TIEMPO Y CUALES SIMPLEMENTE SE DESACTIVARÁN 
+    [SerializeField] bool destructible;
+
     GameObject player;
 
     private void Awake()
@@ -24,7 +27,14 @@ public class DraggBehaviour : MonoBehaviour
             {
                 player.GetComponent<DragabbleBehaviour>().DesactivateDrag();    
             }
-            Destroy(gameObject);
+            if(destructible)
+            {
+                Destroy(gameObject);
+            }
+            else//(!destructible)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 
