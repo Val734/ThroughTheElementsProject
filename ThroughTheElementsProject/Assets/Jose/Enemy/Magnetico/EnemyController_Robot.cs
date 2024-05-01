@@ -77,10 +77,6 @@ public class EnemyController_Robot : EnemyController
             Vector3 direction = Player.transform.position - gameObject.transform.position;
             projectile.GetComponent<Rigidbody>().AddForce(direction*2.5f, ForceMode.VelocityChange);
         }
-        else
-        {
-            projectile.GetComponent<Iman>().Throw(transform.forward, transform.up);
-        }
         localSpeed = 2;
         isAttacking = false;
     }

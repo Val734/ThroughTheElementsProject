@@ -13,10 +13,15 @@ public class Proyectile : MonoBehaviour
     void Awake()
     {
         Debug.Log("EL PROYECTIL HA HECHO EL AWAKE");
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        rb = GetComponent<Rigidbody>();
+        if(player != null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+            rb = GetComponent<Rigidbody>();
 
-        targetPosition = player.transform;
+            targetPosition = player.transform;
+
+        }
+        
 
     }
     public void Throw(Vector3 horizontal, Vector3 vertical)
