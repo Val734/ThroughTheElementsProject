@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static LiquidBoss_Behaviour;
 
 public class StaticTurbineEnemy : MonoBehaviour
 {

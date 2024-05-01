@@ -9,10 +9,10 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
 
 
     [Header("Stats")]
-    [SerializeField] int lives = 15;
-    [SerializeField] int maxLives = 15;
-    [SerializeField] float initialHealingTime = 5f;
-    [SerializeField] float currenthealingTime = 5f;
+    [SerializeField] int lives;
+    [SerializeField] int maxLives;
+    [SerializeField] float initialHealingTime;
+    [SerializeField] float currenthealingTime;
     [SerializeField] int timeshealed = 0;
     [SerializeField] int maxTimesHealed = 2;
 
@@ -40,15 +40,21 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
         }
     }
 
-    public void OnHit(int damage)
+    public void OnHit(int damage) //AQUÍ ESTÁ EL PROBLEMA, CON LOS HITS RECIVED Y SU PUTA MADRE
     {
-        hitsRecived++;
-        if (hitsRecived <= 2)
+        if(_boss.state != LiquidBoss_Behaviour.StatesType.Exploding || _boss.state != LiquidBoss_Behaviour.StatesType.Recovering) 
         {
-            LoseHealth();
-            Debug.Log("El ON HIT");
-            hitsRecived = 0;
-            _boss.state = LiquidBoss_Behaviour.StatesType.Exploding;
+            hitsRecived++;
+            if (hitsRecived <= 3)
+            {
+                LoseHealth();
+                Debug.Log("El ON HIT");
+                if(hitsRecived == 3)
+                {
+                    _boss.state = LiquidBoss_Behaviour.StatesType.Exploding;
+                    hitsRecived = 0;
+                }
+            }            
         }
     }
 

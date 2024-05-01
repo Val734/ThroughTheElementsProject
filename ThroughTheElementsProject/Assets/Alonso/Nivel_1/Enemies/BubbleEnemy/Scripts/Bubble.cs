@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bubble : Proyectile
 {
+    float lifeTime = 10f;
+
     bool playerHitted = false;
     public float goingUpTime = 4f;
 
@@ -39,5 +41,11 @@ public class Bubble : Proyectile
 
             rb.velocity = Vector3.up * verticalForce;
         }
+
+        lifeTime -= Time.deltaTime;
+        if(lifeTime < 0)
+        {
+            Destroy (gameObject);
+        }    
     }
 }

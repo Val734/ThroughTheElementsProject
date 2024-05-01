@@ -14,7 +14,7 @@ public class HitCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("OnTriggerEnter");
+        //Debug.Log("OnTriggerEnter");
         CheckHit(other);
     }
 

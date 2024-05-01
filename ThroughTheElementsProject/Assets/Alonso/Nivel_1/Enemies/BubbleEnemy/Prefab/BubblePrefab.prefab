@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7537614230067054093}
   - component: {fileID: 2076454088141339936}
   - component: {fileID: 7157980996579921987}
+  - component: {fileID: 773329468869906694}
   m_Layer: 0
   m_Name: BubblePrefab
   m_TagString: Untagged
@@ -148,3 +149,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goingUpTime: 4
   verticalForce: 2
+--- !u!114 &773329468869906694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2567851599757480715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ea028f088207e4a86954c3014691cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hittableTags:
+  - Player
+  OnhittableObject:
+    m_PersistentCalls:
+      m_Calls: []
+  damage: 1
