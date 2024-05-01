@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         
-        if (Dash.action.ReadValue<float>() > 0 && !comboAttack[0]) 
+        if (Dash.action.ReadValue<float>() > 0 ) 
         {
             StartCoroutine(DashOrRun());
             
@@ -480,7 +480,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator DashOrRun()
     {
-        if (!isDashing && stamina > 10 && Dash.action.triggered && !comboAttack[0])
+        if (!isDashing && stamina > 10 && Dash.action.triggered )
         {
             Dashdirection = Move.action.ReadValue<Vector2>();
             Debug.Log(Dashdirection);
@@ -503,6 +503,7 @@ public class PlayerController : MonoBehaviour
             }
             DashMovement();
             isDashing = true;
+            RestoreAttackAnimation();
             gameObject.GetComponent<HealthBehaviour>().invulnerable = true;
 
         }
@@ -545,36 +546,36 @@ public class PlayerController : MonoBehaviour
     {
         if (playerCanAttack)
         {
-            if (comboAttack[0])
+            if (comboAttack[0] && !isDashing)
             {
                 attackTime += Time.deltaTime;
-                if (attackTime > 0f && attackTime < 0.4f && !playerIsHitted && characterController.isGrounded)
+                if (attackTime > 0f && attackTime < 0.4f && !playerIsHitted && characterController.isGrounded && !isDashing)
                 {
 
                     canMove = false;
                     animator.SetBool("AttackBool", true);
                     AttackHit.gameObject.SetActive(true);
                 }
-                else if (attackTime > 0.4f && attackTime < 0.8f && !playerIsHitted && characterController.isGrounded)
+                else if (attackTime > 0.4f && attackTime < 0.8f && !playerIsHitted && characterController.isGrounded && !isDashing)
                 {
                     AttackHit.gameObject.SetActive(false);
                 }
-                else if (attackTime > 0.8f && attackTime < 1f && comboAttack[1] && !playerIsHitted && characterController.isGrounded)
+                else if (attackTime > 0.8f && attackTime < 1f && comboAttack[1] && !playerIsHitted && characterController.isGrounded && !isDashing)
                 {
                     AttackHit.gameObject.SetActive(true);
 
                 }
-                else if (attackTime > 1f && attackTime < 1.3f && comboAttack[1] && !playerIsHitted && characterController.isGrounded)
+                else if (attackTime > 1f && attackTime < 1.3f && comboAttack[1] && !playerIsHitted && characterController.isGrounded && !isDashing)
                 {
                     animator.SetBool("AttackBool", true);
                     AttackHit.gameObject.SetActive(false);
                 }
-                else if (attackTime > 1.3f && attackTime < 2f && comboAttack[1] && comboAttack[2] && !playerIsHitted && characterController.isGrounded)
+                else if (attackTime > 1.3f && attackTime < 2f && comboAttack[1] && comboAttack[2] && !playerIsHitted && characterController.isGrounded && !isDashing)
                 {
                     AttackHit.gameObject.SetActive(true);
                     animator.SetBool("AttackBool", true);
                 }
-                else if (attackTime > 2f && comboAttack[1] && comboAttack[2] && !playerIsHitted && characterController.isGrounded)
+                else if (attackTime > 2f && comboAttack[1] && comboAttack[2] && !playerIsHitted && characterController.isGrounded && !isDashing)
                 {
                     animator.SetBool("AttackBool", false);
                     AttackHit.gameObject.SetActive(false);
@@ -586,20 +587,23 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    animator.SetBool("AttackBool", false);
-                    attackTime = 0f;
-                    AttackHit.gameObject.SetActive(false);
-                    comboAttack[0] = false;
-                    comboAttack[1] = false;
-                    comboAttack[2] = false;
-                    canMove = true;
-                    isAttacking = false;
+                    RestoreAttackAnimation();
                 }
             }
         }
     }
 
-
+    private void RestoreAttackAnimation()
+    {
+        animator.SetBool("AttackBool", false);
+        attackTime = 0f;
+        AttackHit.gameObject.SetActive(false);
+        comboAttack[0] = false;
+        comboAttack[1] = false;
+        comboAttack[2] = false;
+        canMove = true;
+        isAttacking = false;
+    }
 
     private void OnDrawGizmos()
     {
