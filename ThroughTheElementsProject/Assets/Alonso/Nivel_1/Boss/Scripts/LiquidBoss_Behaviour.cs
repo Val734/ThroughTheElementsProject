@@ -91,8 +91,6 @@ public class LiquidBoss_Behaviour : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log("El boss está "+state);
-
         if(playerOnArea)
         {
             switch (state)
@@ -159,11 +157,14 @@ public class LiquidBoss_Behaviour : MonoBehaviour
             {
                 if(Player.GetComponent<CharacterController>().isGrounded)
                 {
-                    Debug.Log("ESTÁ EN EL SUELO ");
+                    spikeTarget = Player;
+                    _anim.SetTrigger("SpikeAttack");
                 }
-
-                spikeTarget = Player;
-                _anim.SetTrigger("SpikeAttack");
+                else
+                {
+                    Debug.Log("EL PLAYER ESTABA EN EL SUELO");
+                    canAttack = true;
+                }
             }
             currentattackIntervalTime = 0;
         }
