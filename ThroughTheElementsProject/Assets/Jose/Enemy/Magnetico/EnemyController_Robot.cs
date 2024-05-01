@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyController_Robot : EnemyController
 {
@@ -26,6 +27,8 @@ public class EnemyController_Robot : EnemyController
     Animator animator;
 
     public GameObject Visuals;
+
+    public UnityEvent OnShoot;
 
 
     protected override void ChildAwake()
@@ -70,6 +73,7 @@ public class EnemyController_Robot : EnemyController
         animator.SetTrigger("AttackTrigger");
         localSpeed = 0;
         yield return new WaitForSeconds(throwTime);
+        OnShoot.Invoke();
         GameObject projectile = Instantiate(projectilePrefab, transform.forward + gameObject.transform.position, Quaternion.identity);
         isAttacking = false;
         if(isRobotThrower && canAttack && state != State.Dead)

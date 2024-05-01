@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
 using static BossBehaviour;
 
@@ -20,6 +21,9 @@ public class MagicianController : MonoBehaviour
     public GameObject MagicCircle;
 
     public bool isAlive;
+
+    public UnityEvent onShoot;
+    public UnityEvent onCreateGravity;
 
     public enum OrientationMode
     {
@@ -67,6 +71,7 @@ public class MagicianController : MonoBehaviour
                     if (canAttack == false && isAlive)
                     {
                         animator.SetTrigger("GravityTrigger");
+                        onCreateGravity.Invoke();
                         GameObject bigGravitySphere = Instantiate(BigGravitySphere, colliders2[i].transform.position, Quaternion.identity);
 
                         canCreateGravity = false;
@@ -165,7 +170,9 @@ public class MagicianController : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         animator.SetTrigger("AttackTrigger");
-        yield return new WaitForSeconds(2);  
+        yield return new WaitForSeconds(1.5f);
+        onShoot.Invoke(); 
+        yield return new WaitForSeconds(0.5f);  
         if(isAlive)
         {
             GameObject littleGravitySphere = Instantiate(GravitySphere, transform.position, Quaternion.identity);

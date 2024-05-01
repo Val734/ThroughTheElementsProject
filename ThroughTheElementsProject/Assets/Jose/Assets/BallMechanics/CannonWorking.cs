@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class CannonWorking : MonoBehaviour
@@ -22,7 +23,7 @@ public class CannonWorking : MonoBehaviour
 
     public bool haveGravity;
 
-
+    public UnityEvent OnShoot;
     
 
     void Start()
@@ -79,6 +80,7 @@ public class CannonWorking : MonoBehaviour
         if (!haveGravity)
         {
             // instantiate a cannon ball
+            OnShoot.Invoke();
             GameObject cannonBall = Instantiate(cannonBallPrefab, firePoint.position, Quaternion.identity);
             // apply some force
             Rigidbody rb = cannonBall.GetComponent<Rigidbody>();
