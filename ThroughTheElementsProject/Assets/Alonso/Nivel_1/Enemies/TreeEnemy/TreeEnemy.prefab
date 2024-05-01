@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1933068003963291644}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.321, z: 1.35}
+  m_LocalPosition: {x: 0, y: -0.214, z: 1.35}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 5968489047454722709}
   - component: {fileID: 1359964325269913475}
   - component: {fileID: 5260729821064354731}
+  - component: {fileID: 613437482073282790}
   m_Layer: 0
   m_Name: TreeEnemy
   m_TagString: Enemy
@@ -218,6 +219,27 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.68, z: 0}
+--- !u!95 &613437482073282790
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2650826503172266364}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4740434442783151691
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +265,7 @@ Transform:
   m_GameObject: {fileID: 4740434442783151691}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -259,7 +281,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7646904559518805833}
-  - component: {fileID: 509867398161877694}
   - component: {fileID: 6836036399285940288}
   m_Layer: 0
   m_Name: TreeEnemy
@@ -286,27 +307,6 @@ Transform:
   - {fileID: 4121932213093214230}
   m_Father: {fileID: 4717108162023011664}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &509867398161877694
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4821035167033083578}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: a7b93508744421644a971d89760bdbf2, type: 3}
-  m_Controller: {fileID: 9100000, guid: fce551b12e51e2f4fa6cab3a76993ae0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!135 &6836036399285940288
 SphereCollider:
   m_ObjectHideFlags: 0
