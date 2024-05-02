@@ -223,7 +223,18 @@ public class BossBehaviour : MonoBehaviour
 
         onHit.Invoke();
 
-        yield return new WaitForSeconds(4.6f);
+        if (random == 1)
+        {
+            yield return new WaitForSeconds(4.6f);
+
+        }
+        else if (random == 2)
+        {
+        yield return new WaitForSeconds(2.6f);
+
+
+        }
+
 
         fase = BossFase.fase1;
         isAtaccking = false;
@@ -251,6 +262,7 @@ public class BossBehaviour : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if(fase != BossFase.fase2 || fase != BossFase.fase3)
         {
+
             animator.SetTrigger("ChargeTrigger");
             GameObject rock = Instantiate(Rock, new Vector3(Point[0].transform.position.x, Point[0].transform.position.y + 5, Point[0].transform.position.z), Quaternion.identity);
             rock.GetComponent<Fracture>().Boss = gameObject;
@@ -266,7 +278,7 @@ public class BossBehaviour : MonoBehaviour
     {
         rb.isKinematic = false;     
         isDoingSpecialAttack = false;
-        gameObject.GetComponent<HealthBehaviour>().Damage(5);
+        gameObject.GetComponent<HealthBehaviour>().Damage(20);
         particleSystem.SetActive(false);
 
 
@@ -279,10 +291,9 @@ public class BossBehaviour : MonoBehaviour
         if(rock != null)
         {
             Destroy(rock);
-            if (fase != BossFase.fase2 || fase != BossFase.fase3)
-            {
-                gameObject.GetComponent<HealthBehaviour>().Heal(15);
-            }
+
+            gameObject.GetComponent<HealthBehaviour>().Heal(50);
+            
             StopSpecialAttack();
 
         }

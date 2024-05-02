@@ -20,7 +20,7 @@ public class CannonBall : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
 
-            Player.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 2f, gameObject.transform.position.z);
+            Player.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 3.5f, gameObject.transform.position.z);
             Player.SetActive(true);
             Cannon.GetComponent<CannonWorking>()._cam.gameObject.SetActive(false);
             Player.GetComponentInChildren<SolidStateBehaviour>().isOnBallTransformation = false;
