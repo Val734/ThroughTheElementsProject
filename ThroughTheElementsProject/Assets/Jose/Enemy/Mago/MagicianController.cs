@@ -209,7 +209,6 @@ public class MagicianController : MonoBehaviour
             rigid[i].isKinematic = true;
         }
 
-        Debug.Log("Hola");
         animator.enabled = true;
 
     }
