@@ -40,7 +40,7 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
         }
     }
 
-    public void OnHit(int damage) //AQUÍ ESTÁ EL PROBLEMA, CON LOS HITS RECIVED Y SU PUTA MADRE
+    public void OnHit(int damage)
     {
         if(_boss.state != LiquidBoss_Behaviour.StatesType.Exploding || _boss.state != LiquidBoss_Behaviour.StatesType.Recovering) 
         {

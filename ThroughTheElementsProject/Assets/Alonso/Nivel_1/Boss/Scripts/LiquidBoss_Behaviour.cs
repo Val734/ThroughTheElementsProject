@@ -52,6 +52,7 @@ public class LiquidBoss_Behaviour : MonoBehaviour
     public bool playerOnArea; // ESTE BOOLEANO SE UTILIZA PARA VER QUE EL PLAYER ESTÁ DENTRO DE LA ZONA Y ASÍ CUANDO MUERA PODRÁ VOLVER
     
     public float initialWaitingTime; // ESTE TIEMPO SIRVE PARA PODER EMPEZAR LA PARTIDA UN POCO DESPUÉS DE QUE EL JUGADOR HAYA PASADO AL CAMPO DE BATALLA 
+    public float currentWaitingTime;
     public float attackIntervalTime = 3f; // ESTE ES PARA QUE HAYA CIERTO TIEMPO ENTRE LOS ATAQUES
     [SerializeField] float currentattackIntervalTime = 0f;
     public int attackType;
@@ -120,6 +121,7 @@ public class LiquidBoss_Behaviour : MonoBehaviour
 
     private void WaitingPlayer()
     {
+        Debug.Log($"Puede Atacar?{canAttack}, Estas en el estado {state}");
         playerOnArea = false;
     }
 
@@ -195,17 +197,18 @@ public class LiquidBoss_Behaviour : MonoBehaviour
     {
         if (battleStarted)
         {
-            initialWaitingTime -= Time.deltaTime;
+            currentWaitingTime -= Time.deltaTime;
 
-            if (initialWaitingTime < 0)
+            if (currentWaitingTime < 0)
             {
                 state = StatesType.OnBattle;
+                currentWaitingTime = initialWaitingTime;
             }
         }
     }
 
     public void Exploding()
-    {   
+    {
         if(canAttack)
         {
             state = StatesType.Recovering;

@@ -14,9 +14,9 @@ public class BossBattleController : MonoBehaviour
 
     public void ChangeToStateWaiting()
     {
-        boss.state = LiquidBoss_Behaviour.StatesType.PlayerKilled;
+        boss.state = LiquidBoss_Behaviour.StatesType.WaitingBattle;
         boss.playerOnArea = false;
-
+        healthbar.gameObject.SetActive(false);
     }
 
     private void OnTriggerExit(Collider other)

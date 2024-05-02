@@ -26,8 +26,6 @@ public class Proyectile : MonoBehaviour
     }
     public void Throw(Vector3 horizontal, Vector3 vertical)
     {
-
-
         rb.AddForce(horizontal * ForceSpeed);
 
         Vector3 directionToPlayer = (targetPosition.position - transform.position).normalized;
