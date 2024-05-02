@@ -108,7 +108,7 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
             timeshealed = 0;
             currenthealingTime = initialHealingTime;
             _boss.state = LiquidBoss_Behaviour.StatesType.OnBattle;
-            //g
+            
         }
     }
 }
