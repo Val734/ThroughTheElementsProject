@@ -9,6 +9,9 @@ public class EnemyController_Snow : EnemyController
     [SerializeField] GameObject hitCollider;
     [SerializeField] GameObject healthbar;
 
+    [SerializeField] GameObject soundManager;
+
+
     bool activated;
     float localSpeed = 0f;
     Vector3 initialPosition;

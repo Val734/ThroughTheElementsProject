@@ -69,6 +69,16 @@ public class PlayerController : MonoBehaviour
     float timer = 4f;
     float velocityToApply=0;
 
+    [Header("Sound Settings")]
+    [SerializeField] GameObject soundManager;
+    private AudioSource jumpSound;
+    private AudioSource hurtSound;
+    private AudioSource evadeSound;
+    private AudioSource attackSound;
+
+
+
+
 
     public enum OrientationMode
     {
@@ -100,6 +110,12 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         isFreezed = false;
         playerIsHitted= false;
+
+        jumpSound = soundManager.transform.Find("JumpSound").GetComponent<AudioSource>();
+        hurtSound = soundManager.transform.Find("HurtSound").GetComponent<AudioSource>();
+        evadeSound = soundManager.transform.Find("EvadeSound").GetComponent<AudioSource>();
+        attackSound = soundManager.transform.Find("AttackSound").GetComponent<AudioSource>();
+
 
     }
     private void OnEnable()
@@ -329,6 +345,7 @@ public class PlayerController : MonoBehaviour
         {
             OnJump.Invoke();
             verticalVelocity = jumpSpeed;
+            jumpSound.Play();
             animator.SetBool("IsGrounded", !characterController.isGrounded);
         }
         if (!characterController.isGrounded)
@@ -493,12 +510,15 @@ public class PlayerController : MonoBehaviour
             {
 
                 animator.SetTrigger("EvadeLeftTrigger");
+                evadeSound.Play();
 
             }
             else if (Dashdirection.x >0)
             {
 
                 animator.SetTrigger("EvadeRightTrigger");
+                evadeSound.Play();
+
 
             }
             DashMovement();
@@ -554,6 +574,7 @@ public class PlayerController : MonoBehaviour
 
                     canMove = false;
                     animator.SetBool("AttackBool", true);
+                    attackSound.Play();
                     AttackHit.gameObject.SetActive(true);
                 }
                 else if (attackTime > 0.4f && attackTime < 0.8f && !playerIsHitted && characterController.isGrounded && !isDashing)
@@ -568,11 +589,13 @@ public class PlayerController : MonoBehaviour
                 else if (attackTime > 1f && attackTime < 1.3f && comboAttack[1] && !playerIsHitted && characterController.isGrounded && !isDashing)
                 {
                     animator.SetBool("AttackBool", true);
+                    attackSound.Play();
                     AttackHit.gameObject.SetActive(false);
                 }
                 else if (attackTime > 1.3f && attackTime < 2f && comboAttack[1] && comboAttack[2] && !playerIsHitted && characterController.isGrounded && !isDashing)
                 {
                     AttackHit.gameObject.SetActive(true);
+                    attackSound.Play();
                     animator.SetBool("AttackBool", true);
                 }
                 else if (attackTime > 2f && comboAttack[1] && comboAttack[2] && !playerIsHitted && characterController.isGrounded && !isDashing)
@@ -619,7 +642,8 @@ public class PlayerController : MonoBehaviour
 
         if (playerIsHitted)
         {
-            animator.SetBool("HurtBool", true); 
+            animator.SetBool("HurtBool", true);
+            hurtSound.Play(); 
             //animator.SetTrigger("HurtTrigger");
             isDashing = true;
             Dashdirection = Dashdirection = new Vector2(0, -1);
@@ -657,8 +681,10 @@ public class PlayerController : MonoBehaviour
         if(!isFreezed)
         {
             animator.SetBool("HurtBool", true);
+            hurtSound.Play();
 
-           // animator.SetTrigger("HurtTrigger");
+
+            // animator.SetTrigger("HurtTrigger");
 
         }
     }

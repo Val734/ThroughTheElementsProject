@@ -12,6 +12,8 @@ public class EnemyController_MiniGolem : EnemyController
     private bool playerDetected = false;
     GameObject player;
 
+    [SerializeField] GameObject soundManager;
+
     float localSpeed = 2f;
     private float disappear = 5f;
     private float timeBetweenAttacks = 0.01f;

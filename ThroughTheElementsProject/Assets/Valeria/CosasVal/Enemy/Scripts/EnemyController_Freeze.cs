@@ -14,6 +14,9 @@ public class EnemyController_Freeze : EnemyController
     private bool goToPlayerForAttack;
     [SerializeField] ParticleSystem frost;
 
+    [SerializeField] GameObject soundManager;
+
+
     enum Look
     {
         normal,player

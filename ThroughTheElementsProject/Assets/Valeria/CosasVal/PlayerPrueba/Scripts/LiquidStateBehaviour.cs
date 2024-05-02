@@ -19,6 +19,12 @@ public class LiquidStateBehaviour : MonoBehaviour
     [SerializeField] InputActionReference TransformAction;
     [SerializeField] InputActionReference Hability;
 
+    [Header("Sound Settings")]
+    [SerializeField] GameObject soundManager;
+    private AudioSource swirlSound;
+    private AudioSource waveSound;
+
+
     public GameObject Wave; 
     public GameObject Swirl;
 
@@ -26,6 +32,9 @@ public class LiquidStateBehaviour : MonoBehaviour
 
     public void Awake()
     {
+        swirlSound = soundManager.transform.Find("Swirl").GetComponent<AudioSource>();
+        waveSound = soundManager.transform.Find("Wave").GetComponent<AudioSource>();
+
         controller = GetComponent<PlayerController>();
         animator = GetComponentInChildren<Animator>();
         Wave.SetActive(false);  
@@ -93,7 +102,8 @@ public class LiquidStateBehaviour : MonoBehaviour
     IEnumerator SwirlJumpCoroutine()
     {
         animator.SetBool("TransformBool", true);
-      
+        swirlSound.Play();
+
         yield return new WaitForSeconds(1f);
         controller.verticalVelocity = 20;
         yield return new WaitForSeconds(0.1f);
@@ -119,6 +129,7 @@ public class LiquidStateBehaviour : MonoBehaviour
         isMovingTowardsObjective = true;
         controller.characterController.enabled = false; 
         Wave.SetActive(true);
+        waveSound.Play();
 
         GameObject[] objectives = GameObject.FindGameObjectsWithTag("PointToReach");
         Transform closestObjective = null;
