@@ -77,9 +77,6 @@ public class PlayerController : MonoBehaviour
     private AudioSource attackSound;
 
 
-
-
-
     public enum OrientationMode
     {
         CameraForward,
@@ -88,8 +85,8 @@ public class PlayerController : MonoBehaviour
     }
     public OrientationMode orientationMode = OrientationMode.CameraForward;
     public GameObject LockCamera;
-    [SerializeField] GameObject target;
-    [SerializeField] GameObject lastTarget;
+     private GameObject target;
+    private  GameObject lastTarget;
 
     public bool isDashing;
     private Vector2 Dashdirection;
@@ -158,7 +155,6 @@ public class PlayerController : MonoBehaviour
         {
             if (isEnemyLocked)
             {
-
                 lastTarget = target;
                 target = null;
                 orientationMode = OrientationMode.CameraForward;
@@ -368,8 +364,12 @@ public class PlayerController : MonoBehaviour
                 //freeLoockCamera.Follow = gameObject.transform;
                 break;
             case OrientationMode.ToTarget:
-                desiredOrientation = target.transform.position - transform.position;
+                if (target != null)
+                {
+                                    desiredOrientation = target.transform.position - transform.position;
                 LockCamera.SetActive(true);
+                }
+
 
                 break;
             case OrientationMode.ToMovement:
@@ -453,8 +453,13 @@ public class PlayerController : MonoBehaviour
                 
             }
         }
-        Debug.Log("Nombre del objeto " + potentialTargetLock.name);
+       // Debug.Log("Nombre del objeto " + potentialTargetLock.name);
+        if (potentialTargetLock != null)
+        {
         target = potentialTargetLock;
+
+        }
+
         orientationMode = OrientationMode.ToTarget;
         isEnemyLocked = true;
     }
@@ -497,7 +502,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator DashOrRun()
     {
-        if (!isDashing && stamina > 10 && Dash.action.triggered )
+        if (!isDashing && stamina > 10 && Dash.action.triggered && !playerIsHitted )
         {
             Dashdirection = Move.action.ReadValue<Vector2>();
             Debug.Log(Dashdirection);
@@ -571,10 +576,10 @@ public class PlayerController : MonoBehaviour
                 attackTime += Time.deltaTime;
                 if (attackTime > 0f && attackTime < 0.4f && !playerIsHitted && characterController.isGrounded && !isDashing)
                 {
+                    attackSound.Play();
 
                     canMove = false;
                     animator.SetBool("AttackBool", true);
-                    attackSound.Play();
                     AttackHit.gameObject.SetActive(true);
                 }
                 else if (attackTime > 0.4f && attackTime < 0.8f && !playerIsHitted && characterController.isGrounded && !isDashing)
@@ -583,13 +588,17 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (attackTime > 0.8f && attackTime < 1f && comboAttack[1] && !playerIsHitted && characterController.isGrounded && !isDashing)
                 {
+                    attackSound.Play();
+
                     AttackHit.gameObject.SetActive(true);
+
 
                 }
                 else if (attackTime > 1f && attackTime < 1.3f && comboAttack[1] && !playerIsHitted && characterController.isGrounded && !isDashing)
                 {
-                    animator.SetBool("AttackBool", true);
                     attackSound.Play();
+
+                    animator.SetBool("AttackBool", true);
                     AttackHit.gameObject.SetActive(false);
                 }
                 else if (attackTime > 1.3f && attackTime < 2f && comboAttack[1] && comboAttack[2] && !playerIsHitted && characterController.isGrounded && !isDashing)
