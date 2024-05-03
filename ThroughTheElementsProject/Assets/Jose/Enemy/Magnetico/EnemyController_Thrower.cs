@@ -26,6 +26,7 @@ public class EnemyController_Thrower : EnemyController
     Animator animator;
 
 
+
     protected override void ChildAwake()
     {
         animator=GetComponentInChildren<Animator>();
@@ -33,12 +34,16 @@ public class EnemyController_Thrower : EnemyController
 
     protected override void ChildUpdate()
     {
+        if (isBubbleThrower)
+        {
+            Debug.Log("ES ENEMIGO BURBUJA "+isBubbleThrower);
+        }
+
         CreateOverlap();
     }
 
     private void CreateOverlap()
     {
-
         Collider[] colliders2 = Physics.OverlapSphere(transform.position, detectionDistance, detectionLayerMask);
         for (int i = 0; i < colliders2.Length; i++)
         {
@@ -66,19 +71,26 @@ public class EnemyController_Thrower : EnemyController
         yield return new WaitForSeconds(throwTime);
         GameObject projectile = Instantiate(projectilePrefab, transform.forward + gameObject.transform.position, Quaternion.identity);
         isAttacking = false;
-        if (isBubbleThrower)
+        isBubbleThrower = true;
+
+        Debug.Log(" ---------- AHORA DEBERIA ATACAR ----------"+isBubbleThrower + isAttacking);
+
+        if(isBubbleThrower)
         {
+            
             projectile.GetComponent<Bubble>().Throw(transform.forward, transform.up);
+            Debug.Log($"LA FUERZA ES {transform.forward} y ARRIBA ES {transform.up}");
         }
-        else if(isRobotThrower)
-        {
-            Vector3 direction = Player.transform.position - gameObject.transform.position;
-            projectile.GetComponent<Rigidbody>().AddForce(direction*2.5f, ForceMode.VelocityChange);
-        }
-        else
-        {
-            projectile.GetComponent<Iman>().Throw(transform.forward, transform.up);
-        }
+        //else if(isRobotThrower)
+        //{
+        //    Debug.Log("ESTÁ ENTRANDO AQUÍ, EN LO DE ");
+        //    Vector3 direction = Player.transform.position - gameObject.transform.position;
+        //    projectile.GetComponent<Rigidbody>().AddForce(direction*2.5f, ForceMode.VelocityChange);
+        //}
+        //else
+        //{
+        //    projectile.GetComponent<Iman>().Throw(transform.forward, transform.up);
+        //}
         localSpeed = 2;
         isAttacking = false;
     }
