@@ -12,21 +12,23 @@ public class Proyectile : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log("EL PROYECTIL HA HECHO EL AWAKE");
-        if(player != null)
+        if(!player)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
             rb = GetComponent<Rigidbody>();
 
             targetPosition = player.transform;
 
+            if(!player)
+            {
+                Debug.Log("NO HAY UN JUGADOR");
+            }
         }
-        
-
     }
+
     public void Throw(Vector3 horizontal, Vector3 vertical)
     {
-        rb.AddForce(Vector3.one * 2 * ForceSpeed);
+        rb.AddForce(horizontal * ForceSpeed);
 
         Vector3 directionToPlayer = (targetPosition.position - transform.position).normalized;
         rb.AddForce(0f, 0f, directionToPlayer.x * aimbotForceSpeed);
