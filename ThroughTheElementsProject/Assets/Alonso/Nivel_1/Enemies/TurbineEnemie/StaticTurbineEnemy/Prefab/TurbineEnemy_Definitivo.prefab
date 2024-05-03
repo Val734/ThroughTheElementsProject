@@ -128,7 +128,8 @@ MonoBehaviour:
   target: {fileID: 0}
   attackTime: 0
   blowSpawnPoint: {fileID: 214731986104808216}
-  BlowPrefab: {fileID: 0}
+  BlowPrefab: {fileID: 2014777084744765448, guid: 6f09a37204bb4084e86d74187b80e4d0,
+    type: 3}
   AbsorbPrefab: {fileID: 3909725397503402384}
 --- !u!1 &4719309419168471849
 GameObject:
@@ -156,7 +157,7 @@ Transform:
   m_GameObject: {fileID: 4719309419168471849}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.07972119, z: -0, w: 0.99681723}
-  m_LocalPosition: {x: 0.6, y: 0, z: 17.44}
+  m_LocalPosition: {x: -0.14, y: 0, z: 10.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -225,7 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 214731986104808216}
   m_Layer: 0
-  m_Name: BlowSpawn
+  m_Name: AttackSpawnPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,7 +241,7 @@ Transform:
   m_GameObject: {fileID: 6711202370871526147}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 5.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -453,6 +454,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AbsorbAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628355501527131822, guid: 498d25f6d94d82842b771883a3e7ba94,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

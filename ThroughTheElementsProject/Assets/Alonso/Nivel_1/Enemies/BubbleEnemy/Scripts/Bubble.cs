@@ -12,13 +12,18 @@ public class Bubble : Proyectile
     public float verticalForce = 1f;
     float intervalAscentTime = 0.1f;
 
+    Collider Player;
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Player = collision;
             playerHitted = true;
             collision.GetComponent<CharacterController>().enabled = false;
             collision.GetComponent<BubbleDragBehaviour>().ActivateBubbleDragged(transform, goingUpTime);
+            collision.GetComponentInChildren<Animator>().SetBool("BubbleAttack", true);
+            transform.localScale = Vector3.one * 2.5f;
         }
         else if (collision.gameObject.CompareTag("Floor"))
         {
@@ -34,6 +39,7 @@ public class Bubble : Proyectile
             if (goingUpTime < 0)
             {
                 Destroy(gameObject);
+                Player.GetComponentInChildren<Animator>().SetBool("BubbleAttack", false);
             }
 
             rb.useGravity = true;
