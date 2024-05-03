@@ -1089,7 +1089,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6284719947262519456
 Transform:
   m_ObjectHideFlags: 0
@@ -1189,8 +1189,6 @@ MonoBehaviour:
     type: 3}
   orientationMode: 0
   LockCamera: {fileID: 0}
-  target: {fileID: 0}
-  lastTarget: {fileID: 0}
   isDashing: 0
   AttackHit: {fileID: 7391031970223602605}
 --- !u!114 &7545915013145214113
@@ -1290,7 +1288,7 @@ MonoBehaviour:
       m_Calls: []
   maxHealth: 10
   healthbar: {fileID: 0}
-  health: 10
+  health: 0
   invulnerable: 0
 --- !u!114 &7174910612349431928
 MonoBehaviour:

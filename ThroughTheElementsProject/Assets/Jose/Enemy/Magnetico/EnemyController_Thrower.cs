@@ -14,6 +14,7 @@ public class EnemyController_Thrower : EnemyController
     [SerializeField] float throwTime = 0.7f;
 
     float localSpeed = 2f;
+    bool alive = true;
 
     [SerializeField] public float detectionDistance = 5f;
     [SerializeField] LayerMask detectionLayerMask = Physics.DefaultRaycastLayers;
@@ -31,9 +32,19 @@ public class EnemyController_Thrower : EnemyController
         animator=GetComponentInChildren<Animator>();
     }
 
+    public void Dead()
+    {
+        state = State.Dead;
+        alive = false;
+        animator.SetTrigger("Dead"); //ARREGLAR LA POSICION DE LA ANIMACION
+    }
+
     protected override void ChildUpdate()
     {
-        CreateOverlap();
+        if(alive)
+        {
+            CreateOverlap();
+        }
     }
 
     private void CreateOverlap()
