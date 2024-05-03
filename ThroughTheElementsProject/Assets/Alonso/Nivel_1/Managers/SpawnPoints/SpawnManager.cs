@@ -18,6 +18,14 @@ public class SpawnManager : MonoBehaviour
     [Header("PRUEBA")]
     public bool PRUEBAS;
 
+    public string nameOfScene;
+
+    [SerializeField] string playerPrefLocationX;
+    [SerializeField] string playerPrefLocationY;
+    [SerializeField] string playerPrefLocationZ;
+    [SerializeField] string playerPrefWitchScene;
+
+    [SerializeField] Transform defaultvalue;
 
     private void OnValidate()
     {
@@ -30,7 +38,9 @@ public class SpawnManager : MonoBehaviour
 
     private void Awake()
     {
-        for(int i = 0;i < transform.childCount;i++) 
+        defaultvalue = initialSpawnPoint;
+
+        for (int i = 0; i < transform.childCount; i++)
         {
             SpawnPoints.Add(transform.GetChild(i));
         }
@@ -38,12 +48,18 @@ public class SpawnManager : MonoBehaviour
         initialSpawnPoint = transform.GetChild(0);
         currentSpawnPoint = transform.GetChild(0);
 
+        //slider.value = PlayerPrefs.GetFloat(playerPrefsKey, defaultvalue);
+        ViewPlayerPref();
+        PlayerPrefs.SetString(playerPrefWitchScene, nameOfScene);
     }
 
-     
+    
+
     public void ChangeSpawnPoint(Transform newSpawnPoint)
     {
         currentSpawnPoint = newSpawnPoint;
+        OnValueChange(currentSpawnPoint);
+        
 
     }
 
@@ -58,15 +74,70 @@ public class SpawnManager : MonoBehaviour
 
     public void DiePlayer()
     {
-        Debug.Log("Hola");
         Player.gameObject.SetActive(false);
         Player.gameObject.GetComponent<HealthBehaviour>().RestoreHealth();
         Player.gameObject.transform.position = currentSpawnPoint.transform.position;
         Player.gameObject.GetComponent<PlayerController>().RestorePlayer();
         Player.gameObject.SetActive(true);
     }
-    
+
+    public void OnValueChange(Transform location)
+    {
+
+        PlayerPrefs.SetFloat(playerPrefLocationX, location.transform.position.x);
+        PlayerPrefs.SetFloat(playerPrefLocationY, location.transform.position.y);
+        PlayerPrefs.SetFloat(playerPrefLocationZ, location.transform.position.z);
         
-        
-        
+        PlayerPrefs.Save();
+    }
+
+    private static void ViewPlayerPref()
+    {
+        if (PlayerPrefs.HasKey("PlayerPrefLocationX"))
+        {
+            // Obtener el valor de un PlayerPrefs
+            float valor = PlayerPrefs.GetFloat("PlayerPrefLocationX");
+            Debug.Log("El valor de PlayerPrefLocationX es: " + valor);
+        }
+        else
+        {
+            Debug.Log("PlayerPrefLocationX no existe en PlayerPrefs");
+        }
+
+
+        if (PlayerPrefs.HasKey("PlayerPrefLocationY"))
+        {
+            // Obtener el valor de un PlayerPrefs
+            float valor = PlayerPrefs.GetFloat("PlayerPrefLocationY");
+            Debug.Log("El valor de PlayerPrefLocationY es: " + valor);
+        }
+        else
+        {
+            Debug.Log("PlayerPrefLocationY no existe en PlayerPrefs");
+        }
+
+
+        if (PlayerPrefs.HasKey("PlayerPrefLocationZ"))
+        {
+            // Obtener el valor de un PlayerPrefs
+            float valor = PlayerPrefs.GetFloat("PlayerPrefLocationZ");
+            Debug.Log("El valor de PlayerPrefLocationZ es: " + valor);
+        }
+        else
+        {
+            Debug.Log("PlayerPrefLocationZ no existe en PlayerPrefs");
+        }
+
+
+        if (PlayerPrefs.HasKey("PlayerPrefWitchScene"))
+        {
+            // Obtener el valor de un PlayerPrefs
+            string valor = PlayerPrefs.GetString("PlayerPrefWitchScene");
+            Debug.Log("El valor de PlayerPrefWitchScene es: " + valor);
+        }
+        else
+        {
+            Debug.Log("PlayerPrefWitchScene no existe en PlayerPrefs");
+        }
+    }
 }
