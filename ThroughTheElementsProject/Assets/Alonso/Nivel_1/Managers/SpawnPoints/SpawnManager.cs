@@ -20,12 +20,12 @@ public class SpawnManager : MonoBehaviour
 
     public string nameOfScene;
 
-    [SerializeField] string playerPrefLocationX;
-    [SerializeField] string playerPrefLocationY;
-    [SerializeField] string playerPrefLocationZ;
-    [SerializeField] string playerPrefWitchScene;
+    [SerializeField] string PlayerPrefLocationX;
+    [SerializeField] string PlayerPrefLocationY;
+    [SerializeField] string PlayerPrefLocationZ;
+    [SerializeField] string PlayerPrefWitchScene;
 
-    [SerializeField] Transform defaultvalue;
+    [SerializeField] float defaultvalue=-999;
 
     private void OnValidate()
     {
@@ -38,8 +38,10 @@ public class SpawnManager : MonoBehaviour
 
     private void Awake()
     {
-        defaultvalue = initialSpawnPoint;
-
+        if(PlayerPrefs.GetFloat(PlayerPrefLocationX)!=defaultvalue)
+        {
+            Player.transform.position = new Vector3(PlayerPrefs.GetFloat(PlayerPrefLocationX), PlayerPrefs.GetFloat(PlayerPrefLocationY), PlayerPrefs.GetFloat(PlayerPrefLocationZ));
+        }
         for (int i = 0; i < transform.childCount; i++)
         {
             SpawnPoints.Add(transform.GetChild(i));
@@ -50,7 +52,7 @@ public class SpawnManager : MonoBehaviour
 
         //slider.value = PlayerPrefs.GetFloat(playerPrefsKey, defaultvalue);
         ViewPlayerPref();
-        PlayerPrefs.SetString(playerPrefWitchScene, nameOfScene);
+        PlayerPrefs.SetString(PlayerPrefWitchScene, nameOfScene);
     }
 
     
@@ -84,9 +86,9 @@ public class SpawnManager : MonoBehaviour
     public void OnValueChange(Transform location)
     {
 
-        PlayerPrefs.SetFloat(playerPrefLocationX, location.transform.position.x);
-        PlayerPrefs.SetFloat(playerPrefLocationY, location.transform.position.y);
-        PlayerPrefs.SetFloat(playerPrefLocationZ, location.transform.position.z);
+        PlayerPrefs.SetFloat(PlayerPrefLocationX, location.transform.position.x);
+        PlayerPrefs.SetFloat(PlayerPrefLocationY, location.transform.position.y);
+        PlayerPrefs.SetFloat(PlayerPrefLocationZ, location.transform.position.z);
         
         PlayerPrefs.Save();
     }
