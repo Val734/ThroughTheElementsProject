@@ -9,9 +9,11 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] InputActionReference Pause;
     public GameObject pausa;
+    public GameObject settings;
 
     private void Start()
     {
+        settings.SetActive(false);
         pausa.SetActive(false);
         Time.timeScale = 1f;
 
@@ -38,6 +40,7 @@ public class PauseMenu : MonoBehaviour
         }
         else
         {
+            settings.SetActive(false);
             pausa.SetActive(false);
             Time.timeScale = 1f;
         }
