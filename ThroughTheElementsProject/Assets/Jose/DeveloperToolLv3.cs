@@ -16,7 +16,6 @@ public class DeveloperToolLv3 : MonoBehaviour
     {
         if(Input.GetKeyDown("p") && !check[0]) 
         {
-            Debug.Log("Devep");
             Player.SetActive(false);
             Player.transform.position=point1.transform.position;
             Player.SetActive(true);
@@ -25,7 +24,6 @@ public class DeveloperToolLv3 : MonoBehaviour
         }
         else if(Input.GetKeyDown("p") && !check[1])
         {
-            Debug.Log("Devep");
             Player.SetActive(false);
             Player.transform.position = point2.transform.position;
             Player.SetActive(true);
