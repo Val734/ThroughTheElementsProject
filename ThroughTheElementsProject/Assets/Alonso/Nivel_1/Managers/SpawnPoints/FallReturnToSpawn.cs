@@ -22,10 +22,10 @@ public class FallReturnToSpawn : MonoBehaviour
             Player.SetActive(false);
             Player.transform.position=SpawnManager.GetComponent<SpawnManager>().currentSpawnPoint.transform.position;
             Player.SetActive(true);
+            Player.GetComponent<PlayerController>().StopBeingPushed();
             
             if(battleController)
             {
-                Debug.Log("HA CAIDO EL TONTO DEL PLAYER");
                 battleController.ChangeToStateWaiting();
             }
         }

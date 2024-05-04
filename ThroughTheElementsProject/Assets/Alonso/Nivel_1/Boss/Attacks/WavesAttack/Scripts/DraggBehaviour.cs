@@ -29,10 +29,12 @@ public class DraggBehaviour : MonoBehaviour
             }
             if(destructible)
             {
+                Debug.Log("EL ATAQUE SE HA DESTRUIDO");
                 Destroy(gameObject);
             }
             else//(!destructible)
             {
+                Debug.Log("EL ATAQUE SE HA DESACTIVADO");
                 gameObject.SetActive(false);
             }
         }

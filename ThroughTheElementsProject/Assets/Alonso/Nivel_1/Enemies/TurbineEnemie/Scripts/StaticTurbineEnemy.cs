@@ -67,7 +67,6 @@ public class StaticTurbineEnemy : MonoBehaviour
 
     public void CanAttackAgain()
     {
-        BlowPrefab.SetActive(false);
         AbsorbPrefab.SetActive(false);
         canDoAttack = true;
         attackTime = 3f;
@@ -86,7 +85,7 @@ public class StaticTurbineEnemy : MonoBehaviour
                     canDoAttack = false;
                     _anim.SetTrigger("Blow_Attack");
                 }
-                else if (attack == 1)
+                if (attack == 1)
                 {
                     canDoAttack = false;
                     _anim.SetTrigger("Absorb_Attack");
