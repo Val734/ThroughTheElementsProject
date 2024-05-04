@@ -9,7 +9,11 @@ public class EnemyController_Snow : EnemyController
     [SerializeField] GameObject hitCollider;
     [SerializeField] GameObject healthbar;
 
+    [Header("Sound Settings")]
     [SerializeField] GameObject soundManager;
+    private AudioSource hurtSound;
+    private AudioSource attackSound;
+    private AudioSource idleSound;
 
 
     bool activated;
@@ -20,6 +24,9 @@ public class EnemyController_Snow : EnemyController
     {
         activated = false;
         initialPosition = transform.position; // Guarda la posición inicial
+
+        hurtSound = soundManager.transform.Find("BallEnemyInjured").GetComponent<AudioSource>();
+        attackSound = soundManager.transform.Find("BallEnemyIdle").GetComponent<AudioSource>();
     }
 
     protected override void ChildUpdate()

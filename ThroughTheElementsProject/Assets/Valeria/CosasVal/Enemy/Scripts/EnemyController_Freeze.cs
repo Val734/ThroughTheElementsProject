@@ -14,7 +14,11 @@ public class EnemyController_Freeze : EnemyController
     private bool goToPlayerForAttack;
     [SerializeField] ParticleSystem frost;
 
+    [Header("Sound Settings")]
     [SerializeField] GameObject soundManager;
+    private AudioSource hurtSound;
+    private AudioSource attackSound;
+    private AudioSource idleSound;
 
 
     enum Look
@@ -31,6 +35,12 @@ public class EnemyController_Freeze : EnemyController
         goToPlayerForAttack = true;
         frost = GetComponentInChildren<ParticleSystem>();
         frost.Stop();
+
+
+        hurtSound = soundManager.transform.Find("FreezeEnemyInjured").GetComponent<AudioSource>(); 
+        attackSound = soundManager.transform.Find("FreezeEnemyAttack").GetComponent<AudioSource>();
+        idleSound = soundManager.transform.Find("FreezeEnemyIdle").GetComponent<AudioSource>();
+
     }
 
     protected override void ChildUpdate()
@@ -100,6 +110,7 @@ public class EnemyController_Freeze : EnemyController
         
         animator.SetTrigger("FrozenAttack");
         frost.Play();
+        attackSound.Play();
 
         hitCollider.gameObject.SetActive(true);
         yield return new WaitForSeconds(1.5f);
@@ -117,6 +128,7 @@ public class EnemyController_Freeze : EnemyController
     public void Hurt()
     {
         animator.SetTrigger("Hurt");
+        hurtSound.Play();
     }
     public void Die()
     {

@@ -75,6 +75,8 @@ public class PlayerController : MonoBehaviour
     private AudioSource hurtSound;
     private AudioSource evadeSound;
     private AudioSource attackSound;
+    private AudioSource walkSound;
+
 
 
     public enum OrientationMode
@@ -112,6 +114,8 @@ public class PlayerController : MonoBehaviour
         hurtSound = soundManager.transform.Find("HurtSound").GetComponent<AudioSource>();
         evadeSound = soundManager.transform.Find("EvadeSound").GetComponent<AudioSource>();
         attackSound = soundManager.transform.Find("AttackSound").GetComponent<AudioSource>();
+        walkSound = soundManager.transform.Find("Footsteps").GetComponent<AudioSource>();
+
 
 
     }
@@ -281,13 +285,22 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("SideWardVelocity", smoothedMoveXZLocal.x * runningMultiplier);
 
 
+            if (currentVelocity.magnitude > 0 && !walkSound.isPlaying)
+            {
+                walkSound.Play();
+            }
+            else if (currentVelocity.magnitude == 0 && walkSound.isPlaying)
+            {
+                walkSound.Stop();
+            }
+
 
             //animator.SetBool("IsGrounded", characterController.isGrounded);
             //
         }
 
-            
-        
+
+
     }
 
     private void UpdateFreeze()

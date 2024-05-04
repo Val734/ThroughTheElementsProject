@@ -119,6 +119,7 @@ public class LiquidStateBehaviour : MonoBehaviour
         controller.verticalVelocity = 0;
         animator.SetBool("TransformBool", false);
         Swirl.SetActive(false);
+        swirlSound.Stop();
         isOnUltraJumping = false;
         canUltraJump = true;
     }
@@ -157,7 +158,8 @@ public class LiquidStateBehaviour : MonoBehaviour
                 yield return null;
             }
         }
-        Wave.SetActive(false);  
+        Wave.SetActive(false);
+        waveSound.Stop();
         controller.characterController.enabled = true; 
         isMovingTowardsObjective = false;
         canTP=false;

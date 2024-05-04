@@ -12,13 +12,20 @@ public class EnemyController_MiniGolem : EnemyController
     private bool playerDetected = false;
     GameObject player;
 
-    [SerializeField] GameObject soundManager;
 
     float localSpeed = 2f;
     private float disappear = 5f;
     private float timeBetweenAttacks = 0.01f;
     private float attackTimer = 0f; 
-    private bool isAttacking; 
+    private bool isAttacking;
+
+    [Header("Sound Settings")]
+    [SerializeField] GameObject soundManager;
+    private AudioSource hurtSound;
+    private AudioSource attackSound;
+    private AudioSource idleSound;
+
+
     enum Look
     {
         normal, player
@@ -32,6 +39,10 @@ public class EnemyController_MiniGolem : EnemyController
         animator = GetComponentInChildren<Animator>();
         isAlive = true;
         isPlayerInRange = false;
+
+        hurtSound = soundManager.transform.Find("MiniGolemInjured").GetComponent<AudioSource>();
+        attackSound = soundManager.transform.Find("MiniGolemIdle").GetComponent<AudioSource>();
+
     }
 
     protected override void ChildUpdate()
@@ -65,6 +76,7 @@ public class EnemyController_MiniGolem : EnemyController
                 if (attackTimer <= 0f && !isAttacking)
                 {
                     animator.SetTrigger("Attacking");
+                    attackSound.Play();
                     localSpeed = 0;
                     isAttacking = true;
                     hitCollider.gameObject.SetActive(true);
@@ -76,6 +88,8 @@ public class EnemyController_MiniGolem : EnemyController
                     localSpeed = 0;
                     hitCollider.gameObject.SetActive(false);
                     isAttacking = false;
+                    attackSound.Stop();
+
                 }
                 else
                 {
@@ -115,6 +129,7 @@ public class EnemyController_MiniGolem : EnemyController
     public void Hurt()
     {
         animator.SetTrigger("Hurt");
+        hurtSound.Play();
     }
 
     public void Die()
