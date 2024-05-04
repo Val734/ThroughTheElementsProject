@@ -13,7 +13,6 @@ public class UnlockPortal : MonoBehaviour
         if (totalEnemies == enemyCounter)
         {
             activarPortal.SetActive(true);
-            //Debug.LogError("aaaaaaaaaaaaaaaaaaaa");
         }
     }
 
@@ -23,4 +22,6 @@ public class UnlockPortal : MonoBehaviour
 
         Debug.Log("enemigoMorido");
     }
+
+
 }
