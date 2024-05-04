@@ -285,14 +285,15 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("SideWardVelocity", smoothedMoveXZLocal.x * runningMultiplier);
 
 
-            if (currentVelocity.magnitude > 0 && !walkSound.isPlaying)
+            if (currentVelocity.magnitude > 0 && !walkSound.isPlaying && characterController.isGrounded)
             {
                 walkSound.Play();
             }
-            else if (currentVelocity.magnitude == 0 && walkSound.isPlaying)
+            else if (currentVelocity.magnitude == 0 && !characterController.isGrounded)
             {
                 walkSound.Stop();
             }
+
 
 
             //animator.SetBool("IsGrounded", characterController.isGrounded);
@@ -355,6 +356,8 @@ public class PlayerController : MonoBehaviour
             OnJump.Invoke();
             verticalVelocity = jumpSpeed;
             jumpSound.Play();
+            walkSound.Stop();
+
             animator.SetBool("IsGrounded", !characterController.isGrounded);
         }
         if (!characterController.isGrounded)
@@ -529,6 +532,7 @@ public class PlayerController : MonoBehaviour
 
                 animator.SetTrigger("EvadeLeftTrigger");
                 evadeSound.Play();
+                walkSound.Stop();
 
             }
             else if (Dashdirection.x >0)
@@ -536,6 +540,7 @@ public class PlayerController : MonoBehaviour
 
                 animator.SetTrigger("EvadeRightTrigger");
                 evadeSound.Play();
+                walkSound.Stop();
 
 
             }

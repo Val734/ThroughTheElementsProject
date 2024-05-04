@@ -7204,17 +7204,17 @@ PrefabInstance:
     - target: {fileID: 3369346181185815600, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.41614237
+      value: 0.41614243
       objectReference: {fileID: 0}
     - target: {fileID: 3369346181185815600, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5716866
+      value: -0.57168657
       objectReference: {fileID: 0}
     - target: {fileID: 3369346181185815600, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.41614252
+      value: 0.41614243
       objectReference: {fileID: 0}
     - target: {fileID: 3453269234039561459, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
@@ -8844,7 +8844,12 @@ PrefabInstance:
     - target: {fileID: 847157979578004026, guid: 83fdce3e2254b2941ac051b8d56a6e0c,
         type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109374451115174561, guid: 83fdce3e2254b2941ac051b8d56a6e0c,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2109374451115174561, guid: 83fdce3e2254b2941ac051b8d56a6e0c,
         type: 3}
