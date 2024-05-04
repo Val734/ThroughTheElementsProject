@@ -37,78 +37,67 @@ public class EnemyController_MiniGolem : EnemyController
     protected override void ChildUpdate()
     {
         playerDetected = false;
-        Collider[] entitiesInRange = Physics.OverlapSphere(transform.position,1);
-        if(entitiesInRange.Length > 1)
+        Collider[] entitiesInRange = Physics.OverlapSphere(transform.position, 1);
+
+        bool playerFound = false; 
+
+        foreach (Collider entity in entitiesInRange)
         {
-            foreach (Collider entitie in entitiesInRange)
+            if (entity.CompareTag("Player"))
             {
-                if (entitie.CompareTag("Player"))
+                playerFound = true; 
+                isPlayerInRange = true;
+                playerDetected = true;
+                break; 
+            }
+        }
+
+        if (!playerFound) 
+        {
+            isPlayerInRange = false;
+            hitCollider.gameObject.SetActive(false);
+            localSpeed = 2f; 
+        }
+        else 
+        {
+            if (isAlive && isPlayerInRange)
+            {
+                if (attackTimer <= 0f && !isAttacking)
                 {
-                    isPlayerInRange = true;
-                    playerDetected = true;
+                    animator.SetTrigger("Attacking");
+                    localSpeed = 0;
+                    isAttacking = true;
+                    hitCollider.gameObject.SetActive(true);
+                }
+
+                if (attackTimer <= -0.5f && isAttacking)
+                {
+                    attackTimer = timeBetweenAttacks;
+                    localSpeed = 0;
+                    hitCollider.gameObject.SetActive(false);
+                    isAttacking = false;
+                }
+                else
+                {
+                    attackTimer -= Time.deltaTime;
                 }
             }
-            if(!playerDetected && isPlayerInRange)
-            {
-                isPlayerInRange = false;
-            }
         }
-        else if(entitiesInRange.Length == 1)
-        {
-            if (entitiesInRange[0].CompareTag("Player"))
-            {
-                isPlayerInRange = true;
-            }
-            else if(isPlayerInRange)
-            {
-                isPlayerInRange = false;
-            }
-        }
-        
-        if (isAlive && isPlayerInRange)
-        {
-            if (attackTimer <= 0f && !isAttacking)
-            {
-                // Atacar si el temporizador ha alcanzado cero
-                animator.SetTrigger("Attacking");
-                localSpeed = 0;
-                isAttacking = true;
-                hitCollider.gameObject.SetActive(true);
-            }
 
-            if (attackTimer <= -0.5f && isAttacking)
-            {
-                //Debug.Log("NO ME MUEVO");
-                attackTimer = timeBetweenAttacks; 
-                localSpeed = 0;
-                hitCollider.gameObject.SetActive(false);
-                isAttacking=false;
-
-            }
-            else
-            {
-                attackTimer -= Time.deltaTime;
-            }
-        }
-        else if (!isPlayerInRange)
-        {
-            localSpeed = 2f;
-        }
-        
         if (!isAlive)
         {
             disappear -= Time.deltaTime;
             state = State.Dead;
             if (disappear < 0)
             {
-               // Debug.Log("activar particulas para que la palme y se vayaaaa");
+                // Debug.Log("activar particulas para que la palme y se vayaaaa");
                 Destroy(gameObject);
             }
         }
 
         UpdateOrientation();
-
     }
+
 
     protected override float ReturnSpeed()
     {

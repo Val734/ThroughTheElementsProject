@@ -4996,6 +4996,11 @@ MonoBehaviour:
   SpawnPoints: []
   Player: {fileID: 679128838}
   PRUEBAS: 0
+  nameOfScene: Zona2P1
+  playerPrefLocationX: PlayerPrefLocationX
+  playerPrefLocationY: PlayerPrefLocationY
+  playerPrefLocationZ: PlayerPrefLocationZ
+  playerPrefWitchScene: PlayerPrefWitchScene
 --- !u!4 &1947755356
 Transform:
   m_ObjectHideFlags: 0
@@ -6181,6 +6186,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8612708716701841658, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8703429129235726714, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6476,6 +6486,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 16.13
       objectReference: {fileID: 0}
+    - target: {fileID: 1729496495456253909, guid: f8df6fef6b6aeff4599487810dbba238,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1240369
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729496495456253909, guid: f8df6fef6b6aeff4599487810dbba238,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0442
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729496495456253909, guid: f8df6fef6b6aeff4599487810dbba238,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0442
+      objectReference: {fileID: 0}
     - target: {fileID: 1759686421121752493, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
       propertyPath: layerMask.m_Bits
@@ -6610,7 +6635,24 @@ PrefabInstance:
     - target: {fileID: 2751984856836714944, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
       propertyPath: m_fontSize
-      value: 13.9
+      value: 14.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751984856836714944, guid: f8df6fef6b6aeff4599487810dbba238,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 9e007cd70ea7de447a3deb4f2b05e2b1,
+        type: 2}
+    - target: {fileID: 2751984856836714944, guid: f8df6fef6b6aeff4599487810dbba238,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7570838092417864415, guid: 9e007cd70ea7de447a3deb4f2b05e2b1,
+        type: 2}
+    - target: {fileID: 2751984856836714944, guid: f8df6fef6b6aeff4599487810dbba238,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2782846368676105987, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
@@ -6795,22 +6837,22 @@ PrefabInstance:
     - target: {fileID: 3369346181185815600, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.57168645
+      value: 0.5716865
       objectReference: {fileID: 0}
     - target: {fileID: 3369346181185815600, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.41614234
+      value: 0.41614243
       objectReference: {fileID: 0}
     - target: {fileID: 3369346181185815600, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5716866
+      value: -0.57168657
       objectReference: {fileID: 0}
     - target: {fileID: 3369346181185815600, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.41614252
+      value: 0.41614243
       objectReference: {fileID: 0}
     - target: {fileID: 3453269234039561459, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
@@ -6963,6 +7005,12 @@ PrefabInstance:
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4297438097346105692, guid: f8df6fef6b6aeff4599487810dbba238,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -7570838092417864415, guid: 9e007cd70ea7de447a3deb4f2b05e2b1,
+        type: 2}
     - target: {fileID: 4326459950651817918, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -7301,7 +7349,24 @@ PrefabInstance:
     - target: {fileID: 5420219982528326143, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
       propertyPath: m_fontSize
-      value: 14.1
+      value: 16.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420219982528326143, guid: f8df6fef6b6aeff4599487810dbba238,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 9e007cd70ea7de447a3deb4f2b05e2b1,
+        type: 2}
+    - target: {fileID: 5420219982528326143, guid: f8df6fef6b6aeff4599487810dbba238,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7570838092417864415, guid: 9e007cd70ea7de447a3deb4f2b05e2b1,
+        type: 2}
+    - target: {fileID: 5420219982528326143, guid: f8df6fef6b6aeff4599487810dbba238,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5504384173253986064, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
@@ -7453,6 +7518,12 @@ PrefabInstance:
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6245067512226580835, guid: f8df6fef6b6aeff4599487810dbba238,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -7570838092417864415, guid: 9e007cd70ea7de447a3deb4f2b05e2b1,
+        type: 2}
     - target: {fileID: 6279600320891112367, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
       propertyPath: m_TagString
@@ -7752,6 +7823,16 @@ PrefabInstance:
         type: 3}
       propertyPath: OnhittableObject.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433299372256620522, guid: f8df6fef6b6aeff4599487810dbba238,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0755
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433299372256620522, guid: f8df6fef6b6aeff4599487810dbba238,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0393
       objectReference: {fileID: 0}
     - target: {fileID: 8441907814285741015, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}

@@ -1,6 +1,5 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using static UnityEditor.FilePathAttribute;
 
 public class GameNewOrContinue : MonoBehaviour
 {
