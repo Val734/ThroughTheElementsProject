@@ -20,7 +20,7 @@ public class HitCollider : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("OnCollisionEnter");
+        //Debug.Log("OnCollisionEnter");
         CheckHit(collision.collider);
     }
 
@@ -30,7 +30,7 @@ public class HitCollider : MonoBehaviour
         {
             other.GetComponentInChildren<HurtCollider>()?.NotifyHit(this,damage);
             OnhittableObject.Invoke();
-            Debug.Log($"CheckHit {other.gameObject}");
+            //Debug.Log($"CheckHit {other.gameObject}");
         }
     }
 

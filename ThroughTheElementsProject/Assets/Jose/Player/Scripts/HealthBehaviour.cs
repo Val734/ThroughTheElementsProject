@@ -78,7 +78,7 @@ public class HealthBehaviour : MonoBehaviour
         }
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         hurtCollider.onHurt.RemoveListener(Damage);
     }

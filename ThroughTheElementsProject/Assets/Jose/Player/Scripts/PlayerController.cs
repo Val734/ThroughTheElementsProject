@@ -313,7 +313,7 @@ public class PlayerController : MonoBehaviour
     public void StartFreezing()
     {
         isFreezed = true;
-        Debug.Log(isFreezed);
+      //  Debug.Log(isFreezed);
     }
     public void StopFreezing()
     {
@@ -505,7 +505,7 @@ public class PlayerController : MonoBehaviour
         if (!isDashing && stamina > 10 && Dash.action.triggered && !playerIsHitted )
         {
             Dashdirection = Move.action.ReadValue<Vector2>();
-            Debug.Log(Dashdirection);
+            //Debug.Log(Dashdirection);
             
             if (Dashdirection == new Vector2(0, 0) )
             {

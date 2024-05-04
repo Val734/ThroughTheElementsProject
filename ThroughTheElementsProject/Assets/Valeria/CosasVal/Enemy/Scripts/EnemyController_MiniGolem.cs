@@ -78,7 +78,7 @@ public class EnemyController_MiniGolem : EnemyController
 
             if (attackTimer <= -0.5f && isAttacking)
             {
-                Debug.Log("NO ME MUEVO");
+                //Debug.Log("NO ME MUEVO");
                 attackTimer = timeBetweenAttacks; 
                 localSpeed = 0;
                 hitCollider.gameObject.SetActive(false);
@@ -101,7 +101,7 @@ public class EnemyController_MiniGolem : EnemyController
             state = State.Dead;
             if (disappear < 0)
             {
-                Debug.Log("activar particulas para que la palme y se vayaaaa");
+               // Debug.Log("activar particulas para que la palme y se vayaaaa");
                 Destroy(gameObject);
             }
         }
