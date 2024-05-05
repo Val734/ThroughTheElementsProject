@@ -15,7 +15,7 @@ public class GameNewOrContinue : MonoBehaviour
     }
     public void NewGame()
     {
-        Debug.LogError("entra");
+        //Debug.LogError("entra");
 
         PlayerPrefs.SetFloat("PlayerPrefLocationX", defaultvalue);
         PlayerPrefs.SetFloat("PlayerPrefLocationY", defaultvalue);
