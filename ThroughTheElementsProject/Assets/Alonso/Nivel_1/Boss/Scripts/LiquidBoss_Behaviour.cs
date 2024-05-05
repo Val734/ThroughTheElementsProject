@@ -231,12 +231,6 @@ public class LiquidBoss_Behaviour : MonoBehaviour
     public void Dead()
     {
         state = StatesType.Killed;
-        //if(dead == false)
-        //{
-        //    Debug.Log("MURIENDO");
-        //    _anim.SetBool("Dead",true);
-        //    dead = true;
-        //}
     }
 
     public void Dying()
