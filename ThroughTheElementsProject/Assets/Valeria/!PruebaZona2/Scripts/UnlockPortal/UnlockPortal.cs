@@ -14,6 +14,7 @@ public class UnlockPortal : MonoBehaviour
 
     private void Awake()
     {
+        activarPortal.SetActive(false); 
         timeLine.gameObject.SetActive(false);
         timeLine.stopped += StopTimeLine;
     }
