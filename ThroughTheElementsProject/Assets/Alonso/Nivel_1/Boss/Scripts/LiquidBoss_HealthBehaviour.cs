@@ -76,11 +76,6 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
         }
     }
 
-    private void Dead()
-    {
-        gameObject.SetActive(false);    
-    }
-
     public void Healing()
     {
         currenthealingTime -= Time.deltaTime;

@@ -226,7 +226,7 @@ public class LiquidBoss_Behaviour : MonoBehaviour
         }
     }
 
-    public void Dead()
+    public void Dead() //AQUÍ EMPEZARÁ A BAJAR LENTAMETE 
     {
         gameObject.SetActive(false);
     }

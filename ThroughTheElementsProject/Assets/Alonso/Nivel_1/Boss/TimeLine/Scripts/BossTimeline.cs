@@ -8,25 +8,34 @@ using UnityEngine.Timeline;
 public class BossTimeline : MonoBehaviour
 {
     public PlayableDirector director;
+    bool reproduced;
+    Transform Player;
+    public Transform safePlace;
 
     private void Awake()
     {
         director.stopped += OnStopCinematic;
+        reproduced = false;
     }
 
     private void OnStopCinematic(PlayableDirector director)
     {
-       director.gameObject.SetActive(false);
+        Player.gameObject.SetActive(true);
+        Player.position = safePlace.position;
+        director.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            if(director)
+            if(director && !reproduced)
             {
+                Player = other.transform;
                 director.gameObject.SetActive(true);
                 director.Play();
+                reproduced = true;
+                Player.gameObject.SetActive(false);
             }
         }
     }
