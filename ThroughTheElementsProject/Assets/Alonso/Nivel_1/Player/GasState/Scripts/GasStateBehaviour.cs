@@ -15,10 +15,20 @@ public class GasStateBehaviour : MonoBehaviour
 
     private Animator animator;
 
+
+    [Header("Sound Settings")]
+    [SerializeField] GameObject soundManager;
+    private AudioSource throwGas;
+    private AudioSource geiser;
+
+
     public void Awake()
     {
         controller = GetComponent<PlayerController>();
         animator = GetComponentInChildren<Animator>();
+        geiser = soundManager.transform.Find("GeiserFlying").GetComponent<AudioSource>();
+        throwGas = soundManager.transform.Find("GasEffect").GetComponent<AudioSource>();
+
     }
 
     public void OnEnable()
@@ -65,6 +75,7 @@ public class GasStateBehaviour : MonoBehaviour
             controller.canJump = true;
             isOnGasState = false;
             Fog.SetActive(false);
+            geiser.Stop(); 
             animator.SetBool("TransformBool", false);
 
         }
@@ -77,6 +88,8 @@ public class GasStateBehaviour : MonoBehaviour
         Vector3 spawnPosition = transform.position + transform.rotation * Vector3.forward * 2.0f; // Ajusta el valor para la distancia deseada
         // Instancia el gas en la nueva posición calculada
         Instantiate(GasTrowed, spawnPosition, transform.rotation);
+        animator.SetTrigger("ThrowGas");
+        throwGas.Play(); 
     }
 
     IEnumerator Gas()
@@ -87,6 +100,7 @@ public class GasStateBehaviour : MonoBehaviour
 
         isOnGasState = true;
         Fog.SetActive(true);
+        geiser.Play(); 
         Debug.Log("ACTIVADO EL FOG");
     }
 
