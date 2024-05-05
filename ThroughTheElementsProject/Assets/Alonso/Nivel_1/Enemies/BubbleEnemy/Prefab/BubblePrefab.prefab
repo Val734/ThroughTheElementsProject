@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goingUpTime: 4
   verticalForce: 2
+  bubbleSound: {fileID: -286230950137047984}
 --- !u!114 &773329468869906694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +181,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 6587045640375385990, guid: f398ad9825c7adf48bc35efd11534d90,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 5f134130f64856142b26e9160cf60fb4, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

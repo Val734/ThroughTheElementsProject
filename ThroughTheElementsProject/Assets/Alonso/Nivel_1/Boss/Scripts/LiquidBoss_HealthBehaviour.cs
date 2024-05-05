@@ -48,8 +48,7 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
             if (hitsRecived <= 3)
             {
                 LoseHealth();
-                Debug.Log("El ON HIT");
-                if(hitsRecived == 3)
+                if(hitsRecived == 3 && lives > 0)
                 {
                     _boss.state = LiquidBoss_Behaviour.StatesType.Exploding;
                     hitsRecived = 0;
@@ -66,7 +65,6 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
             healthbar.UpdateHealthbar(maxLives, lives);
             if (lives <= 0)
             {
-                _boss.state = LiquidBoss_Behaviour.StatesType.Killed;
                 OnBossDie.Invoke();
             }
         }

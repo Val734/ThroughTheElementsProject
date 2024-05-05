@@ -50,7 +50,8 @@ public class LiquidBoss_Behaviour : MonoBehaviour
     public bool canAttack; // ESTE BOOLEANO TENDRÁ QUE DESACTIVARSE CADA VEZ QUE UNA ANIMACIÓN SE TERMINA PARA QUE PUEDA HACER OTRO ATAQUE 
     public bool canHeal; // ESTE BOOLEANO TENDRÁ QUE DESACTIVARSE PARA EVITAR QUE EL BOSS SE CURE DEMASIADAS VECES
     public bool playerOnArea; // ESTE BOOLEANO SE UTILIZA PARA VER QUE EL PLAYER ESTÁ DENTRO DE LA ZONA Y ASÍ CUANDO MUERA PODRÁ VOLVER
-    
+    bool bossKilled;
+
     public float initialWaitingTime; // ESTE TIEMPO SIRVE PARA PODER EMPEZAR LA PARTIDA UN POCO DESPUÉS DE QUE EL JUGADOR HAYA PASADO AL CAMPO DE BATALLA 
     public float currentWaitingTime;
     public float attackIntervalTime = 3f; // ESTE ES PARA QUE HAYA CIERTO TIEMPO ENTRE LOS ATAQUES
@@ -109,11 +110,11 @@ public class LiquidBoss_Behaviour : MonoBehaviour
                 case StatesType.Recovering:
                     Recovering();
                     break;
-                case StatesType.Killed:
-                    Dead();
-                    break;
                 case StatesType.PlayerKilled:
                     WaitingPlayer();
+                    break;
+                case StatesType.Killed:
+                    Dying();
                     break;
             }
         }
@@ -226,9 +227,27 @@ public class LiquidBoss_Behaviour : MonoBehaviour
         }
     }
 
-    public void Dead() //AQUÍ EMPEZARÁ A BAJAR LENTAMETE 
+    bool dead;
+    public void Dead()
     {
-        gameObject.SetActive(false);
+        state = StatesType.Killed;
+        //if(dead == false)
+        //{
+        //    Debug.Log("MURIENDO");
+        //    _anim.SetBool("Dead",true);
+        //    dead = true;
+        //}
+    }
+
+    public void Dying()
+    {
+        if (dead == false)
+        {
+            _anim.SetTrigger("Dead");
+            dead = true;
+        }
+        float sinkingSpeed = 1.0f;
+        transform.position -= new Vector3(0, sinkingSpeed * Time.deltaTime, 0);
     }
 
     // ------------------------------------ FUNCIONES DE ATAQUES ------------------------------------

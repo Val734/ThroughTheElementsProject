@@ -14,6 +14,8 @@ public class Bubble : Proyectile
 
     Collider Player;
 
+    public AudioSource bubbleSound;
+
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -26,6 +28,7 @@ public class Bubble : Proyectile
             collision.GetComponent<BubbleDragBehaviour>().ActivateBubbleDragged(transform, goingUpTime);
             collision.GetComponentInChildren<Animator>().SetBool("BubbleAttack", true);
             transform.localScale = Vector3.one * 2.5f;
+            bubbleSound.Play();
         }
         else if (collision.gameObject.CompareTag("Floor"))
         {
@@ -43,6 +46,7 @@ public class Bubble : Proyectile
                 Destroy(gameObject);
                 Player.GetComponent<PlayerController>().enabled = true;
                 Player.GetComponentInChildren<Animator>().SetBool("BubbleAttack", false);
+                bubbleSound.Stop();
             }
 
             rb.useGravity = true;

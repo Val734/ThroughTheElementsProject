@@ -10,8 +10,11 @@ public class BodyOrbBehaviour : MonoBehaviour
     float elapsedTime;
     Vector3 initialScale;
 
+    AudioSource bodyOrbSound;
+
     private void Awake()
     {
+        bodyOrbSound = GetComponent<AudioSource>();
         initialScale = transform.localScale;
     }
 

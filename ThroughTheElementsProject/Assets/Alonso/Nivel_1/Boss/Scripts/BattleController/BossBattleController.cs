@@ -7,6 +7,9 @@ public class BossBattleController : MonoBehaviour
     public LiquidBoss_Behaviour boss;
     public GameObject healthbar;
 
+    bool musicStarted;
+    public AudioSource BossBattleMusic;
+
     private void Awake()
     {
         boss = GetComponentInParent<LiquidBoss_Behaviour>();
@@ -23,6 +26,11 @@ public class BossBattleController : MonoBehaviour
     {
         if(other.tag.Contains("Player"))
         {
+            if(!musicStarted)
+            {
+                BossBattleMusic.Play();
+                musicStarted = true;
+            }
             boss.battleStarted = true;
             boss.playerOnArea = true;
             healthbar.SetActive(true);
