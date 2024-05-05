@@ -25,6 +25,10 @@ public class StaticTurbineEnemy : MonoBehaviour
     [Header("Components")]
     Animator _anim;
 
+    [Header("Sounds")]
+   public AudioSource blowAttackSound;
+   public AudioSource absorbAttackSound;
+
     public enum State
     {
         Waiting,
@@ -98,11 +102,13 @@ public class StaticTurbineEnemy : MonoBehaviour
     public void BlowAttack()
     {
         Debug.Log("BLOW ATTACK");
+        blowAttackSound.Play();
         Instantiate(BlowPrefab, blowSpawnPoint, false);
     }
 
     public void AbsorbAttack()
     {
+        absorbAttackSound.Play();
         AbsorbPrefab.SetActive(true);
     }
 

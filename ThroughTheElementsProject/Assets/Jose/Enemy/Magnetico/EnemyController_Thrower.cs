@@ -20,6 +20,7 @@ public class EnemyController_Thrower : EnemyController
     [SerializeField] LayerMask detectionLayerMask = Physics.DefaultRaycastLayers;
     [SerializeField] List<string> detectionTags = new List<string> { "Player" };
 
+    public Transform visualsPosition;
     private GameObject Player;
 
     private bool isAttacking;
@@ -39,6 +40,10 @@ public class EnemyController_Thrower : EnemyController
         state = State.Dead;
         alive = false;
         animator.SetTrigger("Dead"); //ARREGLAR LA POSICION DE LA ANIMACION
+        Vector3 newPosition = visualsPosition.position;
+        newPosition.y = newPosition.y - 0.86f;
+        visualsPosition.position = newPosition;
+        bubbleEnemyDead.Play();
     }
 
     protected override void ChildUpdate()
@@ -71,6 +76,7 @@ public class EnemyController_Thrower : EnemyController
 
     public void BubbleAttack()
     {
+        bubbleAttack.Play();
         GameObject projectile = Instantiate(projectilePrefab, transform.forward + gameObject.transform.position, Quaternion.identity);
         projectile.GetComponent<Bubble>().Throw(transform.forward, transform.up);
         localSpeed = 2;

@@ -21,6 +21,7 @@ public class Bubble : Proyectile
         {
             Player = collision;
             playerHitted = true;
+            collision.GetComponent<PlayerController>().enabled = false;
             collision.GetComponent<CharacterController>().enabled = false;
             collision.GetComponent<BubbleDragBehaviour>().ActivateBubbleDragged(transform, goingUpTime);
             collision.GetComponentInChildren<Animator>().SetBool("BubbleAttack", true);
@@ -40,6 +41,7 @@ public class Bubble : Proyectile
             if (goingUpTime < 0)
             {
                 Destroy(gameObject);
+                Player.GetComponent<PlayerController>().enabled = true;
                 Player.GetComponentInChildren<Animator>().SetBool("BubbleAttack", false);
             }
 
