@@ -25,6 +25,8 @@ public class EnemyController_Thrower : EnemyController
     private bool isAttacking;
 
     Animator animator;
+    public AudioSource bubbleAttack;
+    public AudioSource bubbleEnemyDead;
 
     protected override void ChildAwake()
     {
@@ -66,20 +68,6 @@ public class EnemyController_Thrower : EnemyController
     {
         return localSpeed;
     }
-    
-    //IEnumerator waitToAttack()
-    //{
-    //    animator.SetTrigger("AttackTrigger");
-    //    localSpeed = 0;
-    //    yield return new WaitForSeconds(throwTime);
-    //    GameObject projectile = Instantiate(projectilePrefab, transform.forward + gameObject.transform.position, Quaternion.identity);
-
-    //    projectile.GetComponent<Bubble>().Throw(transform.forward, transform.up);
-
-    //    localSpeed = 2;
-
-    //    isAttacking = false;
-    //}
 
     public void BubbleAttack()
     {

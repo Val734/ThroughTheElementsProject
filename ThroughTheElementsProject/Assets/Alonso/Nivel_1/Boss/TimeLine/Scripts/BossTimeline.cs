@@ -11,6 +11,7 @@ public class BossTimeline : MonoBehaviour
     bool reproduced;
     Transform Player;
     public Transform safePlace;
+    public AudioSource musicPreBattle;
 
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class BossTimeline : MonoBehaviour
             if(director && !reproduced)
             {
                 Player = other.transform;
+                musicPreBattle.Play();
                 director.gameObject.SetActive(true);
                 director.Play();
                 reproduced = true;

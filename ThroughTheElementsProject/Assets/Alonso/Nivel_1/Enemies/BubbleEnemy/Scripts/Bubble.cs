@@ -14,6 +14,7 @@ public class Bubble : Proyectile
 
     Collider Player;
 
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
