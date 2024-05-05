@@ -2101,6 +2101,17 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3084370706366265321, guid: 4903c977600a9bc429f242fdec37d4fa,
         type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: f398ad9825c7adf48bc35efd11534d90,
+        type: 2}
+    - target: {fileID: 3084370706366265321, guid: 4903c977600a9bc429f242fdec37d4fa,
+        type: 3}
+      propertyPath: defaultValue
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084370706366265321, guid: 4903c977600a9bc429f242fdec37d4fa,
+        type: 3}
       propertyPath: playerPrefsKey
       value: MusicVolume
       objectReference: {fileID: 0}
@@ -2111,6 +2122,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5182548510028321275, guid: 4903c977600a9bc429f242fdec37d4fa,
         type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: f398ad9825c7adf48bc35efd11534d90,
+        type: 2}
+    - target: {fileID: 5182548510028321275, guid: 4903c977600a9bc429f242fdec37d4fa,
+        type: 3}
+      propertyPath: defaultValue
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182548510028321275, guid: 4903c977600a9bc429f242fdec37d4fa,
+        type: 3}
       propertyPath: playerPrefsKey
       value: GeneralVolume
       objectReference: {fileID: 0}
@@ -2119,6 +2141,12 @@ PrefabInstance:
       propertyPath: exposedParameterName
       value: GeneralVolume
       objectReference: {fileID: 0}
+    - target: {fileID: 5384652992571290571, guid: 4903c977600a9bc429f242fdec37d4fa,
+        type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: f398ad9825c7adf48bc35efd11534d90,
+        type: 2}
     - target: {fileID: 5384652992571290571, guid: 4903c977600a9bc429f242fdec37d4fa,
         type: 3}
       propertyPath: playerPrefsKey
@@ -5083,12 +5111,12 @@ PrefabInstance:
     - target: {fileID: 5673022763347317098, guid: 85f7df31cb92ada43bd757f542ba91a7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0052921935
+      value: 0.005292146
       objectReference: {fileID: 0}
     - target: {fileID: 5673022763347317098, guid: 85f7df31cb92ada43bd757f542ba91a7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0012151839
+      value: -0.0012151729
       objectReference: {fileID: 0}
     - target: {fileID: 5691401207968620158, guid: 85f7df31cb92ada43bd757f542ba91a7,
         type: 3}
