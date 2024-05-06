@@ -105,7 +105,7 @@ public class EnemyController_MiniGolem : EnemyController
             if (disappear < 0)
             {
                 // Debug.Log("activar particulas para que la palme y se vayaaaa");
-                Destroy(gameObject);
+               // Destroy(gameObject);
             }
         }
 
