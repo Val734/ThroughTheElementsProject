@@ -5,6 +5,7 @@ using UnityEngine;
 public class GODMode : MonoBehaviour
 {
     public LiquidBoss_HealthBehaviour boss;
+    public GameObject healtBar;
     public GameObject Player;
 
     int maxPoints;
@@ -27,6 +28,7 @@ public class GODMode : MonoBehaviour
         {
             Debug.Log("Boss Muerto");
             boss.OnBossDie.Invoke();
+            healtBar.SetActive(false);
         }
         if(Input.GetKeyDown(KeyCode.F3))
         {
