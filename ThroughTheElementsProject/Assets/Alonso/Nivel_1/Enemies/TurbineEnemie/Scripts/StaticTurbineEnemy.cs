@@ -101,7 +101,6 @@ public class StaticTurbineEnemy : MonoBehaviour
 
     public void BlowAttack()
     {
-        Debug.Log("BLOW ATTACK");
         blowAttackSound.Play();
         Instantiate(BlowPrefab, blowSpawnPoint, false);
     }

@@ -50,11 +50,11 @@ public class LiquidBoss_Behaviour : MonoBehaviour
     public bool canAttack; // ESTE BOOLEANO TENDRÁ QUE DESACTIVARSE CADA VEZ QUE UNA ANIMACIÓN SE TERMINA PARA QUE PUEDA HACER OTRO ATAQUE 
     public bool canHeal; // ESTE BOOLEANO TENDRÁ QUE DESACTIVARSE PARA EVITAR QUE EL BOSS SE CURE DEMASIADAS VECES
     public bool playerOnArea; // ESTE BOOLEANO SE UTILIZA PARA VER QUE EL PLAYER ESTÁ DENTRO DE LA ZONA Y ASÍ CUANDO MUERA PODRÁ VOLVER
-    bool bossKilled;
 
     public float initialWaitingTime; // ESTE TIEMPO SIRVE PARA PODER EMPEZAR LA PARTIDA UN POCO DESPUÉS DE QUE EL JUGADOR HAYA PASADO AL CAMPO DE BATALLA 
     public float currentWaitingTime;
     public float attackIntervalTime = 3f; // ESTE ES PARA QUE HAYA CIERTO TIEMPO ENTRE LOS ATAQUES
+    public float sinkingSpeed; // este Float sirve para poder determinar a cuanta velocidad bajará el boss al morir
     [SerializeField] float currentattackIntervalTime = 0f;
     public int attackType;
 
@@ -90,6 +90,13 @@ public class LiquidBoss_Behaviour : MonoBehaviour
     {
         canAttack = true;
     }
+
+    public void StartBattle()
+    {
+        battleStarted = true;
+        playerOnArea = true;
+    }
+
 
     public void Update()
     {
@@ -240,7 +247,6 @@ public class LiquidBoss_Behaviour : MonoBehaviour
             _anim.SetTrigger("Dead");
             dead = true;
         }
-        float sinkingSpeed = 1.0f;
         transform.position -= new Vector3(0, sinkingSpeed * Time.deltaTime, 0);
     }
 

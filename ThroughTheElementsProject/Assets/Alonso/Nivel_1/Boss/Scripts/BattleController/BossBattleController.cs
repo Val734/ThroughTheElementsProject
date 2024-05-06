@@ -10,10 +10,8 @@ public class BossBattleController : MonoBehaviour
     bool musicStarted;
     public AudioSource BossBattleMusic;
 
-    private void Awake()
-    {
-        boss = GetComponentInParent<LiquidBoss_Behaviour>();
-    }
+    List<string> allTags = new List<string> {"Player"};
+
 
     public void ChangeToStateWaiting()
     {
@@ -22,18 +20,22 @@ public class BossBattleController : MonoBehaviour
         healthbar.gameObject.SetActive(false);
     }
 
-    private void OnTriggerExit(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        if(other.tag.Contains("Player"))
+        if(allTags.Contains(other.tag)) 
         {
-            if(!musicStarted)
-            {
-                BossBattleMusic.Play();
-                musicStarted = true;
-            }
-            boss.battleStarted = true;
-            boss.playerOnArea = true;
-            healthbar.SetActive(true);
+            ActivateBattle();
         }
+    }
+
+    public void ActivateBattle()
+    {
+        if (!musicStarted)
+        {
+            BossBattleMusic.Play();
+            //musicStarted = true;
+        }
+        boss.StartBattle();
+        healthbar.SetActive(true);
     }
 }

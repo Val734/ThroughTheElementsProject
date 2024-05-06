@@ -5,14 +5,19 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 
-public class BossTimeline : MonoBehaviour
+public class BossTimelinePreBattle : MonoBehaviour
 {
     public PlayableDirector director;
-    bool reproduced;
-    Transform Player;
     public Transform safePlace;
+
+    [Header("Audio Settings")]
     public AudioSource musicPreBattle;
     public AudioSource MainMusic;
+    public AudioSource bossRoarSound;
+
+    public LiquidBoss_Behaviour boss;
+    bool reproduced;
+    Transform Player;
 
     private void Awake()
     {
@@ -23,6 +28,7 @@ public class BossTimeline : MonoBehaviour
     {
         Player.gameObject.SetActive(true);
         Player.position = safePlace.position;
+        Player.GetComponent<PlayerController>().isDashing = false;
         director.gameObject.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
@@ -31,6 +37,8 @@ public class BossTimeline : MonoBehaviour
         {
             if(director && !reproduced)
             {
+                boss.GetComponent<Animator>().SetTrigger("WaveAttack");
+                StartCoroutine(RoarSound());
                 MainMusic.Stop();
                 Player = other.transform;
                 musicPreBattle.Play();
@@ -40,5 +48,11 @@ public class BossTimeline : MonoBehaviour
                 Player.gameObject.SetActive(false);
             }
         }
+    }
+
+    IEnumerator RoarSound()
+    {
+        yield return new WaitForSeconds(2);
+        bossRoarSound.Play();
     }
 }
