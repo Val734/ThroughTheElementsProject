@@ -3216,6 +3216,11 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 844686429682627828, guid: 4903c977600a9bc429f242fdec37d4fa,
+        type: 3}
+      propertyPath: HUD
+      value: 
+      objectReference: {fileID: 1831314516098798446}
     - target: {fileID: 1051518077183294220, guid: 4903c977600a9bc429f242fdec37d4fa,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3343,6 +3348,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995848476780334648, guid: 4903c977600a9bc429f242fdec37d4fa,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995848476780334648, guid: 4903c977600a9bc429f242fdec37d4fa,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995848476780334648, guid: 4903c977600a9bc429f242fdec37d4fa,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1831314516098798446}
+    - target: {fileID: 7995848476780334648, guid: 4903c977600a9bc429f242fdec37d4fa,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995848476780334648, guid: 4903c977600a9bc429f242fdec37d4fa,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995848476780334648, guid: 4903c977600a9bc429f242fdec37d4fa,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995848476780334648, guid: 4903c977600a9bc429f242fdec37d4fa,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995848476780334648, guid: 4903c977600a9bc429f242fdec37d4fa,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8807711384312500434, guid: 4903c977600a9bc429f242fdec37d4fa,
         type: 3}
@@ -11231,7 +11276,7 @@ PrefabInstance:
     - target: {fileID: 5093873000471414933, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 5.8608275e-29
+      value: -1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 5093873000471414933, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
@@ -11241,7 +11286,7 @@ PrefabInstance:
     - target: {fileID: 5093873000471414933, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 8.675185e-29
+      value: -1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 5094764240411576094, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
@@ -12196,7 +12241,7 @@ PrefabInstance:
     - target: {fileID: 7927818337061411055, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.02038696
+      value: -0.020386958
       objectReference: {fileID: 0}
     - target: {fileID: 7927818337061411055, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
@@ -12206,7 +12251,7 @@ PrefabInstance:
     - target: {fileID: 7927818337061411055, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.020386962
+      value: -0.020386958
       objectReference: {fileID: 0}
     - target: {fileID: 7958835519281408796, guid: f8df6fef6b6aeff4599487810dbba238,
         type: 3}
