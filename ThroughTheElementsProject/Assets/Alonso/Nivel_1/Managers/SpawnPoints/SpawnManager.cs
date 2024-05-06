@@ -26,6 +26,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] string playerPrefWitchScene;
 
     private float defaultvalue = -999f;
+    private bool isContinue;
 
     private void OnValidate()
     {
@@ -37,10 +38,8 @@ public class SpawnManager : MonoBehaviour
 
     public void SetPlayerPosition()
     {
-        if (PlayerPrefs.GetFloat("PlayerPrefLocationX") != defaultvalue)
-        {
-            Player.transform.position = new Vector3(PlayerPrefs.GetFloat("PlayerPrefLocationX"), PlayerPrefs.GetFloat("PlayerPrefLocationY"), PlayerPrefs.GetFloat("PlayerPrefLocationZ"));
-        }
+        Debug.Log("Entra");
+        isContinue=true;
     }
     private void Awake()
     {
@@ -58,8 +57,14 @@ public class SpawnManager : MonoBehaviour
         PlayerPrefs.SetString(playerPrefWitchScene, nameOfScene);
     }
 
-    
 
+    private void Start()
+    {
+        if ((PlayerPrefs.GetFloat("PlayerPrefLocationX") != defaultvalue) && isContinue)
+        {
+            Player.transform.position = new Vector3(PlayerPrefs.GetFloat("PlayerPrefLocationX"), PlayerPrefs.GetFloat("PlayerPrefLocationY"), PlayerPrefs.GetFloat("PlayerPrefLocationZ"));
+        }
+    }
     public void ChangeSpawnPoint(Transform newSpawnPoint)
     {
         currentSpawnPoint = newSpawnPoint;

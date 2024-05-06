@@ -5,70 +5,65 @@ using System.ComponentModel;
 public class GameNewOrContinue : MonoBehaviour
 {
     private string scene;
-    private float defaultvalue = -999f;
-
+    private float defaultValue = -999f;
 
     private void Awake()
     {
         scene = PlayerPrefs.GetString("PlayerPrefWitchScene");
-
-
     }
+
     public void NewGame()
     {
-        //Debug.LogError("entra");
-
-        PlayerPrefs.SetFloat("PlayerPrefLocationX", defaultvalue);
-        PlayerPrefs.SetFloat("PlayerPrefLocationY", defaultvalue);
-        PlayerPrefs.SetFloat("PlayerPrefLocationZ", defaultvalue);
+        PlayerPrefs.SetFloat("PlayerPrefLocationX", defaultValue);
+        PlayerPrefs.SetFloat("PlayerPrefLocationY", defaultValue);
+        PlayerPrefs.SetFloat("PlayerPrefLocationZ", defaultValue);
         PlayerPrefs.SetString("PlayerPrefWitchScene", "Ninguna");
 
         PlayerPrefs.Save();
         ViewPlayerPref();
-
     }
 
     public void Continue()
     {
-        if(scene!= "Ninguna")
+        if (scene != "Ninguna")
         {
             if (!string.IsNullOrEmpty(scene))
             {
-                GameObject obj = GameObject.Find("SpawnManager");
+                SceneManager.sceneLoaded += OnSceneLoaded;
                 SceneManager.LoadScene(scene);
             }
             else
             {
                 Debug.LogError("El nombre de la escena no está definido en PlayerPrefs.");
             }
-            ViewPlayerPref();
         }
-
-
-
     }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        GameObject obj = GameObject.Find("SpawnManager");
-        if (obj != null)
+        GameObject spawnManager = GameObject.Find("SpawnManager");
+        if (spawnManager != null)
         {
-            SpawnManager componente = obj.GetComponent<SpawnManager>();
-            if (componente != null)
+            // Obtener el componente del objeto
+            SpawnManager spawnManagerComponent = spawnManager.GetComponent<SpawnManager>();
+            if (spawnManagerComponent != null)
             {
-                componente.SetPlayerPosition();
+                // Llamar a la función en el componente
+                spawnManagerComponent.SetPlayerPosition();
             }
             else
             {
-                Debug.LogWarning("El componente MiComponente no está adjunto al GameObject.");
+                Debug.LogWarning("El componente SpawnManager no está adjunto al GameObject 'SpawnManager'.");
             }
         }
         else
         {
-            Debug.LogWarning("No se encontró el GameObject con el nombre especificado.");
+            Debug.LogWarning("No se encontró el GameObject 'SpawnManager' en la nueva escena.");
         }
 
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
+
     private static void ViewPlayerPref()
     {
         if (PlayerPrefs.HasKey("PlayerPrefLocationX"))
