@@ -2187,7 +2187,7 @@ PrefabInstance:
     - target: {fileID: 7621851433585586232, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
         type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7621851433585586232, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
         type: 3}
@@ -2201,6 +2201,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621851433585586232, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621851433585586232, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
+        type: 3}
       propertyPath: GetHurt.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -2209,6 +2214,11 @@ PrefabInstance:
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4172596146140777565}
+    - target: {fileID: 7621851433585586232, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1343144713}
     - target: {fileID: 7621851433585586232, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
         type: 3}
       propertyPath: GetHurt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2231,6 +2241,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621851433585586232, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeToStateWaiting
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621851433585586232, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
+        type: 3}
       propertyPath: GetHurt.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -2246,12 +2261,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7621851433585586232, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
         type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BossBattleController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621851433585586232, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
+        type: 3}
       propertyPath: GetHurt.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PlayerController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7621851433585586232, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
         type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621851433585586232, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
+        type: 3}
+      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7621851433585586232, guid: 69f7291a4929a8a46ac0b9e81c0e35dd,
@@ -4462,7 +4487,7 @@ PrefabInstance:
     - target: {fileID: 4245597458435873279, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0019848319
+      value: 0.001984832
       objectReference: {fileID: 0}
     - target: {fileID: 4245597458435873279, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
@@ -4472,7 +4497,7 @@ PrefabInstance:
     - target: {fileID: 4245597458435873279, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.12216708
+      value: 0.1221671
       objectReference: {fileID: 0}
     - target: {fileID: 5951546926392677722, guid: ace5795079f150c448fd38bf8673ea96,
         type: 3}
@@ -10182,6 +10207,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 404805984886057143, guid: 3a81d508e75dde949aa011f2898c7682,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1645901324245689820, guid: 3a81d508e75dde949aa011f2898c7682,
         type: 3}
       propertyPath: m_LocalPosition.x
