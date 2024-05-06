@@ -23,6 +23,7 @@ public class FallReturnToSpawn : MonoBehaviour
             Player.transform.position=SpawnManager.GetComponent<SpawnManager>().currentSpawnPoint.transform.position;
             Player.SetActive(true);
             Player.GetComponent<PlayerController>().StopBeingPushed();
+            Player.GetComponent<PlayerController>().isDashing = false;
             
             if(battleController)
             {
