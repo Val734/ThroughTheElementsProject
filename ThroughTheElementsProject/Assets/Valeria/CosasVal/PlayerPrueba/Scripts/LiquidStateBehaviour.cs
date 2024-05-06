@@ -83,6 +83,7 @@ public class LiquidStateBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("TeleportPoint"))
         {
             canTP = false;
+           
             Debug.Log("EL ESTADO DEL BOOLEANO PARA HACER TP ES:"+canTP);
 
         }
@@ -128,9 +129,12 @@ public class LiquidStateBehaviour : MonoBehaviour
     IEnumerator MoveTowardsObjective()
     {
         isMovingTowardsObjective = true;
-        controller.characterController.enabled = false; 
+        controller.characterController.enabled = false;
+        controller.canMove = false; 
+        controller.playerCanAttack= false;
         Wave.SetActive(true);
         waveSound.Play();
+        animator.SetBool("Surf", true);
 
         GameObject[] objectives = GameObject.FindGameObjectsWithTag("PointToReach");
         Transform closestObjective = null;
@@ -159,7 +163,12 @@ public class LiquidStateBehaviour : MonoBehaviour
             }
         }
         Wave.SetActive(false);
+
         waveSound.Stop();
+        controller.canMove = true;
+        animator.SetBool("Surf", false);
+
+        controller.playerCanAttack = true;
         controller.characterController.enabled = true; 
         isMovingTowardsObjective = false;
         canTP=false;

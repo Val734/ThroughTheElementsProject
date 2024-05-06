@@ -26,7 +26,7 @@ public class EnemyController_Snow : EnemyController
         initialPosition = transform.position; // Guarda la posición inicial
 
         hurtSound = soundManager.transform.Find("BallEnemyInjured").GetComponent<AudioSource>();
-        attackSound = soundManager.transform.Find("BallEnemyIdle").GetComponent<AudioSource>();
+        attackSound = soundManager.transform.Find("BallEnemyInjured").GetComponent<AudioSource>();
     }
 
     protected override void ChildUpdate()

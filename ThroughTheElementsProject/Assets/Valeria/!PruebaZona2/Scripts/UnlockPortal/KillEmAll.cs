@@ -11,11 +11,13 @@ public class KillEmAll : MonoBehaviour
         {
             foreach (GameObject enemy in enemies)
             {
-
-                HealthBehaviour healthBehaviour = enemy.GetComponent<HealthBehaviour>();
-                if (healthBehaviour != null)
+                if (enemy != null)
                 {
-                    healthBehaviour.OnDie.Invoke();
+                    HealthBehaviour healthBehaviour = enemy.GetComponent<HealthBehaviour>();
+                    if (healthBehaviour != null)
+                    {
+                        healthBehaviour.OnDie.Invoke();
+                    }
                 }
             }
         }
