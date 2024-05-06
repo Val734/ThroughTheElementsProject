@@ -9,17 +9,17 @@ public class Fullscreen : MonoBehaviour
 
     private void Start()
     {
-        tg.isOn = false;
+        tg.isOn = true;
     }
     public void ChangeFullScreen()
     {
         if(tg.isOn)
         {
-            Screen.fullScreen = false; //Cambia a ventana
+            Screen.fullScreen = true; //Cambia a fullscreen
         }
         else
         {
-            Screen.fullScreen = true; //Cambia a fullscreen
+            Screen.fullScreen = false; //Cambia a ventana
         }
     }
 }
