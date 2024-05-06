@@ -44,11 +44,9 @@ public class GameNewOrContinue : MonoBehaviour
         GameObject spawnManager = GameObject.Find("SpawnManager");
         if (spawnManager != null)
         {
-            // Obtener el componente del objeto
             SpawnManager spawnManagerComponent = spawnManager.GetComponent<SpawnManager>();
             if (spawnManagerComponent != null)
             {
-                // Llamar a la función en el componente
                 spawnManagerComponent.SetPlayerPosition();
             }
             else
