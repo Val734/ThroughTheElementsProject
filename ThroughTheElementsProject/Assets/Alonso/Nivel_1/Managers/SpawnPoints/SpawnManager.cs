@@ -35,13 +35,16 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-
-    private void Awake()
+    public void SetPlayerPosition()
     {
-        if(PlayerPrefs.GetFloat("PlayerPrefLocationX")!=defaultvalue)
+        if (PlayerPrefs.GetFloat("PlayerPrefLocationX") != defaultvalue)
         {
             Player.transform.position = new Vector3(PlayerPrefs.GetFloat("PlayerPrefLocationX"), PlayerPrefs.GetFloat("PlayerPrefLocationY"), PlayerPrefs.GetFloat("PlayerPrefLocationZ"));
         }
+    }
+    private void Awake()
+    {
+        
         for (int i = 0; i < transform.childCount; i++)
         {
             SpawnPoints.Add(transform.GetChild(i));

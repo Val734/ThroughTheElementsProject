@@ -1,5 +1,6 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.ComponentModel;
 
 public class GameNewOrContinue : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class GameNewOrContinue : MonoBehaviour
         {
             if (!string.IsNullOrEmpty(scene))
             {
+                GameObject obj = GameObject.Find("SpawnManager");
                 SceneManager.LoadScene(scene);
             }
             else
@@ -45,7 +47,28 @@ public class GameNewOrContinue : MonoBehaviour
 
 
     }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        GameObject obj = GameObject.Find("SpawnManager");
+        if (obj != null)
+        {
+            SpawnManager componente = obj.GetComponent<SpawnManager>();
+            if (componente != null)
+            {
+                componente.SetPlayerPosition();
+            }
+            else
+            {
+                Debug.LogWarning("El componente MiComponente no está adjunto al GameObject.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró el GameObject con el nombre especificado.");
+        }
 
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
     private static void ViewPlayerPref()
     {
         if (PlayerPrefs.HasKey("PlayerPrefLocationX"))
