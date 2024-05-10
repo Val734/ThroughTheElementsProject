@@ -1,4 +1,4 @@
-using UnityEngine.SceneManagement;
+/*using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.ComponentModel;
 
@@ -47,7 +47,7 @@ public class GameNewOrContinue : MonoBehaviour
             SpawnManager spawnManagerComponent = spawnManager.GetComponent<SpawnManager>();
             if (spawnManagerComponent != null)
             {
-                spawnManagerComponent.SetPlayerPosition();
+               // spawnManagerComponent.SetPlayerPosition();
             }
             else
             {
@@ -111,4 +111,4 @@ public class GameNewOrContinue : MonoBehaviour
             Debug.Log("PlayerPrefWitchScene no existe en PlayerPrefs");
         }
     }
-}
+}*/
