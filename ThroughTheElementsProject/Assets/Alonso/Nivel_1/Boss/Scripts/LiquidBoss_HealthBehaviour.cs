@@ -85,7 +85,6 @@ public class LiquidBoss_HealthBehaviour : MonoBehaviour
 
                 if (probabilityOfBeingCured < 2)
                 {
-                    Debug.Log("ME HE CURADO");
                     lives++;
                     timeshealed++;
                     healthbar.UpdateHealthbar(maxLives, lives);
