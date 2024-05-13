@@ -11838,6 +11838,7 @@ GameObject:
   - component: {fileID: 1234333443224862635}
   - component: {fileID: 1234333443225828715}
   - component: {fileID: 1234333443228083116}
+  - component: {fileID: 1234333443228083117}
   m_Layer: 0
   m_Name: rpgpp_lt_mountain_01 (5)
   m_TagString: Untagged
@@ -11867,6 +11868,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 9d123ff5b15c0bd4fbd33779e2acdbd9, type: 3}
+--- !u!65 &1234333443228083117
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234333443228083115}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 166.25513, y: 78.35386, z: 166.25224}
+  m_Center: {x: 0.0007851124, y: 39.35129, z: 36.11}
 --- !u!4 &1235343885704015381
 Transform:
   m_ObjectHideFlags: 0
@@ -21671,9 +21693,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnManager: {fileID: 0}
-  OnSpawn:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &4172119344475214140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21687,9 +21706,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnManager: {fileID: 0}
-  OnSpawn:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &4172596146140777565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21711,11 +21727,6 @@ MonoBehaviour:
   - {fileID: 3902290460722093121}
   Player: {fileID: 770618132}
   PRUEBAS: 0
-  nameOfScene: Nivel_1
-  playerPrefLocationX: PlayerPrefLocationX
-  playerPrefLocationY: PlayerPrefLocationY
-  playerPrefLocationZ: PlayerPrefLocationZ
-  playerPrefWitchScene: PlayerPrefWitchScene
 --- !u!64 &4222765511388036050
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28011,9 +28022,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnManager: {fileID: 0}
-  OnSpawn:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &6612852604437625887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30706,9 +30714,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnManager: {fileID: 0}
-  OnSpawn:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &7774333345136593998
 MeshCollider:
   m_ObjectHideFlags: 0
